@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tastewise by AFA</title>
+  <meta name="description" content="Tastewise by AFA — find dishes at AFA Restaurant by your favorite ingredients and budget." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="account" data-title="title.account" data-nav="account" class="has-photo-header">
+  <header class="site-header"></header>
+  <main>
+    <section class="photo-hero dark auth-hero">
+      <div class="bg"><img src="images/site/table-flowers.jpg" alt="" fetchpriority="high" /></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 data-i18n="account.heroTitle"></h1>
+          <p class="lead" data-i18n="account.heroSub"></p>
+          <span class="hero-flourish" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="wave-bottom"><svg viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70V40C260 0 520 8 760 34s470 30 680 0v36z" fill="currentColor"/></svg></div>
+    </section>
+    <section class="section acc-section">
+      <div class="leaves l-tl"></div>
+      <div class="container acc-layout">
+        <aside class="acc-side">
+          <div class="acc-avatar" id="accAvatar" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <strong class="acc-name" id="accName">&nbsp;</strong>
+          <span class="acc-email" id="accEmail"></span>
+          <nav class="acc-nav" data-i18n-attr="aria-label:account.menu">
+            <a href="#profile" class="acc-link" data-view="profile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span data-i18n="account.profile"></span></a>
+            <a href="#reservations" class="acc-link" data-view="reservations"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8.5" cy="14" r="1" fill="currentColor"/><circle cx="12" cy="14" r="1" fill="currentColor"/><circle cx="15.5" cy="14" r="1" fill="currentColor"/></svg><span data-i18n="account.reservations"></span></a>
+            <a href="#favorites" class="acc-link" data-view="favorites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.5 3.7 4 7.3 4c2 0 3.6 1.1 4.7 2.7C13.1 5.1 14.7 4 16.7 4c3.6 0 5.9 3.5 4.6 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span data-i18n="account.favorites"></span></a>
+            <a href="#settings" class="acc-link" data-view="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span data-i18n="account.settings"></span></a>
+            <button type="button" class="acc-link" id="logoutLink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8M10 12h10M16 8l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="account.logout"></span></button>
+          </nav>
+        </aside>
+
+        <div class="acc-main">
+          <!-- Profile -->
+          <section class="acc-panel" data-panel="profile">
+            <div class="acc-head">
+              <h2 data-i18n="account.profileTitle"></h2>
+              <button type="button" class="btn-text acc-edit" id="editProfile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4zM13.5 6.5l4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span data-i18n="account.edit"></span></button>
+            </div>
+            <dl class="profile-list" id="profileView">
+              <dt data-i18n="account.fullName"></dt><dd id="pvName"></dd>
+              <dt data-i18n="account.email"></dt><dd id="pvEmail"></dd>
+              <dt data-i18n="account.phone"></dt><dd id="pvPhone"></dd>
+              <dt data-i18n="account.location"></dt><dd id="pvCity"></dd>
+            </dl>
+            <form class="form profile-form" id="profileForm" novalidate hidden>
+              <div class="form-msg" id="profileMsg" hidden></div>
+              <div class="form-row">
+                <div class="form-field"><label for="pfName" data-i18n="account.fullName"></label><input class="input" id="pfName" name="fullName" autocomplete="name" required /><span class="field-error"></span></div>
+                <div class="form-field"><label for="pfEmail" data-i18n="account.email"></label><input class="input" id="pfEmail" type="email" disabled /><span class="hint" data-i18n="account.emailNote"></span></div>
+              </div>
+              <div class="form-row">
+                <div class="form-field"><label for="pfPhone" data-i18n="account.phone"></label><input class="input" id="pfPhone" name="phone" type="tel" autocomplete="tel" data-i18n-attr="placeholder:account.phonePh" /><span class="field-error"></span></div>
+                <div class="form-field"><label for="pfCity" data-i18n="account.location"></label><input class="input" id="pfCity" name="city" autocomplete="address-level2" data-i18n-attr="placeholder:account.cityPh" /><span class="field-error"></span></div>
+              </div>
+              <div class="acc-actions">
+                <button type="submit" class="btn btn-primary btn-sm" data-i18n="account.save"></button>
+                <button type="button" class="btn btn-ghost btn-sm" id="cancelEdit" data-i18n="account.cancelEdit"></button>
+              </div>
+            </form>
+            <h2 class="acc-sub" data-i18n="account.activity"></h2>
+            <div class="stat-grid">
+              <a class="stat" href="#reservations"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8.5" cy="14" r="1" fill="currentColor"/><circle cx="12" cy="14" r="1" fill="currentColor"/><circle cx="15.5" cy="14" r="1" fill="currentColor"/></svg><strong id="statRes">–</strong><span id="statResLabel"></span></a>
+              <a class="stat" href="#favorites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.5 3.7 4 7.3 4c2 0 3.6 1.1 4.7 2.7C13.1 5.1 14.7 4 16.7 4c3.6 0 5.9 3.5 4.6 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong id="statFav">–</strong><span id="statFavLabel"></span></a>
+              <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><strong id="statRating">–</strong><span><span data-i18n="account.statRating"></span><small id="statRatingHint"></small></span></div>
+            </div>
+            <p class="muted acc-since" id="memberSince"></p>
+          </section>
+
+          <!-- Reservations -->
+          <section class="acc-panel" data-panel="reservations" hidden>
+            <div class="acc-head">
+              <h2 data-i18n="account.resTitle"></h2>
+              <a href="reserve.html" class="btn btn-primary btn-sm" data-i18n="account.newRes"></a>
+            </div>
+            <div class="res-list" id="resList"></div>
+          </section>
+
+          <!-- Favorites -->
+          <section class="acc-panel" data-panel="favorites" hidden>
+            <div class="acc-head">
+              <h2 data-i18n="account.favorites"></h2>
+              <a href="favorites.html" class="btn-text" data-i18n="account.allFav"></a>
+            </div>
+            <div class="dish-grid cols-3" id="accFavGrid"></div>
+          </section>
+
+          <!-- Settings -->
+          <section class="acc-panel" data-panel="settings" hidden>
+            <div class="acc-head"><h2 data-i18n="account.pwTitle"></h2></div>
+            <p class="muted" data-i18n="account.pwText"></p>
+            <form class="form" id="passwordForm" novalidate>
+              <div class="form-msg" id="pwMsg" hidden></div>
+              <div class="form-row">
+                <div class="form-field"><label for="currentPassword" data-i18n="account.currentPw"></label>
+                  <div class="pw-wrap"><input class="input" type="password" id="currentPassword" name="currentPassword" autocomplete="current-password" required /><button type="button" class="pw-toggle pw-eye" aria-pressed="false" data-i18n-attr="aria-label:pw.show"><svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg class="eye-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 4l16 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></div>
+                  <span class="field-error"></span></div>
+                <div class="form-field"><label for="newPassword" data-i18n="account.newPw"></label>
+                  <div class="pw-wrap"><input class="input" type="password" id="newPassword" name="newPassword" autocomplete="new-password" required /><button type="button" class="pw-toggle pw-eye" aria-pressed="false" data-i18n-attr="aria-label:pw.show"><svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><svg class="eye-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 4l16 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></div>
+                  <span class="hint" data-i18n="f.passwordHint"></span><span class="field-error"></span></div>
+              </div>
+              <div><button type="submit" class="btn btn-primary btn-sm" data-i18n="account.pwSave"></button></div>
+            </form>
+            <div class="acc-head" style="margin-top:2.2rem"><h2 data-i18n="account.langTitle"></h2></div>
+            <p class="muted" data-i18n="account.langText"></p>
+            <div class="chips" id="langChoice"></div>
+          </section>
+        </div>
+
+        <div class="visit-banner">
+          <div class="vb-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 6v16M10 6v10a4 4 0 0 0 8 0V6M14 22v20M34 6c-4 3-6 8-6 14h6v22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="vb-text"><h2 data-i18n="account.visitTitle"></h2><p data-i18n="account.visitText"></p></div>
+          <a href="explore.html" class="btn btn-primary"><span data-i18n="account.exploreMenu"></span> <svg class="arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="info-bar light">
+          <div class="info-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><div><strong data-i18n="info.address"></strong><span data-restaurant="address">Sumqayıt, Azərbaycan</span></div></div>
+          <div class="info-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><div><strong data-i18n="info.hours"></strong><span data-restaurant="hours"></span></div></div>
+          <div class="info-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><div><strong data-i18n="info.contact"></strong><a data-restaurant="phone" href="tel:+994501234567">+994 50 123 45 67</a></div></div>
+          <p class="welcome"><span data-i18n="reserve.welcome"></span> <span aria-hidden="true">♡</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/account.js"></script>
+</body>
+</html>

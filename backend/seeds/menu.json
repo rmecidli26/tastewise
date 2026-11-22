@@ -1,0 +1,1026 @@
+{
+  "restaurant": {
+    "slug": "afa",
+    "name": "AFA Restaurant",
+    "description": "AFA Restaurant is more than just a place to eat — it's a destination for great food, warm atmosphere and unforgettable moments. From classic favorites to modern dishes, AFA offers a unique dining experience for everyone.",
+    "address": "Sumqayit, Azerbaijan",
+    "city": "Sumqayit",
+    "phone": "+994 50 123 45 67",
+    "email": "info@afa-restaurant.az",
+    "opening_hours": {
+      "mon": ["10:00", "23:00"],
+      "tue": ["10:00", "23:00"],
+      "wed": ["10:00", "23:00"],
+      "thu": ["10:00", "23:00"],
+      "fri": ["10:00", "23:00"],
+      "sat": ["10:00", "23:00"],
+      "sun": ["10:00", "23:00"]
+    },
+    "i18n": {
+      "az": {
+        "description": "AFA Restaurant sadəcə yemək yeri deyil — dadlı yeməklər, isti atmosfer və unudulmaz anlar məkanıdır. Sevilən klassik yeməklərdən müasir mətbəxə qədər AFA hər kəsə özünəməxsus qastronomik təcrübə təqdim edir.",
+        "address": "Sumqayıt, Azərbaycan",
+        "city": "Sumqayıt"
+      },
+      "ru": {
+        "description": "AFA Restaurant — это больше, чем просто ресторан: это место вкусной еды, тёплой атмосферы и незабываемых моментов. От любимой классики до современных блюд — AFA дарит каждому гостю особые гастрономические впечатления.",
+        "address": "Сумгаит, Азербайджан",
+        "city": "Сумгаит"
+      }
+    }
+  },
+  "categories": [
+    {
+      "slug": "pizza",
+      "name": "Pizza",
+      "sort_order": 1,
+      "i18n": {
+        "az": "Pizzalar",
+        "ru": "Пицца"
+      }
+    },
+    {
+      "slug": "doner",
+      "name": "Döner & Shawarma",
+      "sort_order": 2,
+      "i18n": {
+        "az": "Dönər və şaurma",
+        "ru": "Дёнер и шаурма"
+      }
+    }
+  ],
+  "allergens": ["pizza dough", "mozzarella", "cheddar", "cheese", "butter", "lavash", "bread", "tombik bread", "tuna"],
+  "ingredient_names": {
+    "arabic sauce": {
+      "az": "ərəb sousu",
+      "ru": "арабский соус"
+    },
+    "basil": {
+      "az": "reyhan",
+      "ru": "базилик"
+    },
+    "bbq sauce": {
+      "az": "BBQ sousu",
+      "ru": "соус барбекю"
+    },
+    "bread": {
+      "az": "çörək",
+      "ru": "хлеб"
+    },
+    "butter": {
+      "az": "kərə yağı",
+      "ru": "сливочное масло"
+    },
+    "cheddar": {
+      "az": "çedar pendiri",
+      "ru": "чеддер"
+    },
+    "cheese": {
+      "az": "pendir",
+      "ru": "сыр"
+    },
+    "chicken": {
+      "az": "toyuq",
+      "ru": "курица"
+    },
+    "corn": {
+      "az": "qarğıdalı",
+      "ru": "кукуруза"
+    },
+    "cucumber": {
+      "az": "xiyar",
+      "ru": "огурцы"
+    },
+    "garlic": {
+      "az": "sarımsaq",
+      "ru": "чеснок"
+    },
+    "hot honey sauce": {
+      "az": "acı-bal sousu",
+      "ru": "остро-медовый соус"
+    },
+    "hot pepper": {
+      "az": "acı bibər",
+      "ru": "острый перец"
+    },
+    "lavash": {
+      "az": "lavaş",
+      "ru": "лаваш"
+    },
+    "lettuce": {
+      "az": "kahı",
+      "ru": "листья салата"
+    },
+    "meat": {
+      "az": "ət",
+      "ru": "мясо"
+    },
+    "minced beef": {
+      "az": "dana qıyma",
+      "ru": "говяжий фарш"
+    },
+    "mozzarella": {
+      "az": "mozzarella",
+      "ru": "моцарелла"
+    },
+    "mushrooms": {
+      "az": "göbələk",
+      "ru": "грибы"
+    },
+    "olives": {
+      "az": "zeytun",
+      "ru": "оливки"
+    },
+    "onion": {
+      "az": "soğan",
+      "ru": "лук"
+    },
+    "oregano": {
+      "az": "oregano",
+      "ru": "орегано"
+    },
+    "pepper": {
+      "az": "bibər",
+      "ru": "перец"
+    },
+    "pepperoni": {
+      "az": "pepperoni",
+      "ru": "пепперони"
+    },
+    "pickled peppers": {
+      "az": "turşu bibər",
+      "ru": "маринованный перец"
+    },
+    "pickles": {
+      "az": "turşu xiyar",
+      "ru": "маринованные огурцы"
+    },
+    "pizza dough": {
+      "az": "pizza xəmiri",
+      "ru": "тесто для пиццы"
+    },
+    "pizza sauce": {
+      "az": "pizza sousu",
+      "ru": "соус для пиццы"
+    },
+    "potato": {
+      "az": "kartof",
+      "ru": "картофель"
+    },
+    "rice": {
+      "az": "düyü",
+      "ru": "рис"
+    },
+    "saffron": {
+      "az": "zəfəran",
+      "ru": "шафран"
+    },
+    "spiced sauce": {
+      "az": "ədviyyatlı sous",
+      "ru": "пряный соус"
+    },
+    "tomato": {
+      "az": "pomidor",
+      "ru": "помидоры"
+    },
+    "tombik bread": {
+      "az": "tombik çörəyi",
+      "ru": "хлеб томбик"
+    },
+    "tuna": {
+      "az": "tuna balığı",
+      "ru": "тунец"
+    }
+  },
+  "dishes": [
+    {
+      "slug": "margherita",
+      "name": "Margherita",
+      "category": "pizza",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "images/dishes/margherita.jpg",
+      "best_seller": false,
+      "description": "Pizza sauce, tomato, mozzarella and oregano.",
+      "diet": ["vegetarian"],
+      "mood": ["light", "comfort"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["pizza dough", "pizza sauce", "tomato", "mozzarella", "oregano"],
+      "variants": [
+        {
+          "code": "18",
+          "label": {
+            "az": "18 sm",
+            "en": "18 cm",
+            "ru": "18 см"
+          },
+          "price": 8.8
+        },
+        {
+          "code": "30",
+          "label": {
+            "az": "30 sm",
+            "en": "30 cm",
+            "ru": "30 см"
+          },
+          "price": 12.5
+        },
+        {
+          "code": "35",
+          "label": {
+            "az": "35 sm",
+            "en": "35 cm",
+            "ru": "35 см"
+          },
+          "price": 16.8
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Margherita",
+          "description": "Pizza sousu, pomidor, mozzarella, oregano."
+        },
+        "ru": {
+          "name": "Маргарита",
+          "description": "Соус для пиццы, помидоры, моцарелла и орегано."
+        }
+      }
+    },
+    {
+      "slug": "veggie-pizza",
+      "name": "Veggie Pizza",
+      "category": "pizza",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "images/dishes/veggie-pizza.jpg",
+      "best_seller": true,
+      "description": "Pizza sauce, mozzarella, mushrooms, peppers, tomato, onion, olives and oregano.",
+      "diet": ["vegetarian"],
+      "mood": ["light", "comfort"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "mushrooms", "pepper", "tomato", "onion", "olives", "oregano"],
+      "variants": [
+        {
+          "code": "18",
+          "label": {
+            "az": "18 sm",
+            "en": "18 cm",
+            "ru": "18 см"
+          },
+          "price": 9.5
+        },
+        {
+          "code": "30",
+          "label": {
+            "az": "30 sm",
+            "en": "30 cm",
+            "ru": "30 см"
+          },
+          "price": 13.5
+        },
+        {
+          "code": "35",
+          "label": {
+            "az": "35 sm",
+            "en": "35 cm",
+            "ru": "35 см"
+          },
+          "price": 18
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Veggie Pizza",
+          "description": "Pizza sousu, mozzarella, göbələk, bibər, pomidor, soğan, zeytun, oregano."
+        },
+        "ru": {
+          "name": "Овощная пицца",
+          "description": "Соус для пиццы, моцарелла, грибы, перец, помидоры, лук, оливки и орегано."
+        }
+      }
+    },
+    {
+      "slug": "bbq-chicken-pizza",
+      "name": "BBQ Chicken Pizza",
+      "category": "pizza",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "images/dishes/bbq-chicken-pizza.jpg",
+      "best_seller": false,
+      "description": "BBQ sauce, mozzarella, chicken, peppers, mushrooms and oregano.",
+      "diet": [],
+      "mood": ["hearty", "celebration"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["pizza dough", "bbq sauce", "mozzarella", "chicken", "pepper", "mushrooms", "oregano"],
+      "variants": [
+        {
+          "code": "18",
+          "label": {
+            "az": "18 sm",
+            "en": "18 cm",
+            "ru": "18 см"
+          },
+          "price": 12.9
+        },
+        {
+          "code": "30",
+          "label": {
+            "az": "30 sm",
+            "en": "30 cm",
+            "ru": "30 см"
+          },
+          "price": 16.9
+        },
+        {
+          "code": "35",
+          "label": {
+            "az": "35 sm",
+            "en": "35 cm",
+            "ru": "35 см"
+          },
+          "price": 19.9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "BBQ Chicken Pizza",
+          "description": "BBQ sousu, mozzarella, toyuq, bibər, göbələk, oregano."
+        },
+        "ru": {
+          "name": "Пицца барбекю с курицей",
+          "description": "Соус барбекю, моцарелла, курица, перец, грибы и орегано."
+        }
+      }
+    },
+    {
+      "slug": "beef-and-mushroom-pizza",
+      "name": "Beef & Mushroom Pizza",
+      "category": "pizza",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "images/dishes/beef-and-mushroom-pizza.jpg",
+      "best_seller": false,
+      "description": "Minced beef, mushrooms, onion, mozzarella, pizza sauce and oregano.",
+      "diet": [],
+      "mood": ["hearty", "celebration"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["pizza dough", "minced beef", "mushrooms", "onion", "mozzarella", "pizza sauce", "oregano"],
+      "variants": [
+        {
+          "code": "18",
+          "label": {
+            "az": "18 sm",
+            "en": "18 cm",
+            "ru": "18 см"
+          },
+          "price": 14.9
+        },
+        {
+          "code": "30",
+          "label": {
+            "az": "30 sm",
+            "en": "30 cm",
+            "ru": "30 см"
+          },
+          "price": 19.5
+        },
+        {
+          "code": "35",
+          "label": {
+            "az": "35 sm",
+            "en": "35 cm",
+            "ru": "35 см"
+          },
+          "price": 24.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Beef & Mushroom Pizza",
+          "description": "Dana qıyma, göbələk, soğan, mozzarella, pizza sousu, oregano."
+        },
+        "ru": {
+          "name": "Пицца с говядиной и грибами",
+          "description": "Говяжий фарш, грибы, лук, моцарелла, соус для пиццы и орегано."
+        }
+      }
+    },
+    {
+      "slug": "tonna-pizza",
+      "name": "Tonna Pizza",
+      "category": "pizza",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "images/dishes/tonna-pizza.jpg",
+      "best_seller": false,
+      "description": "Pizza sauce, mozzarella, tuna, onion, peppers, olives, basil and oregano.",
+      "diet": [],
+      "mood": ["light", "celebration"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "tuna", "onion", "pepper", "olives", "basil", "oregano"],
+      "variants": [
+        {
+          "code": "18",
+          "label": {
+            "az": "18 sm",
+            "en": "18 cm",
+            "ru": "18 см"
+          },
+          "price": 14
+        },
+        {
+          "code": "30",
+          "label": {
+            "az": "30 sm",
+            "en": "30 cm",
+            "ru": "30 см"
+          },
+          "price": 19
+        },
+        {
+          "code": "35",
+          "label": {
+            "az": "35 sm",
+            "en": "35 cm",
+            "ru": "35 см"
+          },
+          "price": 27
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Tonna Pizza",
+          "description": "Pizza sousu, mozzarella, tuna balığı, soğan, bibər, zeytun, reyhan, oregano."
+        },
+        "ru": {
+          "name": "Пицца «Тонна»",
+          "description": "Соус для пиццы, моцарелла, тунец, лук, перец, оливки, базилик и орегано."
+        }
+      }
+    },
+    {
+      "slug": "country-chicken-pizza",
+      "name": "Country Chicken Pizza",
+      "category": "pizza",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "images/dishes/country-chicken-pizza.jpg",
+      "best_seller": true,
+      "description": "Pizza sauce, mozzarella, chicken, corn and peppers.",
+      "diet": [],
+      "mood": ["comfort", "celebration"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "chicken", "corn", "pepper"],
+      "variants": [
+        {
+          "code": "18",
+          "label": {
+            "az": "18 sm",
+            "en": "18 cm",
+            "ru": "18 см"
+          },
+          "price": 12.5
+        },
+        {
+          "code": "30",
+          "label": {
+            "az": "30 sm",
+            "en": "30 cm",
+            "ru": "30 см"
+          },
+          "price": 15.7
+        },
+        {
+          "code": "35",
+          "label": {
+            "az": "35 sm",
+            "en": "35 cm",
+            "ru": "35 см"
+          },
+          "price": 19.9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Country Chicken Pizza",
+          "description": "Pizza sousu, mozzarella, toyuq, qarğıdalı, bibər."
+        },
+        "ru": {
+          "name": "Пицца «Кантри» с курицей",
+          "description": "Соус для пиццы, моцарелла, курица, кукуруза и перец."
+        }
+      }
+    },
+    {
+      "slug": "mushroom-and-cheese-pizza",
+      "name": "Mushroom & Cheese Pizza",
+      "category": "pizza",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "images/dishes/mushroom-and-cheese-pizza.jpg",
+      "best_seller": true,
+      "description": "Mushrooms, mozzarella, a touch of cheddar, oregano and pizza sauce.",
+      "diet": ["vegetarian"],
+      "mood": ["comfort", "celebration"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["pizza dough", "mushrooms", "mozzarella", "cheddar", "oregano", "pizza sauce"],
+      "variants": [
+        {
+          "code": "18",
+          "label": {
+            "az": "18 sm",
+            "en": "18 cm",
+            "ru": "18 см"
+          },
+          "price": 10.9
+        },
+        {
+          "code": "30",
+          "label": {
+            "az": "30 sm",
+            "en": "30 cm",
+            "ru": "30 см"
+          },
+          "price": 14.5
+        },
+        {
+          "code": "35",
+          "label": {
+            "az": "35 sm",
+            "en": "35 cm",
+            "ru": "35 см"
+          },
+          "price": 17.8
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Mushroom & Cheese Pizza",
+          "description": "Göbələk, mozzarella, bir az çedar pendiri, oregano, pizza sousu."
+        },
+        "ru": {
+          "name": "Пицца с грибами и сыром",
+          "description": "Грибы, моцарелла, немного чеддера, орегано и соус для пиццы."
+        }
+      }
+    },
+    {
+      "slug": "garlic-chicken-pizza",
+      "name": "Garlic Chicken Pizza",
+      "category": "pizza",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "images/dishes/garlic-chicken-pizza.jpg",
+      "best_seller": false,
+      "description": "Pizza sauce, mozzarella, fried chicken, garlic and oregano.",
+      "diet": [],
+      "mood": ["comfort", "celebration"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "chicken", "garlic", "oregano"],
+      "variants": [
+        {
+          "code": "18",
+          "label": {
+            "az": "18 sm",
+            "en": "18 cm",
+            "ru": "18 см"
+          },
+          "price": 12.6
+        },
+        {
+          "code": "30",
+          "label": {
+            "az": "30 sm",
+            "en": "30 cm",
+            "ru": "30 см"
+          },
+          "price": 17.9
+        },
+        {
+          "code": "35",
+          "label": {
+            "az": "35 sm",
+            "en": "35 cm",
+            "ru": "35 см"
+          },
+          "price": 21.8
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Garlic Chicken Pizza",
+          "description": "Pizza sousu, mozzarella, qızardılmış toyuq, sarımsaq, oregano."
+        },
+        "ru": {
+          "name": "Пицца с курицей и чесноком",
+          "description": "Соус для пиццы, моцарелла, жареная курица, чеснок и орегано."
+        }
+      }
+    },
+    {
+      "slug": "mixed-meat-pizza",
+      "name": "Mixed Meat Pizza",
+      "category": "pizza",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "images/dishes/mixed-meat-pizza.jpg",
+      "best_seller": false,
+      "description": "Pizza sauce, mozzarella, chicken, minced beef, a little pepperoni and oregano.",
+      "diet": [],
+      "mood": ["hearty", "celebration"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "chicken", "minced beef", "pepperoni", "oregano"],
+      "variants": [
+        {
+          "code": "18",
+          "label": {
+            "az": "18 sm",
+            "en": "18 cm",
+            "ru": "18 см"
+          },
+          "price": 14.5
+        },
+        {
+          "code": "30",
+          "label": {
+            "az": "30 sm",
+            "en": "30 cm",
+            "ru": "30 см"
+          },
+          "price": 18.5
+        },
+        {
+          "code": "35",
+          "label": {
+            "az": "35 sm",
+            "en": "35 cm",
+            "ru": "35 см"
+          },
+          "price": 24.3
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Mixed Meat Pizza",
+          "description": "Pizza sousu, mozzarella, toyuq, dana qıyma, az miqdarda pepperoni, oregano."
+        },
+        "ru": {
+          "name": "Пицца «Мясное ассорти»",
+          "description": "Соус для пиццы, моцарелла, курица, говяжий фарш, немного пепперони и орегано."
+        }
+      }
+    },
+    {
+      "slug": "doner-lavash",
+      "name": "Döner in Lavash",
+      "category": "doner",
+      "cuisine": "turkish",
+      "spice": 1,
+      "image": "images/dishes/doner-lavash.jpg",
+      "best_seller": false,
+      "description": "Chicken or meat in light lavash with fresh tomato, cucumber and a spiced sauce.",
+      "diet": [],
+      "mood": ["light", "comfort"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["chicken", "meat", "lavash", "tomato", "cucumber", "spiced sauce"],
+      "variants": [
+        {
+          "code": "chicken",
+          "label": {
+            "az": "Toyuq",
+            "en": "Chicken",
+            "ru": "Курица"
+          },
+          "price": 3.5
+        },
+        {
+          "code": "meat",
+          "label": {
+            "az": "Ət",
+            "en": "Meat",
+            "ru": "Мясо"
+          },
+          "price": 5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Döner Lavaş",
+          "description": "Yüngül lavaş, təzə pomidor, xiyar və ədviyyatlı sous."
+        },
+        "ru": {
+          "name": "Дёнер в лаваше",
+          "description": "Курица или мясо в тонком лаваше со свежими помидорами, огурцами и пряным соусом."
+        }
+      }
+    },
+    {
+      "slug": "shawarma",
+      "name": "Shawarma",
+      "category": "doner",
+      "cuisine": "turkish",
+      "spice": 1,
+      "image": "images/dishes/shawarma.jpg",
+      "best_seller": true,
+      "description": "Chicken or meat in soft lavash with fries, pickles and a spiced Arabic sauce.",
+      "diet": [],
+      "mood": ["hearty", "comfort"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["chicken", "meat", "lavash", "potato", "pickles", "arabic sauce"],
+      "variants": [
+        {
+          "code": "chicken",
+          "label": {
+            "az": "Toyuq",
+            "en": "Chicken",
+            "ru": "Курица"
+          },
+          "price": 4
+        },
+        {
+          "code": "meat",
+          "label": {
+            "az": "Ət",
+            "en": "Meat",
+            "ru": "Мясо"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Şaurma",
+          "description": "Yumşaq lavaşda toyuq və ya ət, kartof, turşu xiyar və ədviyyatlı ərəb sousu ilə təqdim olunur."
+        },
+        "ru": {
+          "name": "Шаурма",
+          "description": "Курица или мясо в мягком лаваше с картофелем фри, маринованными огурцами и пряным арабским соусом."
+        }
+      }
+    },
+    {
+      "slug": "doner-over-plov",
+      "name": "Döner over Plov",
+      "category": "doner",
+      "cuisine": "turkish",
+      "spice": 2,
+      "image": "images/dishes/doner-over-plov.jpg",
+      "best_seller": false,
+      "description": "Chicken or meat on saffron rice, served with cucumber, tomato and hot peppers.",
+      "diet": [],
+      "mood": ["hearty", "comfort"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["chicken", "meat", "rice", "saffron", "cucumber", "tomato", "hot pepper"],
+      "variants": [
+        {
+          "code": "chicken",
+          "label": {
+            "az": "Toyuq",
+            "en": "Chicken",
+            "ru": "Курица"
+          },
+          "price": 8
+        },
+        {
+          "code": "meat",
+          "label": {
+            "az": "Ət",
+            "en": "Meat",
+            "ru": "Мясо"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Plov Üstü Döner",
+          "description": "Zəfəranlı düyü üzərində toyuq və ya ət, xiyar, pomidor və acı bibərlə təqdim olunur."
+        },
+        "ru": {
+          "name": "Дёнер на плове",
+          "description": "Курица или мясо на шафрановом рисе с огурцами, помидорами и острым перцем."
+        }
+      }
+    },
+    {
+      "slug": "basdirma-doner",
+      "name": "Basdirma Döner",
+      "category": "doner",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": "images/dishes/basdirma-doner.jpg",
+      "best_seller": false,
+      "description": "Marinated chicken or meat in lavash or soft bread with tomato and cucumber — hearty and satisfying.",
+      "diet": [],
+      "mood": ["hearty", "comfort"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["chicken", "meat", "lavash", "bread", "tomato", "cucumber"],
+      "variants": [
+        {
+          "code": "chicken",
+          "label": {
+            "az": "Toyuq",
+            "en": "Chicken",
+            "ru": "Курица"
+          },
+          "price": 4
+        },
+        {
+          "code": "meat",
+          "label": {
+            "az": "Ət",
+            "en": "Meat",
+            "ru": "Мясо"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Basdırma Döner",
+          "description": "Lavaş və ya yumşaq çörəkdə basdırılmış toyuq və ya ət, pomidor, xiyar ilə doyumlu ləzzət."
+        },
+        "ru": {
+          "name": "Басдырма дёнер",
+          "description": "Маринованная курица или мясо в лаваше или мягком хлебе с помидорами и огурцами — сытно и вкусно."
+        }
+      }
+    },
+    {
+      "slug": "iskender-doner",
+      "name": "Iskender Döner",
+      "category": "doner",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": "images/dishes/iskender-doner.jpg",
+      "best_seller": true,
+      "description": "The classic Iskender: lavash, chicken or meat, tomato, onion, cheese and melted butter.",
+      "diet": [],
+      "mood": ["hearty", "celebration"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["chicken", "meat", "lavash", "tomato", "onion", "cheese", "butter"],
+      "variants": [
+        {
+          "code": "chicken",
+          "label": {
+            "az": "Toyuq",
+            "en": "Chicken",
+            "ru": "Курица"
+          },
+          "price": 8
+        },
+        {
+          "code": "meat",
+          "label": {
+            "az": "Ət",
+            "en": "Meat",
+            "ru": "Мясо"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "İsgəndər Döner",
+          "description": "Lavaş, toyuq və ya ət, pomidor, soğan, pendir və kərə yağı ilə zənginləşdirilmiş klassik isgəndər."
+        },
+        "ru": {
+          "name": "Искендер дёнер",
+          "description": "Классический искендер: лаваш, курица или мясо, помидоры, лук, сыр и растопленное сливочное масло."
+        }
+      }
+    },
+    {
+      "slug": "beyti-doner",
+      "name": "Beyti Döner",
+      "category": "doner",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": "images/dishes/beyti-doner.jpg",
+      "best_seller": true,
+      "description": "Chicken or meat in lavash with tomato, peppers, garlic and butter.",
+      "diet": [],
+      "mood": ["hearty", "celebration"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["chicken", "meat", "lavash", "tomato", "pepper", "garlic", "butter"],
+      "variants": [
+        {
+          "code": "chicken",
+          "label": {
+            "az": "Toyuq",
+            "en": "Chicken",
+            "ru": "Курица"
+          },
+          "price": 8
+        },
+        {
+          "code": "meat",
+          "label": {
+            "az": "Ət",
+            "en": "Meat",
+            "ru": "Мясо"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Beyti Döner",
+          "description": "Lavaşda toyuq və ya ət, pomidor, bibər, sarımsaq və kərə yağı."
+        },
+        "ru": {
+          "name": "Бейти дёнер",
+          "description": "Курица или мясо в лаваше с помидорами, перцем, чесноком и сливочным маслом."
+        }
+      }
+    },
+    {
+      "slug": "trend-doner-wrap",
+      "name": "Trend Döner Wrap",
+      "category": "doner",
+      "cuisine": "turkish",
+      "spice": 1,
+      "image": "images/dishes/trend-doner-wrap.jpg",
+      "best_seller": false,
+      "description": "A modern döner: chicken or meat in light lavash with lettuce, tomato and our signature hot-honey sauce.",
+      "diet": [],
+      "mood": ["light", "comfort"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["chicken", "meat", "lavash", "lettuce", "tomato", "hot honey sauce"],
+      "variants": [
+        {
+          "code": "chicken",
+          "label": {
+            "az": "Toyuq",
+            "en": "Chicken",
+            "ru": "Курица"
+          },
+          "price": 6
+        },
+        {
+          "code": "meat",
+          "label": {
+            "az": "Ət",
+            "en": "Meat",
+            "ru": "Мясо"
+          },
+          "price": 8
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Trend Döner Wrap",
+          "description": "Yüngül lavaşda toyuq və ya ət, kahı, pomidor və xüsusi acı-bal sousu ilə hazırlanmış müasir döner variantı."
+        },
+        "ru": {
+          "name": "Тренд дёнер-ролл",
+          "description": "Современный дёнер: курица или мясо в тонком лаваше с листьями салата, помидорами и фирменным остро-медовым соусом."
+        }
+      }
+    },
+    {
+      "slug": "tombik-doner",
+      "name": "Tombik Döner",
+      "category": "doner",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": "images/dishes/tombik-doner.jpg",
+      "best_seller": false,
+      "description": "Chicken or meat in soft tombik bread filled with tomato, onion, cheese and pickled peppers.",
+      "diet": [],
+      "mood": ["hearty", "comfort"],
+      "meal": ["lunch", "dinner"],
+      "ingredients": ["chicken", "meat", "tombik bread", "tomato", "onion", "cheese", "pickled peppers"],
+      "variants": [
+        {
+          "code": "chicken",
+          "label": {
+            "az": "Toyuq",
+            "en": "Chicken",
+            "ru": "Курица"
+          },
+          "price": 4
+        },
+        {
+          "code": "meat",
+          "label": {
+            "az": "Ət",
+            "en": "Meat",
+            "ru": "Мясо"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Tombik Döner",
+          "description": "Pomidor, soğan, pendir və turşu bibər ilə doldurulmuş yumşaq tombik çörəkdə toyuq və ya ət."
+        },
+        "ru": {
+          "name": "Томбик дёнер",
+          "description": "Курица или мясо в мягком хлебе томбик с помидорами, луком, сыром и маринованным перцем."
+        }
+      }
+    }
+  ]
+}

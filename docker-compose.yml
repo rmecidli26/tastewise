@@ -1,0 +1,17 @@
+# Local PostgreSQL for development:  docker compose up -d
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: tastewise
+      POSTGRES_PASSWORD: tastewise
+      POSTGRES_DB: tastewise
+      TZ: Asia/Baku
+    ports:
+      - "5432:5432"
+    volumes:
+      - tastewise_pg:/var/lib/postgresql/data
+
+volumes:
+  tastewise_pg:

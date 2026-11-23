@@ -460,7 +460,7 @@
   });
 
   /** AFA on the Baku seaside — opened in Google Maps when an address is clicked. */
-  const MAP = { lat: 40.3689, lng: 49.8431 };
+  const MAP = { lat: 40.3722, lng: 49.8443 };
   const mapsUrl = () => `https://www.google.com/maps/search/?api=1&query=${MAP.lat}%2C${MAP.lng}`;
   const setAddress = text => $$('[data-restaurant="address"]').forEach(el => {
     el.innerHTML = `<a class="addr-link" href="${mapsUrl()}" target="_blank" rel="noopener" title="${escapeHTML(t('visit.mapOpen'))}">${escapeHTML(text)}</a>`;

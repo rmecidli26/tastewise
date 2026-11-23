@@ -3,7 +3,7 @@
     "slug": "afa",
     "name": "AFA Restaurant",
     "description": "AFA Restaurant is more than just a place to eat — it's a destination for great food, warm atmosphere and unforgettable moments. From classic favorites to modern dishes, AFA offers a unique dining experience for everyone.",
-    "address": "Seaside Boulevard, Neftchilar Ave, Baku",
+    "address": "Next to Sahil metro station, Baku",
     "city": "Baku",
     "phone": "+994 50 123 45 67",
     "email": "info@afa-restaurant.az",
@@ -40,12 +40,12 @@
     "i18n": {
       "az": {
         "description": "AFA Restaurant sadəcə yemək yeri deyil — dadlı yeməklər, isti atmosfer və unudulmaz anlar məkanıdır. Sevilən klassik yeməklərdən müasir mətbəxə qədər AFA hər kəsə özünəməxsus qastronomik təcrübə təqdim edir.",
-        "address": "Dənizkənarı Bulvar, Neftçilər prospekti, Bakı",
+        "address": "Sahil metrosunun yanı, Bakı",
         "city": "Bakı"
       },
       "ru": {
         "description": "AFA Restaurant — это больше, чем просто ресторан: это место вкусной еды, тёплой атмосферы и незабываемых моментов. От любимой классики до современных блюд — AFA дарит каждому гостю особые гастрономические впечатления.",
-        "address": "Приморский бульвар, пр. Нефтчиляр, Баку",
+        "address": "Рядом со станцией метро «Сахил», Баку",
         "city": "Баку"
       }
     }

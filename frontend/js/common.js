@@ -87,11 +87,15 @@
     const key = COLORS[d.category?.slug] ? d.category.slug : 'pizza';
     const [c1, c2] = COLORS[key];
     // The icon stays underneath; if the photo fails to load it is removed and the icon shows.
-    const img = d.imageUrl ? `<img src="${escapeHTML(d.imageUrl)}" alt="${escapeHTML(d.name)}" loading="lazy" />` : '';
+    // Drinks: an internet photo, with our own drawing as a backup if the photo can't load
+    const fb = key === 'drinks' && d.slug && /^https?:/.test(d.imageUrl || '') ? ` data-fallback="images/dishes/${escapeHTML(d.slug)}.svg"` : '';
+    const img = d.imageUrl ? `<img src="${escapeHTML(d.imageUrl)}" alt="${escapeHTML(d.name)}" loading="lazy"${fb} />` : '';
     return `<div class="dish-photo" style="--c1:${c1};--c2:${c2}">${I[ICONS[key]]}${img}${extra}</div>`;
   }
   document.addEventListener('error', e => {
-    if (e.target.tagName === 'IMG' && e.target.closest('.dish-photo')) e.target.remove();
+    const img = e.target;
+    if (img.tagName !== 'IMG' || !img.closest('.dish-photo')) return;
+    if (img.dataset.fallback) { img.src = img.dataset.fallback; delete img.dataset.fallback; } else img.remove();
   }, true);
 
   function ratingHTML(d) {
@@ -299,7 +303,7 @@
       const key = `${dish.id}:${v?.code || ''}`;
       const found = items.find(i => `${i.dishId}:${i.variant || ''}` === key);
       if (found) found.quantity = Math.min(20, found.quantity + quantity);
-      else items.push({ dishId: dish.id, variant: v?.code || null, quantity: Math.min(20, quantity), name: dish.name, variantLabel: v?.label || null, price: v ? v.price : dish.price, imageUrl: dish.imageUrl || null, category: dish.category?.slug || '' });
+      else items.push({ dishId: dish.id, variant: v?.code || null, quantity: Math.min(20, quantity), name: dish.name, variantLabel: v?.label || null, price: v ? v.price : dish.price, imageUrl: dish.imageUrl || null, category: dish.category?.slug || '', slug: dish.slug || '' });
       writeCart(items);
       return found ? found.quantity : quantity;
     },

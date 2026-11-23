@@ -53,7 +53,10 @@
   syncSlider();
 
   /* ---------- Other filters ---------- */
-  api.categories().then(({ categories }) => {
+  const DRINKS = 'drinks';
+  let foodSlugs = null; // every category except drinks
+  const catsReady = api.categories().then(({ categories }) => {
+    foodSlugs = categories.filter(c => c.slug !== DRINKS && c.dishCount > 0).map(c => c.slug);
     $('#categoryChecks').innerHTML = categories.filter(c => c.dishCount > 0).map(c => `
       <label class="check"><input type="checkbox" value="${escapeHTML(c.slug)}" ${state.category.includes(c.slug) ? 'checked' : ''} />
         <span>${escapeHTML(c.name)}</span><span class="count">${c.dishCount}</span></label>`).join('');
@@ -103,18 +106,25 @@
     $('#resultsTitle').textContent = t(state.prefer.length ? 'results.title' : 'results.all');
     syncUrl();
     try {
-      const res = await api.dishes({
-        prefer: state.prefer, category: state.category,
+      await catsReady.catch(() => {});
+      // No category chosen → food in the main grid, drinks in their own section below
+      const split = !state.category.length && foodSlugs?.length;
+      const filters = {
+        prefer: state.prefer,
         minPrice: state.minPrice || '', maxPrice: state.maxPrice || '',
         diet: state.veg ? 'vegetarian' : '', maxSpice: state.mild ? 0 : '',
-        minRating: state.minRating, exclude: state.exclude, sort: effectiveSort(),
-        page: state.page, limit: PAGE_SIZE
-      });
+        minRating: state.minRating, exclude: state.exclude, sort: effectiveSort()
+      };
+      const [res, drinks] = await Promise.all([
+        api.dishes({ ...filters, category: split ? foodSlugs : state.category, page: state.page, limit: PAGE_SIZE }),
+        split && !append ? api.dishes({ ...filters, category: [DRINKS], limit: 24 }) : null
+      ]);
       if (id !== requestId) return;
+      if (!append) renderDrinks(split ? drinks : null);
       const html = res.dishes.map((d, i) => dishCard(d, i)).join('');
       if (append) grid.insertAdjacentHTML('beforeend', html);
       else grid.innerHTML = html || `<div class="empty-state"><strong>${escapeHTML(t('results.emptyTitle'))}</strong>${escapeHTML(t('results.emptyText'))}</div>`;
-      $('#resultCount').textContent = t('results.count', { n: res.total });
+      $('#resultCount').textContent = t('results.count', { n: res.total + (split && drinks ? drinks.total : 0) });
       moreBtn.hidden = state.page >= res.pages;
       await loadFavorites();
       syncFavButtons();
@@ -124,6 +134,19 @@
       $('#resultCount').textContent = '';
     }
   }
+  function renderDrinks(res) {
+    const box = $('#drinksSection');
+    box.hidden = !res?.dishes.length;
+    if (box.hidden) return;
+    $('#drinksGrid').innerHTML = res.dishes.map((d, i) => dishCard(d, i)).join('');
+    $('#drinksCount').textContent = t('results.count', { n: res.total });
+  }
+  $('#drinksAll').addEventListener('click', () => {
+    state.category = [DRINKS];
+    $$('#categoryChecks input').forEach(i => { i.checked = i.value === DRINKS; });
+    load();
+    window.scrollTo({ top: $('#resultsGrid').getBoundingClientRect().top + scrollY - 140, behavior: 'smooth' });
+  });
   moreBtn.addEventListener('click', () => { state.page += 1; load({ append: true }); });
 
   function syncUrl() {

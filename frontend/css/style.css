@@ -1159,3 +1159,30 @@ a.stat:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
 .g-btn { flex: none; width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid rgba(123, 28, 44, .25); background: var(--white); color: var(--burgundy); font-size: 1.3rem; }
 .g-btn:hover { background: var(--blush-2); }
 .field-icon:has(.guests-box) > svg { display: none; }
+
+/* Explore: drinks in their own section */
+.drinks-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px dashed rgba(123, 28, 44, .25); }
+.drinks-section .row-head { margin-bottom: .4rem; }
+.drinks-section h2 { display: flex; align-items: center; gap: .6rem; }
+.drinks-ico { width: 40px; height: 40px; border-radius: 50%; background: var(--blush-2); color: var(--burgundy); display: grid; place-items: center; }
+.drinks-ico svg { width: 24px; height: 24px; }
+.drinks-sub { margin: 0 0 1.2rem; }
+
+/* Order time picker */
+.time-picker { display: grid; gap: .8rem; margin-top: .9rem; padding: .9rem; border-radius: 14px; background: var(--blush); border: 1px solid rgba(123, 28, 44, .12); }
+.time-picker[hidden] { display: none; }
+.day-switch { display: grid; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 999px; background: var(--white); border: 1px solid rgba(123, 28, 44, .15); }
+.day-switch label { position: relative; cursor: pointer; }
+.day-switch input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.day-switch span { display: block; text-align: center; padding: .45rem .6rem; border-radius: 999px; font-weight: 600; font-size: .92rem; color: var(--muted); transition: background .2s, color .2s; }
+.day-switch input:checked + span { background: var(--burgundy); color: #fff; }
+.day-switch input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+.slot-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.slot { border: 1.5px solid rgba(123, 28, 44, .2); background: var(--white); color: var(--ink); border-radius: 999px; padding: .35rem .75rem; font-weight: 600; font-size: .9rem; }
+.slot:hover { border-color: var(--burgundy); }
+.slot[aria-pressed="true"] { background: var(--burgundy); border-color: var(--burgundy); color: #fff; }
+.time-type label { font-size: .88rem; }
+.time-input { position: relative; }
+.time-input svg { position: absolute; left: .85rem; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--burgundy); pointer-events: none; }
+.time-input .input { padding-left: 2.7rem; font-weight: 700; font-size: 1.05rem; }
+.slots-empty { margin: 0; color: #8a5a00; }

@@ -19,9 +19,10 @@
 
   const grid = $('#popularGrid');
   grid.innerHTML = loadingHTML();
-  api.dishes({ sort: 'popular', limit: 4 })
+  api.dishes({ sort: 'popular', limit: 12 })
     .then(async ({ dishes }) => {
-      grid.innerHTML = dishes.map(dishCard).join('');
+      // Popular dishes = food only (drinks have their own section on Explore)
+      grid.innerHTML = dishes.filter(d => d.category.slug !== 'drinks').slice(0, 4).map(dishCard).join('');
       await loadFavorites();
       syncFavButtons();
     })

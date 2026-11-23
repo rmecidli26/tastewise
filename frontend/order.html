@@ -59,10 +59,22 @@
                     <label class="tile"><input type="radio" name="when" value="asap" checked /><span class="tile-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="tile-text"><strong data-i18n="order.asap"></strong><small data-i18n="order.asapHint"></small></span></label>
                     <label class="tile"><input type="radio" name="when" value="later" /><span class="tile-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="tile-text"><strong data-i18n="order.later"></strong><small data-i18n="order.laterHint"></small></span></label>
                   </div>
-                  <div class="form-field" id="timeField" hidden>
-                    <label for="time" data-i18n="order.timeLabel"></label>
-                    <select class="select" id="time" name="time"></select>
-                    <span class="field-error"></span>
+                  <div class="time-picker" id="timeField" hidden>
+                    <div class="day-switch" role="radiogroup" data-i18n-attr="aria-label:order.dayLabel">
+                      <label><input type="radio" name="day" value="today" checked /><span data-i18n="order.today"></span></label>
+                      <label><input type="radio" name="day" value="tomorrow" /><span data-i18n="order.tomorrow"></span></label>
+                    </div>
+                    <p class="hint slots-empty" id="slotsEmpty" hidden data-i18n="order.noSlotsToday"></p>
+                    <div class="slot-chips" id="slotChips" role="group" data-i18n-attr="aria-label:order.quickTimes"></div>
+                    <div class="form-field time-type">
+                      <label for="time" data-i18n="order.typeTime"></label>
+                      <div class="time-input">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        <input class="input" type="time" id="time" name="time" step="300" min="10:00" max="22:30" />
+                      </div>
+                      <span class="hint" id="timeHint"></span>
+                      <span class="field-error" id="timeError"></span>
+                    </div>
                   </div>
                 </section>
 

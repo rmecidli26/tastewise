@@ -159,7 +159,7 @@
           <header>
             <div>
               <h3>${escapeHTML(t('account.orderNo', { id: o.id }))} <span class="status ostatus-${o.status}">${escapeHTML(statusLabel(o))}</span></h3>
-              <p class="muted">${timeOf(o.createdAt)} · ${escapeHTML(t(o.fulfillment === 'delivery' ? 'order.deliveryOpt' : 'order.pickup'))} · ${escapeHTML(o.time ? t('account.orderTime', { time: o.time }) : t('order.asap'))}</p>
+              <p class="muted">${timeOf(o.createdAt)} · ${escapeHTML(t(o.fulfillment === 'delivery' ? 'order.deliveryOpt' : 'order.pickup'))} · ${escapeHTML(o.time ? t(o.timeTomorrow ? 'account.orderTimeTomorrow' : 'account.orderTime', { time: o.time }) : t('order.asap'))}</p>
               <p class="muted">${escapeHTML(payText(o))}</p>
             </div>
             <strong class="order-card-total">${escapeHTML(price(o.total))}</strong>

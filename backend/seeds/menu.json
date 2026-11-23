@@ -1356,7 +1356,7 @@
       "category": "drinks",
       "cuisine": "azerbaijani",
       "spice": 0,
-      "image": "images/dishes/ayran.svg",
+      "image": "https://images.unsplash.com/photo-1630409346699-79481a79db52?auto=format&fit=crop&w=800&q=80",
       "best_seller": true,
       "description": "Chilled homemade ayran — yoghurt, cold water and a pinch of salt, served with fresh mint.",
       "diet": [
@@ -1416,7 +1416,7 @@
       "category": "drinks",
       "cuisine": "azerbaijani",
       "spice": 0,
-      "image": "images/dishes/badamli.svg",
+      "image": "https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=800&q=80",
       "best_seller": false,
       "description": "Natural mineral water from the Badamli springs of Nakhchivan.",
       "diet": [
@@ -1474,7 +1474,7 @@
       "category": "drinks",
       "cuisine": "azerbaijani",
       "spice": 0,
-      "image": "images/dishes/sirab.svg",
+      "image": "https://images.unsplash.com/photo-1639256150782-ecdb00b01e84?auto=format&fit=crop&w=800&q=80",
       "best_seller": false,
       "description": "Natural mineral water from the Sirab springs of Nakhchivan.",
       "diet": [
@@ -1532,7 +1532,7 @@
       "category": "drinks",
       "cuisine": "azerbaijani",
       "spice": 0,
-      "image": "images/dishes/azerbaijani-tea.svg",
+      "image": "https://images.unsplash.com/photo-1579005162638-11c872e1586e?auto=format&fit=crop&w=800&q=80",
       "best_seller": true,
       "description": "Black tea brewed the Azerbaijani way with thyme, served in an armudu glass with lemon.",
       "diet": [
@@ -1592,7 +1592,7 @@
       "category": "drinks",
       "cuisine": "azerbaijani",
       "spice": 0,
-      "image": "images/dishes/pomegranate-juice.svg",
+      "image": "https://images.unsplash.com/photo-1602860637860-fa3d04533a07?auto=format&fit=crop&w=800&q=80",
       "best_seller": false,
       "description": "Freshly squeezed juice from Azerbaijani pomegranates.",
       "diet": [
@@ -1641,7 +1641,7 @@
       "category": "drinks",
       "cuisine": "azerbaijani",
       "spice": 0,
-      "image": "images/dishes/kompot.svg",
+      "image": "https://images.unsplash.com/photo-1625314753553-4ff4ac36263d?auto=format&fit=crop&w=800&q=80",
       "best_seller": false,
       "description": "Homemade fruit kompot made from dried fruit, lightly sweet and served cold.",
       "diet": [
@@ -1692,7 +1692,7 @@
       "category": "drinks",
       "cuisine": "azerbaijani",
       "spice": 0,
-      "image": "images/dishes/rose-sherbet.svg",
+      "image": "https://images.unsplash.com/photo-1567357771095-695c40e0da98?auto=format&fit=crop&w=800&q=80",
       "best_seller": false,
       "description": "Traditional sherbet with rose petals, saffron and a little lemon.",
       "diet": [

@@ -91,6 +91,15 @@
           </div>
           <div class="dish-grid cols-3" id="resultsGrid"></div>
           <div class="load-more"><button type="button" class="btn btn-ghost" id="loadMore" hidden data-i18n="results.more"></button></div>
+          <section class="drinks-section" id="drinksSection" hidden aria-labelledby="drinksTitle">
+            <div class="row-head">
+              <h2 id="drinksTitle"><span class="drinks-ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14h28l-3.5 40a4 4 0 0 1-4 3.6H23.5a4 4 0 0 1-4-3.6z"/><path d="M18 26h24M44 22h4a6 6 0 0 1 0 12h-5"/><path d="M26 6c-2 3 2 4 0 7M33 6c-2 3 2 4 0 7"/></svg></span><span data-i18n="explore.drinks"></span></h2>
+              <span class="line"></span>
+              <button type="button" class="btn-text" id="drinksAll"><span id="drinksCount"></span> →</button>
+            </div>
+            <p class="muted drinks-sub" data-i18n="explore.drinksSub"></p>
+            <div class="dish-grid cols-3" id="drinksGrid"></div>
+          </section>
         </div>
       </div>
     </section>

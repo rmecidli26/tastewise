@@ -48,7 +48,7 @@
               <h4>${escapeHTML(t('aorders.how'))}</h4>
               <p>${escapeHTML(t(o.fulfillment === 'delivery' ? 'order.deliveryOpt' : 'order.pickup'))}${o.address ? `<br /><strong>${escapeHTML(o.address)}</strong>` : ''}</p>
               <h4>${escapeHTML(t('aorders.when'))}</h4>
-              <p><strong>${escapeHTML(o.time || t('order.asap'))}</strong></p>
+              <p><strong>${escapeHTML(o.time ? (o.timeTomorrow ? t('account.orderTimeTomorrow', { time: o.time }) : o.time) : t('order.asap'))}</strong></p>
               <h4>${escapeHTML(t('order.payTitle'))}</h4>
               <p>${o.paid
                 ? `<span class="status ostatus-ready">${escapeHTML(t(o.paymentTest ? 'order.paidTest' : 'order.paid'))}</span> ${escapeHTML(o.card ? `${o.card.brand.toUpperCase()} •••• ${o.card.last4}` : '')}`

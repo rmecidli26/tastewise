@@ -27,6 +27,7 @@ const orderSchema = z.object({
   cardId: z.number().int().positive().nullish(),           // a saved card
   card: cardInput.and(z.object({ save: z.boolean().default(false) })).nullish(), // a new card (brand + last 4 only)
   time: z.string().regex(/^(asap|([01]\d|2[0-3]):[0-5]\d)$/, 'v.orderTime').default('asap'),
+  day: z.enum(['today', 'tomorrow']).default('today'),
   address: z.string().trim().max(300, 'v.address.long').default(''),
   phone: z.string({ required_error: 'v.phone' }).trim().regex(/^\+?[0-9\s\-()]{7,20}$/, 'v.phone'),
   note: z.string().trim().max(500, 'v.note.long').default('')
@@ -49,6 +50,7 @@ export const ORDER_SELECT = `
   o.status, o.admin_note, o.locale, o.created_at, o.updated_at,
   o.paid_at, o.payment_test, o.card_brand, o.card_last4, o.scheduled_for,
   to_char(o.scheduled_for AT TIME ZONE '${config.reservations.timeZone}', 'HH24:MI') AS scheduled_local,
+  ((o.scheduled_for AT TIME ZONE '${config.reservations.timeZone}')::date > (o.created_at AT TIME ZONE '${config.reservations.timeZone}')::date) AS scheduled_next_day,
   (o.status = 'pending' AND o.created_at > now() - interval '${config.orders.cancelMinutes} minutes') AS can_cancel,
   GREATEST(0, EXTRACT(EPOCH FROM (o.created_at + interval '${config.orders.cancelMinutes} minutes' - now())))::int AS cancel_seconds,
   COALESCE((SELECT json_agg(json_build_object(
@@ -77,6 +79,7 @@ export const toOrder = r => ({
   card: r.card_last4 ? { brand: r.card_brand, last4: r.card_last4 } : null,
   scheduledFor: r.scheduled_for,
   time: r.scheduled_local || null, // null = as soon as possible
+  timeTomorrow: Boolean(r.scheduled_next_day),
   createdAt: r.created_at,
   ...(r.user_name && { user: { name: r.user_name, email: r.user_email } })
 });
@@ -150,9 +153,9 @@ router.post('/orders', requireVerified, validate(orderSchema), asyncHandler(asyn
   let scheduledFor = null;
   if (o.time !== 'asap') {
     const { rows: [tm] } = await query(
-      `SELECT ((now() AT TIME ZONE $2)::date + $1::time) AT TIME ZONE $2 AS at,
-              ((now() AT TIME ZONE $2)::date + $1::time) AT TIME ZONE $2 >= now() + interval '30 minutes' AS ok`,
-      [o.time, timeZone]
+      `SELECT ((now() AT TIME ZONE $2)::date + $3::int + $1::time) AT TIME ZONE $2 AS at,
+              ((now() AT TIME ZONE $2)::date + $3::int + $1::time) AT TIME ZONE $2 >= now() + interval '30 minutes' AS ok`,
+      [o.time, timeZone, o.day === 'tomorrow' ? 1 : 0]
     );
     if (!tm.ok) throw new HttpError(400, 'ORDER_TIME_PAST');
     scheduledFor = tm.at;

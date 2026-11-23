@@ -32,7 +32,7 @@
       <li class="order-item">
         <a class="oi-photo" href="dish.html?id=${it.dishId}" tabindex="-1" aria-hidden="true">
           ${ICON[it.category] || I.bag}
-          ${it.imageUrl ? `<img src="${escapeHTML(it.imageUrl)}" alt="" loading="lazy" />` : ''}
+          ${it.imageUrl ? `<img src="${escapeHTML(it.imageUrl)}" alt="" loading="lazy"${it.category === 'drinks' && it.slug ? ` data-fallback="images/dishes/${escapeHTML(it.slug)}.svg"` : ''} />` : ''}
         </a>
         <div class="oi-name">
           <a href="dish.html?id=${it.dishId}">${escapeHTML(it.name)}</a>
@@ -49,7 +49,10 @@
       </li>`).join('');
     totals();
   }
-  list.addEventListener('error', e => { if (e.target.tagName === 'IMG') e.target.remove(); }, true);
+  list.addEventListener('error', e => {
+    const img = e.target; if (img.tagName !== 'IMG') return;
+    if (img.dataset.fallback) { img.src = img.dataset.fallback; delete img.dataset.fallback; } else img.remove();
+  }, true);
 
   function totals() {
     const items = cart.items();
@@ -84,25 +87,58 @@
   });
   document.addEventListener('cart:change', () => render());
 
-  /* ---------- Time slots (today, restaurant time, ≥ 45 min from now, every 15 min) ---------- */
+  /* ---------- Time: today or tomorrow; quick buttons + type any time ---------- */
+  const toMin = hm => { const [h, m] = hm.split(':').map(Number); return h * 60 + m; };
+  const toHM = m => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+  const bakuNow = () => new Date(new Date().toLocaleString('en-US', { timeZone: settings.timeZone }));
+  /** Earliest allowed minute of the chosen day (today: now + 45 min, rounded up to 5 min) */
+  const earliestFor = day => {
+    const open = toMin(settings.firstTime);
+    if (day === 'tomorrow') return open;
+    const n = bakuNow();
+    return Math.max(open, Math.ceil((n.getHours() * 60 + n.getMinutes() + 45) / 5) * 5);
+  };
   function fillTimes() {
-    const now = new Date(new Date().toLocaleString('en-US', { timeZone: settings.timeZone }));
-    const earliest = new Date(now.getTime() + 45 * 60000);
-    const [fh, fm] = settings.firstTime.split(':').map(Number);
-    const [lh, lm] = settings.lastTime.split(':').map(Number);
-    const slots = [];
-    for (let m = fh * 60 + fm; m <= lh * 60 + lm; m += 15) {
-      const d = new Date(now); d.setHours(Math.floor(m / 60), m % 60, 0, 0);
-      if (d >= earliest) slots.push(`${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`);
-    }
-    const sel = $('#time');
-    sel.innerHTML = slots.map(s => `<option value="${s}">${s}</option>`).join('');
-    const laterTile = form.querySelector('input[name="when"][value="later"]');
-    laterTile.disabled = !slots.length;
-    laterTile.closest('.tile').classList.toggle('disabled', !slots.length);
-    laterTile.closest('.tile').title = slots.length ? '' : t('order.noSlots');
-    if (!slots.length && laterTile.checked) form.querySelector('input[name="when"][value="asap"]').checked = true;
+    const close = toMin(settings.lastTime);
+    let day = form.day.value;
+    if (day === 'today' && earliestFor('today') > close) { // too late today → switch to tomorrow
+      form.querySelector('input[name="day"][value="tomorrow"]').checked = true;
+      day = 'tomorrow';
+      $('#slotsEmpty').hidden = false;
+    } else if (day === 'today') $('#slotsEmpty').hidden = true;
+    const from = earliestFor(day);
+    const first = Math.ceil(from / 15) * 15;
+    const chips = [];
+    for (let m = first; m <= close && chips.length < 8; m += m < first + 60 ? 15 : 30) chips.push(toHM(m));
+    $('#slotChips').innerHTML = chips.map(c => `<button type="button" class="slot" data-time="${c}" aria-pressed="false">${c}</button>`).join('');
+    const input = $('#time');
+    input.min = toHM(from);
+    input.max = settings.lastTime;
+    $('#timeHint').textContent = t('order.timeRange', { from: toHM(from), to: settings.lastTime });
+    if (!input.value || toMin(input.value) < from || toMin(input.value) > close) input.value = chips[0] || '';
+    syncChips();
+    $('#timeError').textContent = '';
   }
+  function syncChips() {
+    $$('#slotChips .slot').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.time === $('#time').value)));
+  }
+  /** Returns "HH:MM" or null with an error message shown */
+  function checkTime() {
+    const v = $('#time').value;
+    const from = earliestFor(form.day.value), close = toMin(settings.lastTime);
+    let err = '';
+    if (!/^\d{2}:\d{2}$/.test(v)) err = t('order.timeRequired');
+    else if (toMin(v) < from || toMin(v) > close) err = t('order.timeOut', { from: toHM(from), to: settings.lastTime });
+    $('#timeError').textContent = err;
+    $('#time').toggleAttribute('aria-invalid', Boolean(err));
+    return err ? null : v;
+  }
+  $('#slotChips').addEventListener('click', e => {
+    const b = e.target.closest('.slot'); if (!b) return;
+    $('#time').value = b.dataset.time; syncChips(); checkTime();
+  });
+  $('#time').addEventListener('input', () => { syncChips(); $('#timeError').textContent = ''; });
+  $('#time').addEventListener('change', checkTime);
 
   /* ---------- Payment ---------- */
   function renderCards() {
@@ -138,6 +174,7 @@
   form.addEventListener('change', e => {
     if (e.target.name === 'fulfillment') { $('#addressField').hidden = form.fulfillment.value !== 'delivery'; totals(); }
     if (e.target.name === 'when') { $('#timeField').hidden = form.when.value !== 'later'; if (form.when.value === 'later') fillTimes(); }
+    if (e.target.name === 'day') { $('#slotsEmpty').hidden = true; $('#time').value = ''; fillTimes(); }
     if (e.target.name === 'payment') syncPayment();
     if (e.target.name === 'cardChoice') syncCardChoice();
   });
@@ -175,12 +212,14 @@
     $('#cardError').textContent = '';
     const items = cart.items();
     if (!items.length) return;
+    if (form.when.value === 'later' && !checkTime()) { $('#time').focus(); return; }
 
     const body = {
       items: items.map(i => ({ dishId: i.dishId, variant: i.variant, quantity: i.quantity })),
       fulfillment: form.fulfillment.value,
       payment: form.payment.value,
-      time: form.when.value === 'later' ? form.time.value || 'asap' : 'asap',
+      time: form.when.value === 'later' ? form.time.value : 'asap',
+      day: form.when.value === 'later' ? form.day.value : 'today',
       address: form.address.value,
       phone: form.phone.value,
       note: form.note.value
@@ -230,7 +269,7 @@
         <p>${escapeHTML(t('order.doneText'))}</p>
         <ul class="done-items">${order.items.map(i => `<li><span>${escapeHTML(i.name)}${i.variantLabel ? ` · ${escapeHTML(i.variantLabel)}` : ''} × ${i.quantity}</span><strong>${escapeHTML(price(i.lineTotal))}</strong></li>`).join('')}
           <li class="done-total"><span>${escapeHTML(t('order.total'))}</span><strong>${escapeHTML(price(order.total))}</strong></li></ul>
-        <p class="done-meta">${escapeHTML(order.time ? t('account.orderTime', { time: order.time }) : t('order.asap'))} · ${escapeHTML(payLine)}</p>
+        <p class="done-meta">${escapeHTML(order.time ? t(order.timeTomorrow ? 'account.orderTimeTomorrow' : 'account.orderTime', { time: order.time }) : t('order.asap'))} · ${escapeHTML(payLine)}</p>
         <div class="done-actions">
           <a class="btn btn-primary" href="account.html#orders">${escapeHTML(t('account.orders'))} ${I.arrow}</a>
           <a class="btn btn-ghost" href="explore.html">${escapeHTML(t('order.browse'))}</a>
@@ -252,7 +291,7 @@
         const d = byId.get(i.dishId);
         const v = d.variants.find(x => x.code === i.variant) || (d.variants.length ? null : undefined);
         if (v === null) return null; // size no longer offered
-        return { ...i, name: d.name, variantLabel: v?.label || null, price: v ? v.price : d.price, imageUrl: d.imageUrl, category: d.category.slug };
+        return { ...i, name: d.name, slug: d.slug, variantLabel: v?.label || null, price: v ? v.price : d.price, imageUrl: d.imageUrl, category: d.category.slug };
       }).filter(Boolean);
       cart.replace(next);
     } catch { /* show what we have */ }

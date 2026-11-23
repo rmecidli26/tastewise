@@ -140,7 +140,7 @@ function orderInfo(lang, order) {
   const how = t(lang, `mail.order.${order.fulfillment}`);
   const card = order.card ? `${order.card.brand.toUpperCase()} •••• ${order.card.last4}${order.paymentTest ? ' · TEST' : ''}` : '';
   const pay = t(lang, `mail.order.pay.${order.payment}`, { card });
-  const when = order.time ? t(lang, 'mail.order.time', { time: order.time }) : t(lang, 'mail.order.asap');
+  const when = order.time ? t(lang, order.timeTomorrow ? 'mail.order.timeTomorrow' : 'mail.order.time', { time: order.time }) : t(lang, 'mail.order.asap');
   return [how + (order.address ? `: ${order.address}` : ''), when, pay, `${t(lang, 'mail.order.phone')}: ${order.phone}`];
 }
 

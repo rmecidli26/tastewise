@@ -88,6 +88,11 @@
       'search.budgetLabel': 'Büdcə',
       'search.max': 'Maks. {n} ₼',
       'search.any': 'İstənilən büdcə',
+      'search.custom': 'Öz məbləğinizi yazın…',
+      'search.customLabel': 'Maksimum büdcə',
+      'search.customPh': 'məs. 18',
+      'search.customOk': 'Tətbiq et',
+      'reserve.guestsHint': '1–20 nəfər. Daha böyük qruplar üçün bizə zəng edin.',
 
       /* Home */
       'home.badge': 'Dadınızı kəşf edin',
@@ -631,6 +636,11 @@
       'search.budgetLabel': 'Budget',
       'search.max': 'Max. {n} ₼',
       'search.any': 'Any budget',
+      'search.custom': 'Enter your own amount…',
+      'search.customLabel': 'Maximum budget',
+      'search.customPh': 'e.g. 18',
+      'search.customOk': 'Apply',
+      'reserve.guestsHint': '1–20 guests. For larger groups, please call us.',
 
       'home.badge': 'Discover your taste',
       'home.title': 'Find Your Perfect <span class="script">Dish</span>',
@@ -1164,6 +1174,11 @@
       'search.budgetLabel': 'Бюджет',
       'search.max': 'До {n} ₼',
       'search.any': 'Любой бюджет',
+      'search.custom': 'Своя сумма…',
+      'search.customLabel': 'Максимальный бюджет',
+      'search.customPh': 'например, 18',
+      'search.customOk': 'Применить',
+      'reserve.guestsHint': '1–20 гостей. Для больших компаний позвоните нам.',
 
       'home.badge': 'Откройте свой вкус',
       'home.title': 'Найдите своё идеальное <span class="script">блюдо</span>',

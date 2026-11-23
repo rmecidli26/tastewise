@@ -225,13 +225,54 @@
   }
 
   /** <select> with "Max. 5 ₼ … Any budget" */
+  /** <select> with "Max. 5 ₼ … Any budget" + "Enter amount…", which opens a number box for any budget */
   function budgetSelect(select, current) {
     const opts = [5, 8, 10, 12, 15, 20, 25, 30];
+    const cur = Number(current) || 0;
     select.innerHTML = `<option value="">${escapeHTML(t('search.any'))}</option>` +
-      opts.map(n => `<option value="${n}" ${Number(current) === n ? 'selected' : ''}>${escapeHTML(t('search.max', { n }))}</option>`).join('');
-    if (current && !opts.includes(Number(current))) {
-      select.insertAdjacentHTML('beforeend', `<option value="${Number(current)}" selected>${escapeHTML(t('search.max', { n: Number(current) }))}</option>`);
-    }
+      opts.map(n => `<option value="${n}" ${cur === n ? 'selected' : ''}>${escapeHTML(t('search.max', { n }))}</option>`).join('') +
+      (cur && !opts.includes(cur) ? `<option value="${cur}" selected>${escapeHTML(t('search.max', { n: cur }))}</option>` : '') +
+      `<option value="custom">${escapeHTML(t('search.custom'))}</option>`;
+    select.dataset.last = cur ? String(cur) : '';
+    if (select.dataset.bound) return;
+    select.dataset.bound = '1';
+
+    const box = document.createElement('span');
+    box.className = 'budget-custom';
+    box.hidden = true;
+    box.innerHTML = `<input type="number" inputmode="decimal" min="1" max="500" step="0.5" aria-label="${escapeHTML(t('search.customLabel'))}" placeholder="${escapeHTML(t('search.customPh'))}" /><span aria-hidden="true">₼</span>
+      <button type="button" aria-label="${escapeHTML(t('search.customOk'))}">✓</button>`;
+    select.after(box);
+    const input = box.querySelector('input');
+    const done = apply => {
+      const n = Math.round(Number(String(input.value).replace(',', '.')) * 2) / 2;
+      box.hidden = true; select.hidden = false;
+      if (apply && n >= 1 && n <= 500) {
+        budgetSelect(select, n);
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+      } else {
+        select.value = select.dataset.last || '';
+      }
+      select.focus();
+    };
+    // Stop the "custom" pick from reaching page listeners until a number is entered
+    select.addEventListener('change', e => {
+      if (select.value === 'custom') {
+        e.stopImmediatePropagation();
+        select.hidden = true; box.hidden = false;
+        input.value = select.dataset.last || '';
+        input.focus(); input.select();
+      } else {
+        select.dataset.last = select.value;
+      }
+    });
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') { e.preventDefault(); done(true); }
+      if (e.key === 'Escape') { e.preventDefault(); done(false); }
+    });
+    box.querySelector('button').addEventListener('mousedown', e => e.preventDefault());
+    box.querySelector('button').addEventListener('click', () => done(true));
+    input.addEventListener('blur', () => setTimeout(() => { if (!box.hidden) done(true); }, 120));
   }
 
   /* ---------- Order cart (kept in this browser; prices are re-checked by the server) ---------- */

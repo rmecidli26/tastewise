@@ -27,7 +27,15 @@
   const slots = [];
   for (let h = 10; h <= 22; h++) for (const m of ['00', '30']) if (!(h === 22 && m === '30')) slots.push(`${String(h).padStart(2, '0')}:${m}`);
   form.time.innerHTML = slots.map(s => `<option ${s === '19:00' ? 'selected' : ''}>${s}</option>`).join('');
-  form.guests.innerHTML = Array.from({ length: 20 }, (_, i) => `<option value="${i + 1}" ${i === 1 ? 'selected' : ''}>${escapeHTML(t('account.guests', { n: i + 1 }))}</option>`).join('');
+  // Guests: type any number 1–20 or use − / +
+  const clampGuests = () => {
+    const n = Math.round(Number(form.guests.value));
+    form.guests.value = Number.isFinite(n) && n > 0 ? Math.min(20, n) : 1;
+  };
+  form.querySelectorAll('.g-btn').forEach(b => b.addEventListener('click', () => {
+    form.guests.value = Math.max(1, Math.min(20, (Number(form.guests.value) || 0) + Number(b.dataset.g)));
+  }));
+  form.guests.addEventListener('change', clampGuests);
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -39,7 +47,7 @@
       const { reservation: r } = await api.reserve({
         date: form.date.value,
         time: form.time.value,
-        guests: Number(form.guests.value),
+        guests: (clampGuests(), Number(form.guests.value)),
         phone: form.phone.value,
         note: form.note.value
       });

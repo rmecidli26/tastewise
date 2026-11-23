@@ -1144,3 +1144,18 @@ a.stat:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
   .card-actions .btn .arrow { display: none; }
   .add-btn { width: 34px; height: 34px; }
 }
+
+/* Budget: type your own amount */
+.budget-custom { display: inline-flex; align-items: center; gap: .3rem; }
+.budget-custom[hidden] { display: none; }
+.budget-custom input { width: 5.2rem; border: 1.5px solid rgba(123, 28, 44, .3); border-radius: 10px; padding: .4rem .5rem; font: inherit; font-weight: 600; background: var(--white); color: var(--ink); }
+.budget-custom input:focus { outline: none; border-color: var(--burgundy); box-shadow: 0 0 0 3px rgba(123, 28, 44, .12); }
+.budget-custom button { width: 30px; height: 30px; border-radius: 50%; border: 0; background: var(--burgundy); color: #fff; font-weight: 700; }
+
+/* Reservation: number of guests */
+.guests-box { display: flex; align-items: center; gap: .4rem; width: 100%; }
+.guests-box .input { text-align: center; font-weight: 700; padding-left: .5rem !important; -moz-appearance: textfield; }
+.guests-box .input::-webkit-outer-spin-button, .guests-box .input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.g-btn { flex: none; width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid rgba(123, 28, 44, .25); background: var(--white); color: var(--burgundy); font-size: 1.3rem; }
+.g-btn:hover { background: var(--blush-2); }
+.field-icon:has(.guests-box) > svg { display: none; }

@@ -34,49 +34,78 @@
             <ul class="order-list" id="orderList"></ul>
           </section>
 
-          <aside class="order-side">
-            <div class="order-summary">
-              <h2 data-i18n="order.summary"></h2>
-              <dl>
-                <dt data-i18n="order.subtotal"></dt><dd id="sumSubtotal">0 ₼</dd>
-                <dt data-i18n="order.delivery"></dt><dd id="sumFee"></dd>
-              </dl>
-              <div class="order-total"><span data-i18n="order.total"></span><strong id="sumTotal">0 ₼</strong></div>
-              <p class="hint" id="minNote" hidden></p>
-            </div>
-
-            <div class="order-form-card">
-              <h2 data-i18n="order.detailsTitle"></h2>
+          <aside class="checkout">
+            <div class="co-card">
               <div id="orderGate"></div>
-              <form class="form" id="orderForm" novalidate hidden>
+              <form class="form co-form" id="orderForm" novalidate hidden>
                 <div class="form-msg" id="orderMsg" hidden></div>
-                <fieldset class="choice-group">
-                  <legend data-i18n="order.how"></legend>
-                  <label class="choice"><input type="radio" name="fulfillment" value="pickup" checked /><span><strong data-i18n="order.pickup"></strong><small data-i18n="order.pickupHint"></small></span></label>
-                  <label class="choice"><input type="radio" name="fulfillment" value="delivery" /><span><strong data-i18n="order.deliveryOpt"></strong><small data-i18n="order.deliveryHint"></small></span></label>
-                </fieldset>
-                <div class="form-field" id="addressField" hidden>
-                  <label for="address" data-i18n="order.address"></label>
-                  <textarea class="textarea" id="address" name="address" rows="2" maxlength="300" autocomplete="street-address" data-i18n-attr="placeholder:order.addressPh"></textarea>
-                  <span class="field-error"></span>
+
+                <section class="co-step">
+                  <h3><span class="co-num">1</span><span data-i18n="order.how"></span></h3>
+                  <div class="tiles-2" role="radiogroup" data-i18n-attr="aria-label:order.how">
+                    <label class="tile"><input type="radio" name="fulfillment" value="pickup" checked /><span class="tile-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v10h16V10M3 10l1.5-6h15L21 10M3 10c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="tile-text"><strong data-i18n="order.pickup"></strong><small data-i18n="order.pickupHint"></small></span></label>
+                    <label class="tile"><input type="radio" name="fulfillment" value="delivery" /><span class="tile-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="17" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="17" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 17h7M15 6h2l2.5 8.5M3 13h7l2-4h3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tile-text"><strong data-i18n="order.deliveryOpt"></strong><small data-i18n="order.deliveryHint"></small></span></label>
+                  </div>
+                  <div class="form-field" id="addressField" hidden>
+                    <label for="address" data-i18n="order.address"></label>
+                    <textarea class="textarea" id="address" name="address" rows="2" maxlength="300" autocomplete="street-address" data-i18n-attr="placeholder:order.addressPh"></textarea>
+                    <span class="field-error"></span>
+                  </div>
+                </section>
+
+                <section class="co-step">
+                  <h3><span class="co-num">2</span><span data-i18n="order.whenTitle"></span></h3>
+                  <div class="tiles-2" role="radiogroup" data-i18n-attr="aria-label:order.whenTitle">
+                    <label class="tile"><input type="radio" name="when" value="asap" checked /><span class="tile-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="tile-text"><strong data-i18n="order.asap"></strong><small data-i18n="order.asapHint"></small></span></label>
+                    <label class="tile"><input type="radio" name="when" value="later" /><span class="tile-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="tile-text"><strong data-i18n="order.later"></strong><small data-i18n="order.laterHint"></small></span></label>
+                  </div>
+                  <div class="form-field" id="timeField" hidden>
+                    <label for="time" data-i18n="order.timeLabel"></label>
+                    <select class="select" id="time" name="time"></select>
+                    <span class="field-error"></span>
+                  </div>
+                </section>
+
+                <section class="co-step">
+                  <h3><span class="co-num">3</span><span data-i18n="order.contactTitle"></span></h3>
+                  <div class="form-field">
+                    <label for="phone" data-i18n="order.phone"></label>
+                    <input class="input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+994 50 123 45 67" required />
+                    <span class="field-error"></span>
+                  </div>
+                  <div class="form-field">
+                    <label for="note" data-i18n="order.note"></label>
+                    <textarea class="textarea" id="note" name="note" rows="2" maxlength="500" data-i18n-attr="placeholder:order.notePh"></textarea>
+                    <span class="field-error"></span>
+                  </div>
+                </section>
+
+                <section class="co-step">
+                  <h3><span class="co-num">4</span><span data-i18n="order.payTitle"></span></h3>
+                  <div class="tiles-3" role="radiogroup" data-i18n-attr="aria-label:order.payTitle">
+                    <span id="onlineTile"><label class="tile"><input type="radio" name="payment" value="online" /><span class="tile-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 9.5h19M6 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="tile-text"><strong data-i18n="order.online"></strong><small data-i18n="order.onlineHint"></small></span></label></span>
+                    <label class="tile"><input type="radio" name="payment" value="cash" checked /><span class="tile-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span><span class="tile-text"><strong data-i18n="order.payCash"></strong><small data-i18n="order.payCashHint"></small></span></label>
+                    <label class="tile"><input type="radio" name="payment" value="card" /><span class="tile-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="8.5" y="5" width="7" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9 13h.01M12 13h.01M15 13h.01M9 16h.01M12 16h.01M15 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="tile-text"><strong data-i18n="order.payTerminal"></strong><small data-i18n="order.payTerminalHint"></small></span></label>
+                  </div>
+                  <div class="online-pay" id="onlinePay" hidden>
+                    <p class="test-badge"><span aria-hidden="true">●</span> <span data-i18n="card.test"></span></p>
+                    <div class="saved-cards" id="savedCards" role="radiogroup"></div>
+                    <div class="new-card" id="newCard"></div>
+                    <p class="hint" data-i18n="card.testHint"></p>
+                    <span class="field-error" id="cardError"></span>
+                  </div>
+                </section>
+
+                <div class="co-summary">
+                  <dl>
+                    <dt data-i18n="order.subtotal"></dt><dd id="sumSubtotal">0 ₼</dd>
+                    <dt data-i18n="order.delivery"></dt><dd id="sumFee">—</dd>
+                  </dl>
+                  <div class="order-total"><span data-i18n="order.total"></span><strong id="sumTotal">0 ₼</strong></div>
+                  <p class="hint" id="minNote" hidden></p>
+                  <button type="submit" class="btn btn-primary btn-lg btn-block" id="placeOrder"><span id="placeLabel" data-i18n="order.submit"></span> <span id="btnTotal"></span></button>
+                  <p class="co-secure"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span data-i18n="order.secureNote"></span></p>
                 </div>
-                <div class="form-field">
-                  <label for="phone" data-i18n="order.phone"></label>
-                  <input class="input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+994 50 123 45 67" required />
-                  <span class="field-error"></span>
-                </div>
-                <fieldset class="choice-group">
-                  <legend data-i18n="order.payTitle"></legend>
-                  <label class="choice compact"><input type="radio" name="payment" value="cash" checked /><span><strong data-i18n="order.cash"></strong></span></label>
-                  <label class="choice compact"><input type="radio" name="payment" value="card" /><span><strong data-i18n="order.card"></strong></span></label>
-                  <p class="hint" style="margin:.2rem 0 0" data-i18n="order.payNote"></p>
-                </fieldset>
-                <div class="form-field">
-                  <label for="note" data-i18n="order.note"></label>
-                  <textarea class="textarea" id="note" name="note" rows="2" maxlength="500" data-i18n-attr="placeholder:order.notePh"></textarea>
-                  <span class="field-error"></span>
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block" id="placeOrder"><span data-i18n="order.submit"></span> <span id="btnTotal"></span></button>
               </form>
             </div>
           </aside>
@@ -92,6 +121,7 @@
   <script src="js/i18n.js"></script>
   <script src="js/api.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/cardform.js"></script>
   <script src="js/order.js"></script>
 </body>
 </html>

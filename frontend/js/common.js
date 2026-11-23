@@ -32,6 +32,7 @@
     user: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
     cutlery: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M16 3c-2 1.5-3 4-3 7h3v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     bag: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    cup: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14h28l-3.5 40a4 4 0 0 1-4 3.6H23.5a4 4 0 0 1-4-3.6z"/><path d="M18 26h24M44 22h4a6 6 0 0 1 0 12h-5"/><path d="M26 6c-2 3 2 4 0 7M33 6c-2 3 2 4 0 7"/></svg>',
     plus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
     pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
     phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
@@ -80,13 +81,14 @@
   }
 
   /* ---------- Dish visuals & cards ---------- */
-  const COLORS = { pizza: ['#a2414f', '#5b1220'], doner: ['#b5695a', '#7b1c2c'] };
+  const COLORS = { pizza: ['#a2414f', '#5b1220'], doner: ['#b5695a', '#7b1c2c'], drinks: ['#d98c73', '#8e3b46'] };
+  const ICONS = { pizza: 'pizza', doner: 'wrap', drinks: 'cup' };
   function dishPhoto(d, extra = '') {
-    const key = d.category?.slug === 'doner' ? 'doner' : 'pizza';
+    const key = COLORS[d.category?.slug] ? d.category.slug : 'pizza';
     const [c1, c2] = COLORS[key];
     // The icon stays underneath; if the photo fails to load it is removed and the icon shows.
     const img = d.imageUrl ? `<img src="${escapeHTML(d.imageUrl)}" alt="${escapeHTML(d.name)}" loading="lazy" />` : '';
-    return `<div class="dish-photo" style="--c1:${c1};--c2:${c2}">${key === 'doner' ? I.wrap : I.pizza}${img}${extra}</div>`;
+    return `<div class="dish-photo" style="--c1:${c1};--c2:${c2}">${I[ICONS[key]]}${img}${extra}</div>`;
   }
   document.addEventListener('error', e => {
     if (e.target.tagName === 'IMG' && e.target.closest('.dish-photo')) e.target.remove();

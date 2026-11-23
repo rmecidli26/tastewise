@@ -35,6 +35,7 @@
           <nav class="acc-nav" data-i18n-attr="aria-label:account.menu">
             <a href="#profile" class="acc-link" data-view="profile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span data-i18n="account.profile"></span></a>
             <a href="#orders" class="acc-link" data-view="orders"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span data-i18n="account.orders"></span></a>
+            <a href="#cards" class="acc-link" data-view="cards"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 9.5h19M6 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="account.cards"></span></a>
             <a href="#reservations" class="acc-link" data-view="reservations"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8.5" cy="14" r="1" fill="currentColor"/><circle cx="12" cy="14" r="1" fill="currentColor"/><circle cx="15.5" cy="14" r="1" fill="currentColor"/></svg><span data-i18n="account.reservations"></span></a>
             <a href="#favorites" class="acc-link" data-view="favorites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.5 3.7 4 7.3 4c2 0 3.6 1.1 4.7 2.7C13.1 5.1 14.7 4 16.7 4c3.6 0 5.9 3.5 4.6 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span data-i18n="account.favorites"></span></a>
             <a href="#settings" class="acc-link" data-view="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span data-i18n="account.settings"></span></a>
@@ -86,6 +87,26 @@
               <a href="explore.html" class="btn btn-primary btn-sm" data-i18n="order.browse"></a>
             </div>
             <div class="orders-list" id="ordersList"></div>
+          </section>
+
+          <!-- Payment cards -->
+          <section class="acc-panel" data-panel="cards" hidden>
+            <div class="acc-head">
+              <h2 data-i18n="account.cards"></h2>
+              <button type="button" class="btn btn-primary btn-sm" id="addCardBtn" data-i18n="pcard.add"></button>
+            </div>
+            <p class="muted" data-i18n="account.cardsText"></p>
+            <p class="test-badge"><span aria-hidden="true">●</span> <span data-i18n="card.test"></span></p>
+            <div class="card-list" id="cardList"></div>
+            <form class="form add-card-form" id="addCardForm" novalidate hidden>
+              <div class="form-msg" id="cardMsg" hidden></div>
+              <div id="addCardFields"></div>
+              <p class="hint" data-i18n="card.testHint"></p>
+              <div class="acc-actions">
+                <button type="submit" class="btn btn-primary btn-sm" data-i18n="pcard.add"></button>
+                <button type="button" class="btn btn-ghost btn-sm" id="cancelCard" data-i18n="card.cancel"></button>
+              </div>
+            </form>
           </section>
 
           <!-- Reservations -->
@@ -152,6 +173,7 @@
   <script src="js/i18n.js"></script>
   <script src="js/api.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/cardform.js"></script>
   <script src="js/account.js"></script>
 </body>
 </html>

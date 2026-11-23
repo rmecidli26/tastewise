@@ -17,12 +17,6 @@
   $('#searchForm').addEventListener('submit', e => { e.preventDefault(); go(); });
   $('#ingPicker').addEventListener('ing:submit', go);
 
-  /* QR code that opens this website on a phone */
-  const siteUrl = `${location.origin}/`;
-  if (window.TWQR) $('#qrCode').innerHTML = TWQR.svg(siteUrl, { size: 116, label: t('qr.alt') });
-  $('#qrUrl').href = siteUrl;
-  $('#qrUrl').textContent = location.host;
-
   const grid = $('#popularGrid');
   grid.innerHTML = loadingHTML();
   api.dishes({ sort: 'popular', limit: 4 })

@@ -68,6 +68,15 @@
         "az": "Dönər və şaurma",
         "ru": "Дёнер и шаурма"
       }
+    },
+    {
+      "slug": "drinks",
+      "name": "Drinks",
+      "sort_order": 3,
+      "i18n": {
+        "az": "İçkilər",
+        "ru": "Напитки"
+      }
     }
   ],
   "allergens": [
@@ -79,7 +88,8 @@
     "lavash",
     "bread",
     "tombik bread",
-    "tuna"
+    "tuna",
+    "yoghurt"
   ],
   "ingredient_names": {
     "arabic sauce": {
@@ -221,6 +231,54 @@
     "tuna": {
       "az": "tuna balığı",
       "ru": "тунец"
+    },
+    "yoghurt": {
+      "az": "qatıq",
+      "ru": "йогурт"
+    },
+    "water": {
+      "az": "su",
+      "ru": "вода"
+    },
+    "salt": {
+      "az": "duz",
+      "ru": "соль"
+    },
+    "mint": {
+      "az": "nanə",
+      "ru": "мята"
+    },
+    "mineral water": {
+      "az": "mineral su",
+      "ru": "минеральная вода"
+    },
+    "black tea": {
+      "az": "qara çay",
+      "ru": "чёрный чай"
+    },
+    "lemon": {
+      "az": "limon",
+      "ru": "лимон"
+    },
+    "pomegranate": {
+      "az": "nar",
+      "ru": "гранат"
+    },
+    "dried fruit": {
+      "az": "quru meyvə",
+      "ru": "сухофрукты"
+    },
+    "sugar": {
+      "az": "şəkər",
+      "ru": "сахар"
+    },
+    "rose petals": {
+      "az": "qızılgül ləçəkləri",
+      "ru": "лепестки розы"
+    },
+    "thyme": {
+      "az": "kəklikotu",
+      "ru": "чабрец"
     }
   },
   "dishes": [
@@ -1289,6 +1347,396 @@
         "ru": {
           "name": "Томбик дёнер",
           "description": "Курица или мясо в мягком хлебе томбик с помидорами, луком, сыром и маринованным перцем."
+        }
+      }
+    },
+    {
+      "slug": "ayran",
+      "name": "Ayran",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": "images/dishes/ayran.svg",
+      "best_seller": true,
+      "description": "Chilled homemade ayran — yoghurt, cold water and a pinch of salt, served with fresh mint.",
+      "diet": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "yoghurt",
+        "water",
+        "salt",
+        "mint"
+      ],
+      "variants": [
+        {
+          "code": "03",
+          "label": {
+            "az": "0,3 L",
+            "en": "0.3 L",
+            "ru": "0,3 л"
+          },
+          "price": 1.5
+        },
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 2.2
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Ayran",
+          "description": "Ev üsulu soyuq ayran — qatıq, sərin su, bir çimdik duz və təzə nanə."
+        },
+        "ru": {
+          "name": "Айран",
+          "description": "Домашний холодный айран — йогурт, прохладная вода, щепотка соли и свежая мята."
+        }
+      }
+    },
+    {
+      "slug": "badamli",
+      "name": "Badamli Mineral Water",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": "images/dishes/badamli.svg",
+      "best_seller": false,
+      "description": "Natural mineral water from the Badamli springs of Nakhchivan.",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "mineral water"
+      ],
+      "variants": [
+        {
+          "code": "sparkling",
+          "label": {
+            "az": "Qazlı",
+            "en": "Sparkling",
+            "ru": "Газированная"
+          },
+          "price": 1.2
+        },
+        {
+          "code": "still",
+          "label": {
+            "az": "Qazsız",
+            "en": "Still",
+            "ru": "Без газа"
+          },
+          "price": 1.2
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Badamlı mineral su",
+          "description": "Naxçıvanın Badamlı bulaqlarından təbii mineral su."
+        },
+        "ru": {
+          "name": "Минеральная вода «Бадамлы»",
+          "description": "Натуральная минеральная вода из источников Бадамлы, Нахчыван."
+        }
+      }
+    },
+    {
+      "slug": "sirab",
+      "name": "Sirab Mineral Water",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": "images/dishes/sirab.svg",
+      "best_seller": false,
+      "description": "Natural mineral water from the Sirab springs of Nakhchivan.",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "mineral water"
+      ],
+      "variants": [
+        {
+          "code": "sparkling",
+          "label": {
+            "az": "Qazlı",
+            "en": "Sparkling",
+            "ru": "Газированная"
+          },
+          "price": 1.2
+        },
+        {
+          "code": "still",
+          "label": {
+            "az": "Qazsız",
+            "en": "Still",
+            "ru": "Без газа"
+          },
+          "price": 1.2
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Sirab mineral su",
+          "description": "Naxçıvanın Sirab bulaqlarından təbii mineral su."
+        },
+        "ru": {
+          "name": "Минеральная вода «Сираб»",
+          "description": "Натуральная минеральная вода из источников Сираб, Нахчыван."
+        }
+      }
+    },
+    {
+      "slug": "azerbaijani-tea",
+      "name": "Azerbaijani Black Tea",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": "images/dishes/azerbaijani-tea.svg",
+      "best_seller": true,
+      "description": "Black tea brewed the Azerbaijani way with thyme, served in an armudu glass with lemon.",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "black tea",
+        "thyme",
+        "lemon"
+      ],
+      "variants": [
+        {
+          "code": "glass",
+          "label": {
+            "az": "Stəkan",
+            "en": "Glass",
+            "ru": "Стакан"
+          },
+          "price": 1.0
+        },
+        {
+          "code": "pot",
+          "label": {
+            "az": "Çaynik (2 nəfər)",
+            "en": "Teapot (for 2)",
+            "ru": "Чайник (на двоих)"
+          },
+          "price": 5.0
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Armudu stəkanda çay",
+          "description": "Kəklikotu ilə dəmlənmiş qara çay, armudu stəkanda limonla."
+        },
+        "ru": {
+          "name": "Чай в армуду",
+          "description": "Чёрный чай, заваренный по-азербайджански с чабрецом, в стаканчике армуду с лимоном."
+        }
+      }
+    },
+    {
+      "slug": "pomegranate-juice",
+      "name": "Pomegranate Juice",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": "images/dishes/pomegranate-juice.svg",
+      "best_seller": false,
+      "description": "Freshly squeezed juice from Azerbaijani pomegranates.",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "pomegranate"
+      ],
+      "variants": [
+        {
+          "code": "03",
+          "label": {
+            "az": "0,3 L",
+            "en": "0.3 L",
+            "ru": "0,3 л"
+          },
+          "price": 3.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Nar şirəsi",
+          "description": "Azərbaycan narından təzə sıxılmış şirə."
+        },
+        "ru": {
+          "name": "Гранатовый сок",
+          "description": "Свежевыжатый сок из азербайджанских гранатов."
+        }
+      }
+    },
+    {
+      "slug": "kompot",
+      "name": "Homemade Kompot",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": "images/dishes/kompot.svg",
+      "best_seller": false,
+      "description": "Homemade fruit kompot made from dried fruit, lightly sweet and served cold.",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "dried fruit",
+        "water",
+        "sugar"
+      ],
+      "variants": [
+        {
+          "code": "03",
+          "label": {
+            "az": "0,3 L",
+            "en": "0.3 L",
+            "ru": "0,3 л"
+          },
+          "price": 2.0
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Ev kompotu",
+          "description": "Quru meyvələrdən hazırlanan, az şirin, soyuq ev kompotu."
+        },
+        "ru": {
+          "name": "Домашний компот",
+          "description": "Домашний компот из сухофруктов, слегка сладкий, подаётся холодным."
+        }
+      }
+    },
+    {
+      "slug": "rose-sherbet",
+      "name": "Rose & Saffron Sherbet",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": "images/dishes/rose-sherbet.svg",
+      "best_seller": false,
+      "description": "Traditional sherbet with rose petals, saffron and a little lemon.",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "mood": [
+        "light",
+        "celebration"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "rose petals",
+        "saffron",
+        "lemon",
+        "sugar",
+        "water"
+      ],
+      "variants": [
+        {
+          "code": "03",
+          "label": {
+            "az": "0,3 L",
+            "en": "0.3 L",
+            "ru": "0,3 л"
+          },
+          "price": 2.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Qızılgül şərbəti",
+          "description": "Qızılgül ləçəkləri, zəfəran və bir az limonla ənənəvi şərbət."
+        },
+        "ru": {
+          "name": "Розовый шербет",
+          "description": "Традиционный шербет с лепестками розы, шафраном и лимоном."
         }
       }
     }

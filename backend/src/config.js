@@ -44,7 +44,12 @@ export const config = {
     deliveryFee: Number(env.DELIVERY_FEE || 0),      // AZN, 0 = free delivery
     minTotal: Number(env.ORDER_MIN_TOTAL || 0),       // AZN, minimum food total for delivery
     maxActivePerUser: 5,
-    notifyEmail: env.ORDER_NOTIFY_EMAIL || ''         // restaurant inbox for new orders (optional)
+    notifyEmail: env.ORDER_NOTIFY_EMAIL || '',        // restaurant inbox for new orders (optional)
+    cancelMinutes: 5,                                  // customer can cancel a pending order this long
+    // "test" = card form works but no money is taken (until a provider such as Payriff/Epoint is connected)
+    // "off"  = hide card payment on the site
+    cardPayments: env.CARD_PAYMENTS === 'off' ? 'off' : 'test',
+    maxSavedCards: 5
   },
 
   // Reservations (restaurant local time)

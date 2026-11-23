@@ -20,6 +20,7 @@ import adminRoutes from './routes/admin.js';
 import newsletterRoutes from './routes/newsletter.js';
 import meRoutes from './routes/me.js';
 import orderRoutes from './routes/orders.js';
+import cardRoutes from './routes/cards.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FRONTEND_DIR = path.resolve(__dirname, '../../frontend');
@@ -62,7 +63,7 @@ app.get('/api/health', async (req, res) => {
 
 app.use('/api', apiLimiter, loadUser);
 app.use('/api/auth', authRoutes);
-app.use('/api', dishRoutes, reviewRoutes, favoriteRoutes, reservationRoutes, restaurantRoutes, adminRoutes, newsletterRoutes, meRoutes, orderRoutes);
+app.use('/api', dishRoutes, reviewRoutes, favoriteRoutes, reservationRoutes, restaurantRoutes, adminRoutes, newsletterRoutes, meRoutes, orderRoutes, cardRoutes);
 app.use('/api', apiNotFound);
 
 // ---------- Frontend (static files, same origin → simple cookies, no CORS) ----------

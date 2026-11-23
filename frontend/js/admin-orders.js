@@ -36,7 +36,7 @@
           <header>
             <div>
               <h3>#${o.id} <span class="status ostatus-${o.status}">${escapeHTML(label(o))}</span></h3>
-              <p class="muted">${escapeHTML(when(o.createdAt))}</p>
+              <p class="muted">${escapeHTML(I18N.fmtDate(new Date(o.createdAt), { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' }))}, ${new Date(o.createdAt).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Baku' })}</p>
             </div>
             <strong class="order-card-total">${escapeHTML(price(o.total))}</strong>
           </header>
@@ -46,8 +46,13 @@
               <p>${escapeHTML(o.user.name)}<br /><span class="muted">${escapeHTML(o.user.email)}</span><br />
                 <a class="link" href="tel:${escapeHTML(o.phone.replace(/[^\d+]/g, ''))}">${escapeHTML(o.phone)}</a></p>
               <h4>${escapeHTML(t('aorders.how'))}</h4>
-              <p>${escapeHTML(t(o.fulfillment === 'delivery' ? 'order.deliveryOpt' : 'order.pickup'))}${o.address ? `<br /><strong>${escapeHTML(o.address)}</strong>` : ''}<br />
-                <span class="muted">${escapeHTML(t(o.payment === 'card' ? 'order.card' : 'order.cash'))}</span></p>
+              <p>${escapeHTML(t(o.fulfillment === 'delivery' ? 'order.deliveryOpt' : 'order.pickup'))}${o.address ? `<br /><strong>${escapeHTML(o.address)}</strong>` : ''}</p>
+              <h4>${escapeHTML(t('aorders.when'))}</h4>
+              <p><strong>${escapeHTML(o.time || t('order.asap'))}</strong></p>
+              <h4>${escapeHTML(t('order.payTitle'))}</h4>
+              <p>${o.paid
+                ? `<span class="status ostatus-ready">${escapeHTML(t(o.paymentTest ? 'order.paidTest' : 'order.paid'))}</span> ${escapeHTML(o.card ? `${o.card.brand.toUpperCase()} •••• ${o.card.last4}` : '')}`
+                : `${escapeHTML(t('order.payOnReceipt'))} · ${escapeHTML(t(o.payment === 'card' ? 'order.payTerminal' : 'order.payCash'))}`}</p>
             </div>
             <div>
               <h4>${escapeHTML(t('aorders.items'))}</h4>

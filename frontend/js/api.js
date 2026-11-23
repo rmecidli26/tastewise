@@ -89,6 +89,9 @@ const api = {
   placeOrder: body => request('/orders', { method: 'POST', body }),
   myOrders: () => request('/me/orders'),
   cancelOrder: id => request(`/me/orders/${id}/cancel`, { method: 'POST' }),
+  cards: () => request('/me/cards'),
+  addCard: body => request('/me/cards', { method: 'POST', body }),
+  removeCard: id => request(`/me/cards/${id}`, { method: 'DELETE' }),
 
   // admin
   adminReservations: query => request('/admin/reservations', { query }),

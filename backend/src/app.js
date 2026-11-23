@@ -19,6 +19,7 @@ import restaurantRoutes from './routes/restaurant.js';
 import adminRoutes from './routes/admin.js';
 import newsletterRoutes from './routes/newsletter.js';
 import meRoutes from './routes/me.js';
+import orderRoutes from './routes/orders.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FRONTEND_DIR = path.resolve(__dirname, '../../frontend');
@@ -32,7 +33,7 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       'img-src': ["'self'", 'data:', 'https:'],
-      'frame-src': ["'self'", 'https://www.openstreetmap.org'], // map on the Visit AFA page
+      'frame-src': ["'self'", 'https://www.google.com', 'https://maps.google.com'], // Google map on the Visit AFA page
       'font-src': ["'self'", 'https://fonts.gstatic.com', 'data:'],
       'style-src': ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
       // only force https in production (localhost runs on http)
@@ -61,7 +62,7 @@ app.get('/api/health', async (req, res) => {
 
 app.use('/api', apiLimiter, loadUser);
 app.use('/api/auth', authRoutes);
-app.use('/api', dishRoutes, reviewRoutes, favoriteRoutes, reservationRoutes, restaurantRoutes, adminRoutes, newsletterRoutes, meRoutes);
+app.use('/api', dishRoutes, reviewRoutes, favoriteRoutes, reservationRoutes, restaurantRoutes, adminRoutes, newsletterRoutes, meRoutes, orderRoutes);
 app.use('/api', apiNotFound);
 
 // ---------- Frontend (static files, same origin → simple cookies, no CORS) ----------

@@ -1,6 +1,6 @@
 /* Dish page: gallery, size/option picker, ingredients, favorites, reviews */
 (() => {
-  const { $, $$, escapeHTML, param, price, stars, ratingNum, dishPhoto, loadingHTML, getMe, loginUrl, loadFavorites, syncFavButtons, favorites, toast, showMsg, I } = TW;
+  const { $, $$, escapeHTML, param, price, stars, ratingNum, dishPhoto, loadingHTML, getMe, loginUrl, loadFavorites, syncFavButtons, favorites, toast, showMsg, I, cart, cartToast } = TW;
   const id = Number(param('id'));
   if (!id) { location.replace('explore.html'); return; }
 
@@ -44,7 +44,7 @@
       ${v.length > 1 ? `
         <p class="variant-label">${escapeHTML(t(isSize ? 'dish.size' : 'dish.option'))}</p>
         <div class="variants" role="group" aria-label="${escapeHTML(t(isSize ? 'dish.size' : 'dish.option'))}">
-          ${v.map((x, i) => `<button type="button" class="variant" data-price="${x.price}" aria-pressed="${i === 0}"><span>${escapeHTML(x.label)}</span><small>${escapeHTML(price(x.price))}</small></button>`).join('')}
+          ${v.map((x, i) => `<button type="button" class="variant" data-code="${escapeHTML(x.code)}" data-price="${x.price}" aria-pressed="${i === 0}"><span>${escapeHTML(x.label)}</span><small>${escapeHTML(price(x.price))}</small></button>`).join('')}
         </div>` : ''}
       <p class="dish-desc">${escapeHTML(d.description)}</p>
       <h2 class="sub-h">${escapeHTML(t('dish.ingredients'))}</h2>
@@ -52,16 +52,54 @@
       ${hasAllergen ? `<p class="hint" style="margin:.2rem 0 0">${escapeHTML(t('dish.allergen'))}</p>` : ''}
       <div class="chips-line">${chips.map(c => `<span>${escapeHTML(c)}</span>`).join('')}</div>
       ${d.isAvailable === false ? `<p class="form-msg info" style="margin-top:1rem">${escapeHTML(t('dish.unavailable'))}</p>` : ''}
+      ${d.isAvailable === false ? '' : `
+      <div class="add-row">
+        <div class="stepper" role="group" aria-label="${escapeHTML(t('dish.qty'))}">
+          <button type="button" id="qtyDec" aria-label="${escapeHTML(t('order.dec'))}">−</button>
+          <output id="qtyOut" aria-live="polite">1</output>
+          <button type="button" id="qtyInc" aria-label="${escapeHTML(t('order.inc'))}">+</button>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" id="addCart">${I.bag}<span>${escapeHTML(t('dish.addCart'))}</span> <span id="addTotal"></span></button>
+      </div>
+      <p class="hint in-cart" id="inCart" hidden></p>`}
       <div class="dish-actions">
-        <button type="button" class="btn btn-primary" id="favMain" data-fav="${d.id}" aria-pressed="false">${I.heart}<span>${escapeHTML(t('dish.addFav'))}</span></button>
+        <button type="button" class="btn btn-soft" id="favMain" data-fav="${d.id}" aria-pressed="false">${I.heart}<span>${escapeHTML(t('dish.addFav'))}</span></button>
         <a href="${escapeHTML(backHref)}" class="btn btn-ghost"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> ${escapeHTML(t('dish.back'))}</a>
       </div>
       <a class="link" style="display:inline-block;margin-top:1rem" href="reserve.html">${escapeHTML(t('dish.reserve'))} →</a>`;
 
+    /* size / option + quantity → add to order */
+    let qty = 1;
+    const selected = () => $('.variant[aria-pressed="true"]', info);
+    const unit = () => Number(selected()?.dataset.price ?? v[0]?.price ?? d.price);
+    const refresh = () => {
+      $('#dishPrice').textContent = price(unit());
+      if (!$('#addCart')) return;
+      $('#qtyOut').textContent = qty;
+      $('#qtyDec').disabled = qty <= 1;
+      $('#qtyInc').disabled = qty >= 20;
+      $('#addTotal').textContent = `· ${price(Math.round(unit() * qty * 100) / 100)}`;
+      const code = selected()?.dataset.code || v[0]?.code || null;
+      const inCart = cart.items().filter(i => i.dishId === d.id && (i.variant || null) === code).reduce((n, i) => n + i.quantity, 0);
+      $('#inCart').hidden = !inCart;
+      $('#inCart').innerHTML = `${escapeHTML(t('dish.inCart', { n: inCart }))} · <a class="link" href="order.html">${escapeHTML(t('cart.view'))}</a>`;
+    };
     $$('.variant', info).forEach(b => b.addEventListener('click', () => {
       $$('.variant', info).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-      $('#dishPrice').textContent = price(b.dataset.price);
+      refresh();
     }));
+    if ($('#addCart')) {
+      $('#qtyDec').addEventListener('click', () => { qty = Math.max(1, qty - 1); refresh(); });
+      $('#qtyInc').addEventListener('click', () => { qty = Math.min(20, qty + 1); refresh(); });
+      $('#addCart').addEventListener('click', () => {
+        cart.add(d, selected()?.dataset.code || null, qty);
+        const label = selected() ? `${d.name} (${selected().querySelector('span').textContent})` : d.name;
+        cartToast(label);
+        qty = 1;
+        refresh();
+      });
+    }
+    refresh();
   }
 
   async function renderGallery(d) {

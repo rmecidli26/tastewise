@@ -13,10 +13,12 @@ if (!config.smtp.host && !config.brevoApiKey) {
   process.exit(1);
 }
 
-console.log(`Connecting to ${config.smtp.host}:${config.smtp.port} (secure=${config.smtp.secure}) as ${config.smtp.user || '(no login)'}…`);
+console.log(config.brevoApiKey
+  ? `Using Brevo API, sender ${config.mailFrom}…`
+  : `Connecting to ${config.smtp.host}:${config.smtp.port} (secure=${config.smtp.secure}) as ${config.smtp.user || '(no login)'}…`);
 try {
   await verifySmtp();
-  console.log('✓ SMTP login OK');
+  console.log(config.brevoApiKey ? '✓ Brevo API key OK' : '✓ SMTP login OK');
   await sendMail({
     to,
     subject: 'Tastewise — test email',
@@ -28,7 +30,11 @@ try {
 } catch (err) {
   console.error(`✗ ${err.message}`);
   const m = `${err.code || ''} ${err.responseCode || ''} ${err.message}`;
-  if (/535|EAUTH|Username and Password not accepted|BadCredentials/i.test(m)) {
+  if (/Brevo 401/.test(m)) {
+    console.error('→ Brevo rejected the API key. Copy it again (starts with xkeysib-) into BREVO_API_KEY.');
+  } else if (/Brevo 400/.test(m)) {
+    console.error('→ Usually the sender email in MAIL_FROM is not verified in Brevo (Senders), or the address is wrong.');
+  } else if (/535|EAUTH|Username and Password not accepted|BadCredentials/i.test(m)) {
     console.error('→ Login rejected. For Gmail use an App Password (16 letters, 2-Step Verification must be on), not your normal password.');
   } else if (/ETIMEDOUT|ECONNREFUSED|ESOCKET|ENOTFOUND|ECONNECTION/i.test(m)) {
     console.error('→ Cannot reach the mail server. Check SMTP_HOST / SMTP_PORT, and that port 465 is used with SMTP_SECURE=true (587 with false).');

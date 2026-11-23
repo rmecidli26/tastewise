@@ -34,6 +34,10 @@ const searchSchema = z.object({
   include: list(term),
   prefer: list(term),
   exclude: list(term),
+  ids: z.preprocess(
+    v => (v === undefined || v === '' ? undefined : String(v).split(',').map(Number)),
+    z.array(z.number().int().positive()).max(30).optional()
+  ),
   sort: z.enum(['match', 'menu', 'popular', 'price_asc', 'price_desc', 'name']).optional(),
   limit: optionalNumber(z.number().int().min(1).max(100)),
   page: optionalNumber(z.number().int().min(1).max(1000))

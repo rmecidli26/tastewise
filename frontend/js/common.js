@@ -31,6 +31,8 @@
     wallet: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a1 1 0 0 1-1-1V7zM4 7l11-3v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="16" cy="13.5" r="1.3" fill="currentColor"/></svg>',
     user: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
     cutlery: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M16 3c-2 1.5-3 4-3 7h3v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    bag: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    plus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
     pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
     phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
     clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
@@ -96,6 +98,7 @@
   }
 
   function dishCard(d, i = 0) {
+    cardDishes.set(d.id, d);
     const isFav = favorites.has(d.id);
     const ribbon = d.isBestSeller ? `<span class="best-ribbon">${escapeHTML(t('card.best'))}</span>` : '';
     const match = d.match ? `<span class="match-badge">${escapeHTML(t('card.match', { count: d.match.count, total: d.match.total }))}</span>` : '';
@@ -106,7 +109,10 @@
         <div class="dish-body">
           <h3><a href="dish.html?id=${d.id}">${escapeHTML(d.name)}</a></h3>
           <div class="dish-meta">${ratingHTML(d)}<span class="price">${escapeHTML(priceFrom(d))}</span></div>
-          <div class="card-actions"><a class="btn btn-soft btn-sm" href="dish.html?id=${d.id}" tabindex="-1">${escapeHTML(t('card.details'))} ${I.arrow}</a></div>
+          <div class="card-actions">
+            <a class="btn btn-soft btn-sm" href="dish.html?id=${d.id}" tabindex="-1">${escapeHTML(t('card.details'))} ${I.arrow}</a>
+            <button type="button" class="add-btn" data-add="${d.id}" aria-label="${escapeHTML(t('card.addAria', { name: d.name }))}" title="${escapeHTML(t('card.add'))}">${I.plus}</button>
+          </div>
         </div>
       </article>`;
   }
@@ -226,6 +232,66 @@
     }
   }
 
+  /* ---------- Order cart (kept in this browser; prices are re-checked by the server) ---------- */
+  const CART_KEY = 'tw:cart';
+  const cardDishes = new Map(); // dishes shown on cards, for the quick "+" button
+  const readCart = () => {
+    try { const v = JSON.parse(localStorage.getItem(CART_KEY)); return Array.isArray(v) ? v : []; } catch { return []; }
+  };
+  let storageOk = true;
+  const writeCart = items => {
+    try { localStorage.setItem(CART_KEY, JSON.stringify(items)); } catch { storageOk = false; } // private mode: keep in memory
+    memoryCart = items;
+    syncCart();
+    document.dispatchEvent(new CustomEvent('cart:change'));
+  };
+  let memoryCart = readCart();
+  const cart = {
+    items: () => (storageOk ? readCart() : memoryCart.map(i => ({ ...i }))),
+    count: () => cart.items().reduce((n, i) => n + i.quantity, 0),
+    /** dish: object from the API; variant: code or null */
+    add(dish, variantCode = null, quantity = 1) {
+      const v = dish.variants?.find(x => x.code === variantCode) || (dish.variants?.length ? dish.variants[0] : null);
+      const items = cart.items();
+      const key = `${dish.id}:${v?.code || ''}`;
+      const found = items.find(i => `${i.dishId}:${i.variant || ''}` === key);
+      if (found) found.quantity = Math.min(20, found.quantity + quantity);
+      else items.push({ dishId: dish.id, variant: v?.code || null, quantity: Math.min(20, quantity), name: dish.name, variantLabel: v?.label || null, price: v ? v.price : dish.price, imageUrl: dish.imageUrl || null, category: dish.category?.slug || '' });
+      writeCart(items);
+      return found ? found.quantity : quantity;
+    },
+    setQuantity(index, quantity) {
+      const items = cart.items();
+      if (!items[index]) return;
+      if (quantity <= 0) items.splice(index, 1); else items[index].quantity = Math.min(20, quantity);
+      writeCart(items);
+    },
+    remove(index) { cart.setQuantity(index, 0); },
+    replace(items) { writeCart(items); },
+    clear() { writeCart([]); }
+  };
+  function syncCart() {
+    const n = cart.count();
+    $$('.cart-count').forEach(b => { b.hidden = n === 0; b.textContent = n; });
+    const btn = $('#orderBtn');
+    if (btn) btn.setAttribute('aria-label', `${t('header.order')} — ${t('header.orderAria', { n })}`);
+  }
+  window.addEventListener('storage', e => { if (e.key === CART_KEY) { memoryCart = readCart(); syncCart(); } });
+  function cartToast(name) {
+    toast(t('cart.added', { name }), 'success');
+    const btn = $('#orderBtn');
+    if (btn) { btn.classList.remove('bump'); void btn.offsetWidth; btn.classList.add('bump'); }
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-add]');
+    if (!b) return;
+    e.preventDefault();
+    const d = cardDishes.get(Number(b.dataset.add));
+    if (!d) return;
+    cart.add(d);
+    cartToast(d.name);
+  });
+
   /* ---------- Header ---------- */
   const NAV = [
     ['home', 'index.html', 'nav.home'],
@@ -252,10 +318,9 @@
         </a>
         <nav class="main-nav" id="mainNav" aria-label="${escapeHTML(t('nav.main'))}">
           ${NAV.map(([key, href, label]) => `<a href="${href}" class="${key === active ? 'active' : ''}"${key === active ? ' aria-current="page"' : ''}>${escapeHTML(t(label))}</a>`).join('')}
-          ${langSwitch('lang-mobile')}
         </nav>
         <div class="header-actions">
-          ${langSwitch('lang-desktop')}
+          <a href="order.html" class="order-btn${active === 'order' ? ' active' : ''}" id="orderBtn">${I.bag}<span class="order-label">${escapeHTML(t('header.order'))}</span><span class="cart-count" hidden>0</span></a>
           <a href="favorites.html" class="icon-btn" aria-label="${escapeHTML(t('header.favorites'))}">${I.heart}<span class="fav-count" hidden>0</span></a>
           <div class="auth-actions" id="authSlot"></div>
           <a href="explore.html" class="btn btn-primary btn-sm header-cta">${escapeHTML(t('cta.find'))} ${I.arrow}</a>
@@ -266,7 +331,7 @@
     const toggle = $('#menuToggle'), nav = $('#mainNav');
     toggle.addEventListener('click', () => toggle.setAttribute('aria-expanded', String(nav.classList.toggle('open'))));
     $$('a', nav).forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }));
-    $$('[data-lang]', header).forEach(b => b.addEventListener('click', () => I18N.setLang(b.dataset.lang)));
+    syncCart();
     getMe().then(renderAuthSlot);
   }
 
@@ -287,8 +352,9 @@
           <div class="dd-head"><strong>${escapeHTML(me.fullName)}</strong>${escapeHTML(me.email)}</div>
           <a href="account.html">${escapeHTML(t('user.account'))}</a>
           <a href="favorites.html">${escapeHTML(t('user.favorites'))}</a>
+          <a href="account.html#orders">${escapeHTML(t('user.orders'))}</a>
           <a href="account.html#reservations">${escapeHTML(t('user.reservations'))}</a>
-          ${me.role === 'admin' ? `<a href="admin.html">${escapeHTML(t('user.admin'))}</a>` : ''}
+          ${me.role === 'admin' ? `<a href="admin-orders.html">${escapeHTML(t('user.adminOrders'))}</a><a href="admin.html">${escapeHTML(t('user.admin'))}</a>` : ''}
           <button type="button" id="logoutBtn">${escapeHTML(t('user.logout'))}</button>
         </div>
       </div>`;
@@ -333,12 +399,14 @@
         </div>
         <div class="footer-bottom">
           <span>${escapeHTML(t('footer.rights', { year: new Date().getFullYear() }))}</span>
+          <div class="footer-lang"><span>${escapeHTML(t('footer.lang'))}:</span>${langSwitch('')}</div>
           <nav class="footer-links" aria-label="Footer">
             ${NAV.slice(0, 4).map(([, href, label]) => `<a href="${href}">${escapeHTML(t(label))}</a>`).join('')}
             <a href="visit.html">${escapeHTML(t('footer.contact'))}</a>
           </nav>
         </div>
       </div>`;
+    $$('[data-lang]', footer).forEach(b => b.addEventListener('click', () => I18N.setLang(b.dataset.lang)));
     $('#newsForm').addEventListener('submit', async e => {
       e.preventDefault();
       const form = e.currentTarget, msg = $('#newsMsg');
@@ -391,12 +459,20 @@
     tog.setAttribute('aria-pressed', String(show));
   });
 
+  /** AFA on the Baku seaside — opened in Google Maps when an address is clicked. */
+  const MAP = { lat: 40.3689, lng: 49.8431 };
+  const mapsUrl = () => `https://www.google.com/maps/search/?api=1&query=${MAP.lat}%2C${MAP.lng}`;
+  const setAddress = text => $$('[data-restaurant="address"]').forEach(el => {
+    el.innerHTML = `<a class="addr-link" href="${mapsUrl()}" target="_blank" rel="noopener" title="${escapeHTML(t('visit.mapOpen'))}">${escapeHTML(text)}</a>`;
+  });
+
   /** Fills [data-restaurant="address|phone|hours|description|email"] elements from the API. */
   function fillRestaurant() {
     const setHours = h => $$('[data-restaurant="hours"]').forEach(el => { el.textContent = t('info.hoursValue', { from: h[0], to: h[1] }); });
     setHours(['10:00', '23:00']);
+    setAddress(t('info.addressValue'));
     return api.restaurant().then(({ restaurant: r }) => {
-      $$('[data-restaurant="address"]').forEach(el => { el.textContent = r.address; });
+      setAddress(r.address);
       $$('[data-restaurant="description"]').forEach(el => { el.textContent = r.description; });
       $$('[data-restaurant="email"]').forEach(el => { el.textContent = r.email; if (el.tagName === 'A') el.href = `mailto:${r.email}`; });
       $$('[data-restaurant="phone"]').forEach(el => { el.textContent = r.phone; if (el.tagName === 'A') el.href = `tel:${r.phone.replace(/[^\d+]/g, '')}`; });
@@ -417,8 +493,8 @@
     $, $$, escapeHTML, param, price, priceFrom, stars, ratingNum, cuisineLabel, dietLabel, SPICE, I, t,
     getMe, requireLogin, loginUrl, safeNext,
     toast, dishCard, dishPhoto, ratingHTML, loadingHTML,
-    favorites, loadFavorites, syncFavButtons,
-    ingredientPicker, budgetSelect, fillRestaurant,
+    favorites, loadFavorites, syncFavButtons, cart, cartToast,
+    ingredientPicker, budgetSelect, fillRestaurant, MAP, mapsUrl,
     showMsg, showFieldErrors, setBusy
   };
 })();

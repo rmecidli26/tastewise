@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tastewise by AFA</title>
+  <meta name="description" content="Tastewise by AFA — find dishes at AFA Restaurant by your favorite ingredients and budget." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="admin-orders" data-title="title.adminOrders">
+  <header class="site-header"></header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <p class="crumbs" data-i18n="admin.crumb"></p>
+        <h1 data-i18n="aorders.title"></h1>
+        <p class="muted" data-i18n="aorders.sub"></p>
+        <div class="admin-tabs"><span class="chip" aria-pressed="true" data-i18n="admin.ordersLink"></span><a class="chip" href="admin.html" data-i18n="aorders.reservations"></a></div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:.5rem">
+      <div class="container">
+        <div class="toolbar">
+          <div class="chips" id="statusChips">
+            <button type="button" class="chip" data-value="active" aria-pressed="true" data-i18n="aorders.active"></button>
+            <button type="button" class="chip" data-value="pending" aria-pressed="false" data-i18n="ostatus.pending"></button>
+            <button type="button" class="chip" data-value="confirmed" aria-pressed="false" data-i18n="ostatus.confirmed"></button>
+            <button type="button" class="chip" data-value="ready" aria-pressed="false" data-i18n="ostatus.ready"></button>
+            <button type="button" class="chip" data-value="completed" aria-pressed="false" data-i18n="ostatus.completed"></button>
+            <button type="button" class="chip" data-value="declined" aria-pressed="false" data-i18n="ostatus.declined"></button>
+            <button type="button" class="chip" data-value="cancelled" aria-pressed="false" data-i18n="ostatus.cancelled"></button>
+            <button type="button" class="chip" data-value="all" aria-pressed="false" data-i18n="admin.all"></button>
+          </div>
+          <button type="button" class="btn btn-ghost btn-sm" id="refresh" data-i18n="aorders.refresh"></button>
+        </div>
+        <p class="new-orders" id="newOrders" role="status" hidden></p>
+        <div class="admin-orders" id="adminOrders"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/admin-orders.js"></script>
+</body>
+</html>

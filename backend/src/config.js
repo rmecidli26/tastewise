@@ -39,6 +39,14 @@ export const config = {
     resendCooldownSeconds: 60
   },
 
+  // Online orders (paid on pickup / delivery)
+  orders: {
+    deliveryFee: Number(env.DELIVERY_FEE || 0),      // AZN, 0 = free delivery
+    minTotal: Number(env.ORDER_MIN_TOTAL || 0),       // AZN, minimum food total for delivery
+    maxActivePerUser: 5,
+    notifyEmail: env.ORDER_NOTIFY_EMAIL || ''         // restaurant inbox for new orders (optional)
+  },
+
   // Reservations (restaurant local time)
   reservations: {
     timeZone: 'Asia/Baku',

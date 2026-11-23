@@ -7,12 +7,12 @@
   "private": true,
   "scripts": {
     "start": "node src/server.js",
-    "test-email": "node src/scripts/test-email.js",
     "dev": "node --watch src/server.js",
     "migrate": "node src/scripts/migrate.js",
     "seed": "node src/scripts/seed.js",
     "db:reset": "node src/scripts/migrate.js --reset && node src/scripts/seed.js",
-    "make-admin": "node src/scripts/make-admin.js"
+    "make-admin": "node src/scripts/make-admin.js",
+    "test-email": "node src/scripts/test-email.js"
   },
   "engines": {
     "node": ">=20"

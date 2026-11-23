@@ -36,7 +36,7 @@ async function sendViaBrevo({ to, subject, text, html }) {
 
 const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-/** Checks the email settings (used by `npm run test-email`). */
+/** Checks the SMTP login (used by `npm run test-email`). */
 export const verifySmtp = async () => {
   if (config.brevoApiKey) {
     const res = await fetch('https://api.brevo.com/v3/account', { headers: { 'api-key': config.brevoApiKey, accept: 'application/json' } });
@@ -111,5 +111,88 @@ export async function sendReservationStatusEmail(user, reservation) {
       <p style="margin:0 0 6px">${escapeHtml(t(lang, 'mail.hi', vars))}</p>
       <p style="margin:0 0 12px">${escapeHtml(tr('line'))}</p>
       ${note ? `<p style="margin:0;padding:12px;background:#f7ebe3;border-radius:10px">${escapeHtml(note)}</p>` : ''}`)
+  });
+}
+
+/* ---------- Orders ---------- */
+const azn = n => `${Number(n).toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1')} ₼`;
+
+function orderTable(lang, order) {
+  const rows = order.items.map(i => `
+    <tr>
+      <td style="padding:8px 0;border-bottom:1px solid #f0dcd5">${escapeHtml(i.name)}${i.variantLabel ? ` <span style="color:#6e5559">(${escapeHtml(i.variantLabel)})</span>` : ''}</td>
+      <td style="padding:8px 6px;border-bottom:1px solid #f0dcd5;text-align:center;white-space:nowrap">× ${i.quantity}</td>
+      <td style="padding:8px 0;border-bottom:1px solid #f0dcd5;text-align:right;white-space:nowrap">${azn(i.lineTotal)}</td>
+    </tr>`).join('');
+  const fee = order.deliveryFee > 0
+    ? `<tr><td colspan="2" style="padding:6px 0;color:#6e5559">${escapeHtml(t(lang, 'mail.order.fee'))}</td><td style="text-align:right">${azn(order.deliveryFee)}</td></tr>` : '';
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:16px 0;font-size:15px">${rows}${fee}
+    <tr><td colspan="2" style="padding:10px 0;font-weight:bold">${escapeHtml(t(lang, 'mail.order.total'))}</td>
+        <td style="padding:10px 0;text-align:right;font-weight:bold;color:#7a1f2e;font-size:18px">${azn(order.total)}</td></tr></table>`;
+}
+function orderText(lang, order) {
+  const lines = order.items.map(i => `• ${i.name}${i.variantLabel ? ` (${i.variantLabel})` : ''} × ${i.quantity} — ${azn(i.lineTotal)}`);
+  if (order.deliveryFee > 0) lines.push(`${t(lang, 'mail.order.fee')}: ${azn(order.deliveryFee)}`);
+  lines.push(`${t(lang, 'mail.order.total')}: ${azn(order.total)}`);
+  return lines.join('\n');
+}
+function orderInfo(lang, order) {
+  const how = t(lang, `mail.order.${order.fulfillment}`);
+  const pay = t(lang, `mail.order.pay.${order.payment}`);
+  return [how + (order.address ? `: ${order.address}` : ''), pay, `${t(lang, 'mail.order.phone')}: ${order.phone}`];
+}
+
+/** Sent to the customer right after ordering. */
+export async function sendOrderReceivedEmail(user, order) {
+  const lang = user.locale || 'az';
+  const vars = { id: order.id, name: user.full_name };
+  const info = orderInfo(lang, order);
+  await sendMail({
+    to: user.email,
+    subject: t(lang, 'mail.order.subject', vars),
+    text: `${t(lang, 'mail.hi', vars)}\n\n${t(lang, 'mail.order.lead', vars)}\n\n${orderText(lang, order)}\n\n${info.join('\n')}`,
+    html: layout(lang, t(lang, 'mail.order.title', vars), `
+      <p style="margin:0 0 6px">${escapeHtml(t(lang, 'mail.hi', vars))}</p>
+      <p style="margin:0">${escapeHtml(t(lang, 'mail.order.lead', vars))}</p>
+      ${orderTable(lang, order)}
+      <p style="margin:0;color:#6e5559;font-size:14px">${info.map(escapeHtml).join('<br>')}</p>`)
+  });
+}
+
+/** Sent to the restaurant inbox (ORDER_NOTIFY_EMAIL) when a new order arrives. */
+export async function sendNewOrderNotice(order) {
+  if (!config.orders.notifyEmail) return;
+  const lang = 'az';
+  const info = orderInfo(lang, order);
+  const who = order.user ? `${order.user.name} <${order.user.email}>` : '';
+  await sendMail({
+    to: config.orders.notifyEmail,
+    subject: t(lang, 'mail.order.newSubject', { id: order.id, total: azn(order.total) }),
+    text: `${who}\n\n${orderText(lang, order)}\n\n${info.join('\n')}${order.note ? `\n\n${order.note}` : ''}\n\n${config.appUrl}/admin-orders.html`,
+    html: layout(lang, t(lang, 'mail.order.newTitle', { id: order.id }), `
+      <p style="margin:0">${escapeHtml(who)}</p>
+      ${orderTable(lang, order)}
+      <p style="margin:0 0 12px;color:#6e5559;font-size:14px">${info.map(escapeHtml).join('<br>')}</p>
+      ${order.note ? `<p style="margin:0 0 12px;padding:12px;background:#f7ebe3;border-radius:10px">${escapeHtml(order.note)}</p>` : ''}
+      <p style="margin:0"><a href="${escapeHtml(config.appUrl)}/admin-orders.html" style="color:#7a1f2e;font-weight:bold">${escapeHtml(t(lang, 'mail.order.open'))}</a></p>`)
+  });
+}
+
+/** Sent to the customer when the restaurant confirms, readies or declines an order. */
+export async function sendOrderStatusEmail(user, order) {
+  const lang = user.locale || 'az';
+  const kind = order.status === 'ready' ? (order.fulfillment === 'delivery' ? 'onTheWay' : 'ready') : order.status;
+  const vars = { id: order.id, name: user.full_name, note: order.adminNote };
+  const line = t(lang, `mail.order.status.${kind}`, vars);
+  const note = order.adminNote ? t(lang, 'mail.res.note', vars) : '';
+  await sendMail({
+    to: user.email,
+    subject: t(lang, 'mail.order.statusSubject', vars),
+    text: `${t(lang, 'mail.hi', vars)}\n\n${line}${note ? `\n\n${note}` : ''}\n\n${orderText(lang, order)}`,
+    html: layout(lang, t(lang, 'mail.order.statusSubject', vars), `
+      <p style="margin:0 0 6px">${escapeHtml(t(lang, 'mail.hi', vars))}</p>
+      <p style="margin:0 0 12px">${escapeHtml(line)}</p>
+      ${note ? `<p style="margin:0;padding:12px;background:#f7ebe3;border-radius:10px">${escapeHtml(note)}</p>` : ''}
+      ${orderTable(lang, order)}`)
   });
 }

@@ -1,10 +1,10 @@
 /* Account: profile, activity, reservations, favorites, settings */
 (async () => {
-  const { $, $$, escapeHTML, loadingHTML, requireLogin, toast, dishCard, favorites, syncFavButtons, showMsg, showFieldErrors, setBusy, ratingNum } = TW;
+  const { $, $$, escapeHTML, loadingHTML, requireLogin, toast, dishCard, favorites, syncFavButtons, showMsg, showFieldErrors, setBusy, ratingNum, price, cart, I } = TW;
   let me = await requireLogin();
 
   /* ---------- Sections (#profile, #reservations, #favorites, #settings) ---------- */
-  const VIEWS = ['profile', 'reservations', 'favorites', 'settings'];
+  const VIEWS = ['profile', 'orders', 'reservations', 'favorites', 'settings'];
   const loaded = new Set();
   function show(view) {
     if (!VIEWS.includes(view)) view = 'profile';
@@ -16,7 +16,7 @@
     });
     if (!loaded.has(view)) {
       loaded.add(view);
-      ({ profile: loadProfile, reservations: loadReservations, favorites: loadFavs, settings: renderSettings })[view]();
+      ({ profile: loadProfile, orders: loadOrders, reservations: loadReservations, favorites: loadFavs, settings: renderSettings })[view]();
     }
   }
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
@@ -121,6 +121,68 @@
       loadReservations();
       loaded.delete('profile'); // refresh the counters next time
     } catch (err) { toast(err.message, 'error'); b.disabled = false; }
+  });
+
+  /* ---------- Orders ---------- */
+  const ordersList = $('#ordersList');
+  const statusLabel = o => t(`ostatus.${o.status === 'ready' && o.fulfillment === 'delivery' ? 'onTheWay' : o.status}`);
+  async function loadOrders() {
+    ordersList.innerHTML = loadingHTML();
+    try {
+      const { orders } = await api.myOrders();
+      if (!orders.length) {
+        ordersList.innerHTML = `<div class="empty-box"><strong>${escapeHTML(t('account.ordersEmptyTitle'))}</strong>${escapeHTML(t('account.ordersEmptyText'))}<br /><a class="btn btn-primary" href="explore.html">${escapeHTML(t('order.browse'))}</a></div>`;
+        return;
+      }
+      ordersList.innerHTML = orders.map(o => `
+        <article class="order-card">
+          <header>
+            <div>
+              <h3>${escapeHTML(t('account.orderNo', { id: o.id }))} <span class="status ostatus-${o.status}">${escapeHTML(statusLabel(o))}</span></h3>
+              <p class="muted">${escapeHTML(I18N.fmtDate(new Date(o.createdAt), { day: 'numeric', month: 'long', year: 'numeric' }))} · ${new Date(o.createdAt).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Baku' })} · ${escapeHTML(t(o.fulfillment === 'delivery' ? 'order.deliveryOpt' : 'order.pickup'))}</p>
+            </div>
+            <strong class="order-card-total">${escapeHTML(price(o.total))}</strong>
+          </header>
+          <ul class="order-card-items">
+            ${o.items.map(i => `<li>
+              <span class="oc-photo">${i.imageUrl ? `<img src="${escapeHTML(i.imageUrl)}" alt="" loading="lazy" />` : I.bag}</span>
+              <span class="oc-name">${escapeHTML(i.name)}${i.variantLabel ? ` <small>${escapeHTML(i.variantLabel)}</small>` : ''}</span>
+              <span class="oc-qty">${escapeHTML(price(i.unitPrice))} × ${i.quantity}</span>
+              <strong>${escapeHTML(price(i.lineTotal))}</strong></li>`).join('')}
+          </ul>
+          ${o.adminNote ? `<p class="oc-note"><strong>${escapeHTML(t('account.afaNote'))}</strong> ${escapeHTML(o.adminNote)}</p>` : ''}
+          <footer>
+            ${o.canCancel ? `<button type="button" class="btn btn-danger btn-sm" data-cancel-order="${o.id}">${escapeHTML(t('account.cancelOrder'))}</button>` : ''}
+            <button type="button" class="btn btn-ghost btn-sm" data-repeat="${o.id}">${escapeHTML(t('account.repeat'))}</button>
+          </footer>
+        </article>`).join('');
+      ordersList._orders = orders;
+    } catch (err) {
+      ordersList.innerHTML = `<div class="empty-box">${escapeHTML(err.message)}</div>`;
+    }
+  }
+  ordersList.addEventListener('error', e => { if (e.target.tagName === 'IMG') e.target.remove(); }, true);
+  ordersList.addEventListener('click', async e => {
+    const c = e.target.closest('[data-cancel-order]');
+    const r = e.target.closest('[data-repeat]');
+    if (c) {
+      if (!window.confirm(t('account.confirmCancelOrder'))) return;
+      c.disabled = true;
+      try { const res = await api.cancelOrder(c.dataset.cancelOrder); toast(res.message); loadOrders(); }
+      catch (err) { toast(err.message, 'error'); c.disabled = false; }
+    }
+    if (r) {
+      // Put the same dishes back in the cart; the server re-checks today's prices
+      const o = ordersList._orders.find(x => x.id === Number(r.dataset.repeat));
+      const items = cart.items();
+      o.items.filter(i => i.dishId).forEach(i => {
+        const same = items.find(x => x.dishId === i.dishId && (x.variant || null) === (i.variant || null));
+        if (same) same.quantity = Math.min(20, same.quantity + i.quantity);
+        else items.push({ dishId: i.dishId, variant: i.variant, quantity: i.quantity, name: i.name, variantLabel: i.variantLabel, price: i.unitPrice, imageUrl: i.imageUrl });
+      });
+      cart.replace(items);
+      location.assign('order.html');
+    }
   });
 
   /* ---------- Favorites ---------- */

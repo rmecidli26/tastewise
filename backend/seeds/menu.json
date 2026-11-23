@@ -3,29 +3,50 @@
     "slug": "afa",
     "name": "AFA Restaurant",
     "description": "AFA Restaurant is more than just a place to eat — it's a destination for great food, warm atmosphere and unforgettable moments. From classic favorites to modern dishes, AFA offers a unique dining experience for everyone.",
-    "address": "Sumqayit, Azerbaijan",
-    "city": "Sumqayit",
+    "address": "Seaside Boulevard, Neftchilar Ave, Baku",
+    "city": "Baku",
     "phone": "+994 50 123 45 67",
     "email": "info@afa-restaurant.az",
     "opening_hours": {
-      "mon": ["10:00", "23:00"],
-      "tue": ["10:00", "23:00"],
-      "wed": ["10:00", "23:00"],
-      "thu": ["10:00", "23:00"],
-      "fri": ["10:00", "23:00"],
-      "sat": ["10:00", "23:00"],
-      "sun": ["10:00", "23:00"]
+      "mon": [
+        "10:00",
+        "23:00"
+      ],
+      "tue": [
+        "10:00",
+        "23:00"
+      ],
+      "wed": [
+        "10:00",
+        "23:00"
+      ],
+      "thu": [
+        "10:00",
+        "23:00"
+      ],
+      "fri": [
+        "10:00",
+        "23:00"
+      ],
+      "sat": [
+        "10:00",
+        "23:00"
+      ],
+      "sun": [
+        "10:00",
+        "23:00"
+      ]
     },
     "i18n": {
       "az": {
         "description": "AFA Restaurant sadəcə yemək yeri deyil — dadlı yeməklər, isti atmosfer və unudulmaz anlar məkanıdır. Sevilən klassik yeməklərdən müasir mətbəxə qədər AFA hər kəsə özünəməxsus qastronomik təcrübə təqdim edir.",
-        "address": "Sumqayıt, Azərbaycan",
-        "city": "Sumqayıt"
+        "address": "Dənizkənarı Bulvar, Neftçilər prospekti, Bakı",
+        "city": "Bakı"
       },
       "ru": {
         "description": "AFA Restaurant — это больше, чем просто ресторан: это место вкусной еды, тёплой атмосферы и незабываемых моментов. От любимой классики до современных блюд — AFA дарит каждому гостю особые гастрономические впечатления.",
-        "address": "Сумгаит, Азербайджан",
-        "city": "Сумгаит"
+        "address": "Приморский бульвар, пр. Нефтчиляр, Баку",
+        "city": "Баку"
       }
     }
   },
@@ -49,7 +70,17 @@
       }
     }
   ],
-  "allergens": ["pizza dough", "mozzarella", "cheddar", "cheese", "butter", "lavash", "bread", "tombik bread", "tuna"],
+  "allergens": [
+    "pizza dough",
+    "mozzarella",
+    "cheddar",
+    "cheese",
+    "butter",
+    "lavash",
+    "bread",
+    "tombik bread",
+    "tuna"
+  ],
   "ingredient_names": {
     "arabic sauce": {
       "az": "ərəb sousu",
@@ -202,10 +233,24 @@
       "image": "images/dishes/margherita.jpg",
       "best_seller": false,
       "description": "Pizza sauce, tomato, mozzarella and oregano.",
-      "diet": ["vegetarian"],
-      "mood": ["light", "comfort"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["pizza dough", "pizza sauce", "tomato", "mozzarella", "oregano"],
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "pizza dough",
+        "pizza sauce",
+        "tomato",
+        "mozzarella",
+        "oregano"
+      ],
       "variants": [
         {
           "code": "18",
@@ -255,10 +300,28 @@
       "image": "images/dishes/veggie-pizza.jpg",
       "best_seller": true,
       "description": "Pizza sauce, mozzarella, mushrooms, peppers, tomato, onion, olives and oregano.",
-      "diet": ["vegetarian"],
-      "mood": ["light", "comfort"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "mushrooms", "pepper", "tomato", "onion", "olives", "oregano"],
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "pizza dough",
+        "pizza sauce",
+        "mozzarella",
+        "mushrooms",
+        "pepper",
+        "tomato",
+        "onion",
+        "olives",
+        "oregano"
+      ],
       "variants": [
         {
           "code": "18",
@@ -309,9 +372,23 @@
       "best_seller": false,
       "description": "BBQ sauce, mozzarella, chicken, peppers, mushrooms and oregano.",
       "diet": [],
-      "mood": ["hearty", "celebration"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["pizza dough", "bbq sauce", "mozzarella", "chicken", "pepper", "mushrooms", "oregano"],
+      "mood": [
+        "hearty",
+        "celebration"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "pizza dough",
+        "bbq sauce",
+        "mozzarella",
+        "chicken",
+        "pepper",
+        "mushrooms",
+        "oregano"
+      ],
       "variants": [
         {
           "code": "18",
@@ -362,9 +439,23 @@
       "best_seller": false,
       "description": "Minced beef, mushrooms, onion, mozzarella, pizza sauce and oregano.",
       "diet": [],
-      "mood": ["hearty", "celebration"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["pizza dough", "minced beef", "mushrooms", "onion", "mozzarella", "pizza sauce", "oregano"],
+      "mood": [
+        "hearty",
+        "celebration"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "pizza dough",
+        "minced beef",
+        "mushrooms",
+        "onion",
+        "mozzarella",
+        "pizza sauce",
+        "oregano"
+      ],
       "variants": [
         {
           "code": "18",
@@ -415,9 +506,25 @@
       "best_seller": false,
       "description": "Pizza sauce, mozzarella, tuna, onion, peppers, olives, basil and oregano.",
       "diet": [],
-      "mood": ["light", "celebration"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "tuna", "onion", "pepper", "olives", "basil", "oregano"],
+      "mood": [
+        "light",
+        "celebration"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "pizza dough",
+        "pizza sauce",
+        "mozzarella",
+        "tuna",
+        "onion",
+        "pepper",
+        "olives",
+        "basil",
+        "oregano"
+      ],
       "variants": [
         {
           "code": "18",
@@ -468,9 +575,22 @@
       "best_seller": true,
       "description": "Pizza sauce, mozzarella, chicken, corn and peppers.",
       "diet": [],
-      "mood": ["comfort", "celebration"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "chicken", "corn", "pepper"],
+      "mood": [
+        "comfort",
+        "celebration"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "pizza dough",
+        "pizza sauce",
+        "mozzarella",
+        "chicken",
+        "corn",
+        "pepper"
+      ],
       "variants": [
         {
           "code": "18",
@@ -520,10 +640,25 @@
       "image": "images/dishes/mushroom-and-cheese-pizza.jpg",
       "best_seller": true,
       "description": "Mushrooms, mozzarella, a touch of cheddar, oregano and pizza sauce.",
-      "diet": ["vegetarian"],
-      "mood": ["comfort", "celebration"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["pizza dough", "mushrooms", "mozzarella", "cheddar", "oregano", "pizza sauce"],
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "comfort",
+        "celebration"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "pizza dough",
+        "mushrooms",
+        "mozzarella",
+        "cheddar",
+        "oregano",
+        "pizza sauce"
+      ],
       "variants": [
         {
           "code": "18",
@@ -574,9 +709,22 @@
       "best_seller": false,
       "description": "Pizza sauce, mozzarella, fried chicken, garlic and oregano.",
       "diet": [],
-      "mood": ["comfort", "celebration"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "chicken", "garlic", "oregano"],
+      "mood": [
+        "comfort",
+        "celebration"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "pizza dough",
+        "pizza sauce",
+        "mozzarella",
+        "chicken",
+        "garlic",
+        "oregano"
+      ],
       "variants": [
         {
           "code": "18",
@@ -627,9 +775,23 @@
       "best_seller": false,
       "description": "Pizza sauce, mozzarella, chicken, minced beef, a little pepperoni and oregano.",
       "diet": [],
-      "mood": ["hearty", "celebration"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["pizza dough", "pizza sauce", "mozzarella", "chicken", "minced beef", "pepperoni", "oregano"],
+      "mood": [
+        "hearty",
+        "celebration"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "pizza dough",
+        "pizza sauce",
+        "mozzarella",
+        "chicken",
+        "minced beef",
+        "pepperoni",
+        "oregano"
+      ],
       "variants": [
         {
           "code": "18",
@@ -680,9 +842,22 @@
       "best_seller": false,
       "description": "Chicken or meat in light lavash with fresh tomato, cucumber and a spiced sauce.",
       "diet": [],
-      "mood": ["light", "comfort"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["chicken", "meat", "lavash", "tomato", "cucumber", "spiced sauce"],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "meat",
+        "lavash",
+        "tomato",
+        "cucumber",
+        "spiced sauce"
+      ],
       "variants": [
         {
           "code": "chicken",
@@ -724,9 +899,22 @@
       "best_seller": true,
       "description": "Chicken or meat in soft lavash with fries, pickles and a spiced Arabic sauce.",
       "diet": [],
-      "mood": ["hearty", "comfort"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["chicken", "meat", "lavash", "potato", "pickles", "arabic sauce"],
+      "mood": [
+        "hearty",
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "meat",
+        "lavash",
+        "potato",
+        "pickles",
+        "arabic sauce"
+      ],
       "variants": [
         {
           "code": "chicken",
@@ -768,9 +956,23 @@
       "best_seller": false,
       "description": "Chicken or meat on saffron rice, served with cucumber, tomato and hot peppers.",
       "diet": [],
-      "mood": ["hearty", "comfort"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["chicken", "meat", "rice", "saffron", "cucumber", "tomato", "hot pepper"],
+      "mood": [
+        "hearty",
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "meat",
+        "rice",
+        "saffron",
+        "cucumber",
+        "tomato",
+        "hot pepper"
+      ],
       "variants": [
         {
           "code": "chicken",
@@ -812,9 +1014,22 @@
       "best_seller": false,
       "description": "Marinated chicken or meat in lavash or soft bread with tomato and cucumber — hearty and satisfying.",
       "diet": [],
-      "mood": ["hearty", "comfort"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["chicken", "meat", "lavash", "bread", "tomato", "cucumber"],
+      "mood": [
+        "hearty",
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "meat",
+        "lavash",
+        "bread",
+        "tomato",
+        "cucumber"
+      ],
       "variants": [
         {
           "code": "chicken",
@@ -856,9 +1071,23 @@
       "best_seller": true,
       "description": "The classic Iskender: lavash, chicken or meat, tomato, onion, cheese and melted butter.",
       "diet": [],
-      "mood": ["hearty", "celebration"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["chicken", "meat", "lavash", "tomato", "onion", "cheese", "butter"],
+      "mood": [
+        "hearty",
+        "celebration"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "meat",
+        "lavash",
+        "tomato",
+        "onion",
+        "cheese",
+        "butter"
+      ],
       "variants": [
         {
           "code": "chicken",
@@ -900,9 +1129,23 @@
       "best_seller": true,
       "description": "Chicken or meat in lavash with tomato, peppers, garlic and butter.",
       "diet": [],
-      "mood": ["hearty", "celebration"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["chicken", "meat", "lavash", "tomato", "pepper", "garlic", "butter"],
+      "mood": [
+        "hearty",
+        "celebration"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "meat",
+        "lavash",
+        "tomato",
+        "pepper",
+        "garlic",
+        "butter"
+      ],
       "variants": [
         {
           "code": "chicken",
@@ -944,9 +1187,22 @@
       "best_seller": false,
       "description": "A modern döner: chicken or meat in light lavash with lettuce, tomato and our signature hot-honey sauce.",
       "diet": [],
-      "mood": ["light", "comfort"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["chicken", "meat", "lavash", "lettuce", "tomato", "hot honey sauce"],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "meat",
+        "lavash",
+        "lettuce",
+        "tomato",
+        "hot honey sauce"
+      ],
       "variants": [
         {
           "code": "chicken",
@@ -988,9 +1244,23 @@
       "best_seller": false,
       "description": "Chicken or meat in soft tombik bread filled with tomato, onion, cheese and pickled peppers.",
       "diet": [],
-      "mood": ["hearty", "comfort"],
-      "meal": ["lunch", "dinner"],
-      "ingredients": ["chicken", "meat", "tombik bread", "tomato", "onion", "cheese", "pickled peppers"],
+      "mood": [
+        "hearty",
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "meat",
+        "tombik bread",
+        "tomato",
+        "onion",
+        "cheese",
+        "pickled peppers"
+      ],
       "variants": [
         {
           "code": "chicken",

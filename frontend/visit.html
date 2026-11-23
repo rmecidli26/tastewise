@@ -80,7 +80,7 @@
           <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span data-i18n="visit.locTitle"></span></h3>
           <p><strong>AFA Restaurant</strong></p>
           <p data-restaurant="address"></p>
-          <a class="btn btn-ghost btn-sm" style="margin-top:.6rem" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=AFA+Restaurant+Sumqayit"><span data-i18n="visit.directions"></span> <svg class="arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn btn-ghost btn-sm" style="margin-top:.6rem" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=40.3689%2C49.8431"><span data-i18n="visit.directions"></span> <svg class="arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="loc-col">
           <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="info.hours"></span></h3>
@@ -92,8 +92,13 @@
           <p><a data-restaurant="phone" href="tel:+994501234567">+994 50 123 45 67</a></p>
           <p><a data-restaurant="email" href="mailto:info@afa-restaurant.az">info@afa-restaurant.az</a></p>
         </div>
-        <div class="map"><iframe data-i18n-attr="title:visit.mapTitle" loading="lazy" referrerpolicy="no-referrer"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=49.6386%2C40.5747%2C49.6986%2C40.6047&amp;layer=mapnik&amp;marker=40.5897%2C49.6686"></iframe></div>
+        <div class="map">
+          <iframe data-i18n-attr="title:visit.mapTitle" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"
+            src="https://maps.google.com/maps?q=40.3689,49.8431&amp;z=15&amp;hl=az&amp;output=embed"></iframe>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=40.3689%2C49.8431" target="_blank" rel="noopener" data-gmaps>
+            <span class="map-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span data-i18n="visit.mapOpen"></span></span>
+          </a>
+        </div>
       </div>
     </section>
 

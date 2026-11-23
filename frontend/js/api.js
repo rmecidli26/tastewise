@@ -84,9 +84,17 @@ const api = {
   myReservations: () => request('/me/reservations'),
   cancelReservation: id => request(`/me/reservations/${id}/cancel`, { method: 'POST' }),
 
+  // orders
+  orderConfig: () => request('/orders/config'),
+  placeOrder: body => request('/orders', { method: 'POST', body }),
+  myOrders: () => request('/me/orders'),
+  cancelOrder: id => request(`/me/orders/${id}/cancel`, { method: 'POST' }),
+
   // admin
   adminReservations: query => request('/admin/reservations', { query }),
-  adminUpdateReservation: (id, body) => request(`/admin/reservations/${id}`, { method: 'PATCH', body })
+  adminUpdateReservation: (id, body) => request(`/admin/reservations/${id}`, { method: 'PATCH', body }),
+  adminOrders: query => request('/admin/orders', { query }),
+  adminUpdateOrder: (id, body) => request(`/admin/orders/${id}`, { method: 'PATCH', body })
 };
 
 window.api = api;

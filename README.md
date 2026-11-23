@@ -82,6 +82,8 @@ tastewise/
 │  ├─ about.html      haqqımızda
 │  ├─ visit.html      AFA-ya gəlin: restoran, qalereya, xəritə
 │  ├─ reserve.html    masa sifarişi
+│  ├─ order.html      onlayn sifariş (səbət)
+│  ├─ admin-orders.html  gələn sifarişlər (admin)
 │  ├─ account.html    hesabım: profil, fəaliyyət, rezervasiyalar, sevimlilər, tənzimləmələr
 │  ├─ login.html  register.html  verify.html  forgot.html  admin.html  404.html
 │  ├─ menu.html       köhnə link → explore.html
@@ -89,7 +91,7 @@ tastewise/
 │  ├─ css/style.css
 │  └─ js/  i18n.js  api.js  common.js  <səhifə>.js
 └─ backend/
-   ├─ migrations/001_init.sql  002_i18n.sql  003_menu_variants.sql  004_profile.sql
+   ├─ migrations/001_init.sql  002_i18n.sql  003_menu_variants.sql  004_profile.sql  005_orders.sql
    ├─ seeds/menu.json
    └─ src/
       ├─ server.js  app.js  config.js  db.js  i18n.js
@@ -121,6 +123,10 @@ tastewise/
 | GET · POST | `/api/me/reservations` · `/:id/cancel` | ✔ | Öz rezervasiyaları |
 | GET · PATCH | `/api/admin/reservations[/:id]` | admin | Təsdiq / rədd |
 | POST | `/api/newsletter` | — | `{ email }` — xəbər abunəsi |
+| GET | `/api/orders/config` | — | Çatdırılma haqqı və minimum məbləğ |
+| POST | `/api/orders` | ✔ təsdiqli | `{ items:[{dishId, variant, quantity}], fulfillment: pickup·delivery, payment: cash·card, address, phone, note }` — qiymətləri server hesablayır |
+| GET | `/api/me/orders` · POST `/api/me/orders/:id/cancel` | ✔ | Sifarişlərim / gözləyən sifarişi ləğv et |
+| GET · PATCH | `/api/admin/orders[/:id]` | admin | Təsdiq → hazır → tamamlandı (və ya rədd) |
 
 Xəta formatı: `{ "error": { "code": "INVALID_CODE", "message": "...", "details": ... } }`
 
@@ -137,3 +143,16 @@ Xəta formatı: `{ "error": { "code": "INVALID_CODE", "message": "...", "details
 2. `NODE_ENV=production`, uzun təsadüfi `JWT_SECRET`, `APP_URL=https://your-domain`.
 3. SMTP məlumatları.
 4. `npm ci && npm run migrate && npm run seed && npm start` (HTTPS arxasında).
+
+
+## Onlayn sifariş
+
+Səbət brauzerdə saxlanılır. Sifariş üçün hesaba daxil olmaq lazımdır. Ödəniş təhvil zamanı edilir (nağd və ya kart), restorandan götürmə və ya çatdırılma seçilir. Bütün qiymətləri server bazadan özü hesablayır.
+
+İstəyə görə `.env` / Render dəyişənləri:
+
+| Dəyişən | Mənası |
+|---|---|
+| `ORDER_NOTIFY_EMAIL` | Yeni sifariş gələndə restorana email (məs. `info@afa-restaurant.az`) |
+| `DELIVERY_FEE` | Çatdırılma haqqı, ₼ (default `0` — pulsuz) |
+| `ORDER_MIN_TOTAL` | Çatdırılma üçün minimum sifariş, ₼ (default `0`) |

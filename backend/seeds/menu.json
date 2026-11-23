@@ -71,11 +71,20 @@
     },
     {
       "slug": "drinks",
-      "name": "Drinks",
+      "name": "Soft drinks",
+      "sort_order": 4,
+      "i18n": {
+        "az": "Alkoqolsuz içkilər",
+        "ru": "Безалкогольные напитки"
+      }
+    },
+    {
+      "slug": "desserts",
+      "name": "Desserts",
       "sort_order": 3,
       "i18n": {
-        "az": "İçkilər",
-        "ru": "Напитки"
+        "az": "Şirniyyatlar",
+        "ru": "Десерты"
       }
     }
   ],
@@ -89,7 +98,13 @@
     "bread",
     "tombik bread",
     "tuna",
-    "yoghurt"
+    "yoghurt",
+    "walnut",
+    "egg",
+    "flour",
+    "mascarpone",
+    "cream cheese",
+    "pistachio"
   ],
   "ingredient_names": {
     "arabic sauce": {
@@ -279,6 +294,66 @@
     "thyme": {
       "az": "kəklikotu",
       "ru": "чабрец"
+    },
+    "walnut": {
+      "az": "qoz",
+      "ru": "грецкий орех"
+    },
+    "pistachio": {
+      "az": "püstə",
+      "ru": "фисташки"
+    },
+    "phyllo dough": {
+      "az": "yuxa xəmir",
+      "ru": "тесто фило"
+    },
+    "honey syrup": {
+      "az": "bal şərbəti",
+      "ru": "медовый сироп"
+    },
+    "cardamom": {
+      "az": "hil",
+      "ru": "кардамон"
+    },
+    "flour": {
+      "az": "un",
+      "ru": "мука"
+    },
+    "egg": {
+      "az": "yumurta",
+      "ru": "яйца"
+    },
+    "mascarpone": {
+      "az": "maskarpone",
+      "ru": "маскарпоне"
+    },
+    "coffee": {
+      "az": "qəhvə",
+      "ru": "кофе"
+    },
+    "cocoa": {
+      "az": "kakao",
+      "ru": "какао"
+    },
+    "savoiardi": {
+      "az": "savoyardi peçenyesi",
+      "ru": "печенье савоярди"
+    },
+    "cream cheese": {
+      "az": "krem pendir",
+      "ru": "сливочный сыр"
+    },
+    "blueberry": {
+      "az": "qaragilə",
+      "ru": "черника"
+    },
+    "dark chocolate": {
+      "az": "tünd şokolad",
+      "ru": "тёмный шоколад"
+    },
+    "vanilla": {
+      "az": "vanil",
+      "ru": "ваниль"
     }
   },
   "dishes": [
@@ -1737,6 +1812,268 @@
         "ru": {
           "name": "Розовый шербет",
           "description": "Традиционный шербет с лепестками розы, шафраном и лимоном."
+        }
+      }
+    },
+    {
+      "slug": "paxlava",
+      "name": "Baku Pakhlava",
+      "category": "desserts",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": "https://images.unsplash.com/photo-1761828122856-8703baac8e86?auto=format&fit=crop&w=800&q=80",
+      "best_seller": true,
+      "description": "Classic Baku pakhlava — thin layers of dough, walnuts, cardamom and saffron, soaked in honey syrup.",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "celebration",
+        "comfort"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "phyllo dough",
+        "walnut",
+        "honey syrup",
+        "butter",
+        "cardamom",
+        "saffron"
+      ],
+      "variants": [
+        {
+          "code": "1",
+          "label": {
+            "az": "1 ədəd",
+            "en": "1 piece",
+            "ru": "1 шт."
+          },
+          "price": 1.5
+        },
+        {
+          "code": "4",
+          "label": {
+            "az": "4 ədəd",
+            "en": "4 pieces",
+            "ru": "4 шт."
+          },
+          "price": 5.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Bakı paxlavası",
+          "description": "Klassik Bakı paxlavası — nazik xəmir qatları, qoz, hil və zəfəran, bal şərbətində."
+        },
+        "ru": {
+          "name": "Бакинская пахлава",
+          "description": "Классическая бакинская пахлава — тонкие слои теста, грецкий орех, кардамон и шафран в медовом сиропе."
+        }
+      }
+    },
+    {
+      "slug": "shekerchorek",
+      "name": "Shakarchorek",
+      "category": "desserts",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": "https://images.unsplash.com/photo-1513519683267-4ee6761728ac?auto=format&fit=crop&w=800&q=80",
+      "best_seller": false,
+      "description": "Melt-in-the-mouth Azerbaijani butter cookies with a hint of vanilla.",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "dessert",
+        "breakfast"
+      ],
+      "ingredients": [
+        "flour",
+        "butter",
+        "sugar",
+        "egg",
+        "vanilla"
+      ],
+      "variants": [
+        {
+          "code": "3",
+          "label": {
+            "az": "3 ədəd",
+            "en": "3 pieces",
+            "ru": "3 шт."
+          },
+          "price": 2.0
+        },
+        {
+          "code": "6",
+          "label": {
+            "az": "6 ədəd",
+            "en": "6 pieces",
+            "ru": "6 шт."
+          },
+          "price": 3.8
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Şəkərçörəyi",
+          "description": "Ağızda əriyən kərəli Azərbaycan şəkərçörəyi, yüngül vanil ətri ilə."
+        },
+        "ru": {
+          "name": "Шекерчорек",
+          "description": "Тающее во рту азербайджанское песочное печенье с лёгким ароматом ванили."
+        }
+      }
+    },
+    {
+      "slug": "tiramisu",
+      "name": "Tiramisu",
+      "category": "desserts",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": "https://images.unsplash.com/photo-1766232333746-b0a2697d6d0d?auto=format&fit=crop&w=800&q=80",
+      "best_seller": false,
+      "description": "Savoiardi soaked in coffee, layered with mascarpone cream and dusted with cocoa.",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "celebration",
+        "comfort"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "savoiardi",
+        "mascarpone",
+        "coffee",
+        "egg",
+        "sugar",
+        "cocoa"
+      ],
+      "variants": [
+        {
+          "code": "slice",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 6.0
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Tiramisu",
+          "description": "Qəhvəyə batırılmış savoyardi, maskarpone kremi və kakao."
+        },
+        "ru": {
+          "name": "Тирамису",
+          "description": "Савоярди, пропитанные кофе, крем из маскарпоне и какао."
+        }
+      }
+    },
+    {
+      "slug": "cheesecake",
+      "name": "Blueberry Cheesecake",
+      "category": "desserts",
+      "cuisine": "international",
+      "spice": 0,
+      "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
+      "best_seller": false,
+      "description": "Creamy baked cheesecake on a buttery biscuit base with blueberry sauce.",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "celebration",
+        "comfort"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "cream cheese",
+        "flour",
+        "butter",
+        "egg",
+        "sugar",
+        "blueberry"
+      ],
+      "variants": [
+        {
+          "code": "slice",
+          "label": {
+            "az": "1 dilim",
+            "en": "1 slice",
+            "ru": "1 кусок"
+          },
+          "price": 6.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Qaragiləli çizkeyk",
+          "description": "Kərəli peçenye əsasında kremli bişmiş çizkeyk, qaragilə sousu ilə."
+        },
+        "ru": {
+          "name": "Чизкейк с черникой",
+          "description": "Нежный запечённый чизкейк на песочной основе с черничным соусом."
+        }
+      }
+    },
+    {
+      "slug": "brownie",
+      "name": "Chocolate Brownie",
+      "category": "desserts",
+      "cuisine": "international",
+      "spice": 0,
+      "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
+      "best_seller": false,
+      "description": "Warm dark-chocolate brownie with a crisp top and fudgy centre, with walnuts.",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "dark chocolate",
+        "butter",
+        "sugar",
+        "egg",
+        "flour",
+        "walnut"
+      ],
+      "variants": [
+        {
+          "code": "1",
+          "label": {
+            "az": "1 ədəd",
+            "en": "1 piece",
+            "ru": "1 шт."
+          },
+          "price": 4.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Şokoladlı brauni",
+          "description": "İsti tünd şokoladlı brauni — üstü xırtıldayan, içi yumşaq, qozla."
+        },
+        "ru": {
+          "name": "Шоколадный брауни",
+          "description": "Тёплый брауни из тёмного шоколада — хрустящая корочка, мягкая серединка, с грецким орехом."
         }
       }
     }

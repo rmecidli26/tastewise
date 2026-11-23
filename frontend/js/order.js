@@ -7,7 +7,7 @@
   let savedCards = [];
   let cardForm = null;
   const money = n => Math.round(n * 100) / 100;
-  const ICON = { pizza: I.pizza, doner: I.wrap, drinks: I.cup };
+  const ICON = { pizza: I.pizza, doner: I.wrap, drinks: I.cup, desserts: I.cake };
 
   /* ---------- Cart list ---------- */
   function render() {

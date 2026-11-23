@@ -5,12 +5,12 @@
 
 // One word typed by the user → the ingredient names it should match
 const GROUPS = {
-  dairy: ['milk', 'cream', 'butter', 'cheese', 'cheddar', 'mozzarella', 'yoghurt', 'kaymak', 'parmesan', 'burrata'],
-  gluten: ['flour', 'bread', 'pasta', 'lavash', 'pizza dough'],
+  dairy: ['milk', 'cream', 'butter', 'cheese', 'cheddar', 'mozzarella', 'yoghurt', 'kaymak', 'parmesan', 'burrata', 'mascarpone', 'cream cheese'],
+  gluten: ['flour', 'bread', 'pasta', 'lavash', 'pizza dough', 'phyllo dough', 'savoiardi'],
   meat: ['beef', 'lamb', 'chicken', 'meat', 'pepperoni'],
   fish: ['salmon', 'sturgeon', 'anchovy', 'tuna'],
   seafood: ['shrimp', 'salmon', 'sturgeon', 'anchovy', 'tuna'],
-  nut: ['walnut', 'chestnut'],
+  nut: ['walnut', 'chestnut', 'pistachio'],
   pork: ['pork', 'bacon', 'ham']
 };
 

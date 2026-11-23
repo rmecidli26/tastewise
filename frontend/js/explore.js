@@ -1,6 +1,6 @@
 /* Explore: ingredients + budget search, filters, results */
 (() => {
-  const { $, $$, escapeHTML, price, dishCard, loadingHTML, ingredientPicker, budgetSelect, loadFavorites, syncFavButtons } = TW;
+  const { $, $$, escapeHTML, price, dishCard, loadingHTML, ingredientPicker, budgetSelect, loadFavorites, syncFavButtons, I } = TW;
   const PAGE_SIZE = 12;
   const PRICE_MAX = 30;
   const url = new URLSearchParams(location.search);
@@ -52,19 +52,33 @@
   maxR.addEventListener('input', onSlide);
   syncSlider();
 
-  /* ---------- Other filters ---------- */
-  const DRINKS = 'drinks';
-  let foodSlugs = null; // every category except drinks
+  /* ---------- Menu sections: tabs + category filter ---------- */
+  const TAB_ICON = { pizza: I.pizza, doner: I.wrap, desserts: I.cake, drinks: I.cup };
+  let cats = [];
   const catsReady = api.categories().then(({ categories }) => {
-    foodSlugs = categories.filter(c => c.slug !== DRINKS && c.dishCount > 0).map(c => c.slug);
-    $('#categoryChecks').innerHTML = categories.filter(c => c.dishCount > 0).map(c => `
+    cats = categories.filter(c => c.dishCount > 0);
+    $('#categoryChecks').innerHTML = cats.map(c => `
       <label class="check"><input type="checkbox" value="${escapeHTML(c.slug)}" ${state.category.includes(c.slug) ? 'checked' : ''} />
         <span>${escapeHTML(c.name)}</span><span class="count">${c.dishCount}</span></label>`).join('');
+    $('#menuTabs').innerHTML = `<button type="button" role="tab" data-tab="">${I.grid}<span>${escapeHTML(t('results.all'))}</span></button>` +
+      cats.map(c => `<button type="button" role="tab" data-tab="${escapeHTML(c.slug)}">${TAB_ICON[c.slug] || I.grid}<span>${escapeHTML(c.name)}</span></button>`).join('');
+    syncTabs();
   });
-  $('#categoryChecks').addEventListener('change', () => {
-    state.category = $$('#categoryChecks input:checked').map(i => i.value);
+  function syncTabs() {
+    const one = state.category.length === 1 ? state.category[0] : state.category.length ? null : '';
+    $$('#menuTabs [data-tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === one)));
+  }
+  function setCategory(list) {
+    state.category = list;
+    $$('#categoryChecks input').forEach(i => { i.checked = list.includes(i.value); });
+    syncTabs();
     load();
+  }
+  $('#menuTabs').addEventListener('click', e => {
+    const b = e.target.closest('[data-tab]'); if (!b) return;
+    setCategory(b.dataset.tab ? [b.dataset.tab] : []);
   });
+  $('#categoryChecks').addEventListener('change', () => setCategory($$('#categoryChecks input:checked').map(i => i.value)));
   const veg = $('#vegOnly'), mild = $('#mildOnly');
   veg.checked = state.veg; mild.checked = state.mild;
   veg.addEventListener('change', () => { state.veg = veg.checked; load(); });
@@ -89,63 +103,76 @@
     Object.assign(state, { prefer: [], category: [], minPrice: 0, maxPrice: 0, veg: false, mild: false, minRating: '', exclude: '', sort: '' });
     picker.set([]); budgetSelect(budget, ''); syncSlider();
     $$('#categoryChecks input').forEach(i => { i.checked = false; });
+    syncTabs();
     veg.checked = mild.checked = false; exclude.value = '';
     $$('input[name="rating"]').forEach(r => { r.checked = r.value === ''; });
     load();
   });
 
   /* ---------- Load results ---------- */
-  const grid = $('#resultsGrid'), moreBtn = $('#loadMore');
+  const grid = $('#resultsGrid'), moreBtn = $('#loadMore'), sections = $('#menuSections');
   let requestId = 0;
+  const catName = slug => cats.find(c => c.slug === slug)?.name || slug;
   async function load({ append = false } = {}) {
     const id = ++requestId;
-    if (!append) { state.page = 1; grid.innerHTML = loadingHTML(); moreBtn.hidden = true; }
     // "Best match" only makes sense with ingredients
     sortSel.querySelector('option[value="match"]').hidden = !state.prefer.length;
     sortSel.value = effectiveSort();
-    $('#resultsTitle').textContent = t(state.prefer.length ? 'results.title' : 'results.all');
     syncUrl();
+    await catsReady.catch(() => {});
+    const grouped = !state.category.length; // "All menu" → one section per category
+    $('#resultsTitle').textContent = state.prefer.length ? t('results.title')
+      : state.category.length === 1 ? catName(state.category[0]) : t('results.all');
+    if (!append) {
+      state.page = 1; moreBtn.hidden = true;
+      grid.hidden = grouped; sections.hidden = !grouped;
+      (grouped ? sections : grid).innerHTML = loadingHTML();
+    }
+    const filters = {
+      prefer: state.prefer,
+      minPrice: state.minPrice || '', maxPrice: state.maxPrice || '',
+      diet: state.veg ? 'vegetarian' : '', maxSpice: state.mild ? 0 : '',
+      minRating: state.minRating, exclude: state.exclude, sort: effectiveSort()
+    };
+    const empty = `<div class="empty-state"><strong>${escapeHTML(t('results.emptyTitle'))}</strong>${escapeHTML(t('results.emptyText'))}</div>`;
     try {
-      await catsReady.catch(() => {});
-      // No category chosen → food in the main grid, drinks in their own section below
-      const split = !state.category.length && foodSlugs?.length;
-      const filters = {
-        prefer: state.prefer,
-        minPrice: state.minPrice || '', maxPrice: state.maxPrice || '',
-        diet: state.veg ? 'vegetarian' : '', maxSpice: state.mild ? 0 : '',
-        minRating: state.minRating, exclude: state.exclude, sort: effectiveSort()
-      };
-      const [res, drinks] = await Promise.all([
-        api.dishes({ ...filters, category: split ? foodSlugs : state.category, page: state.page, limit: PAGE_SIZE }),
-        split && !append ? api.dishes({ ...filters, category: [DRINKS], limit: 24 }) : null
-      ]);
-      if (id !== requestId) return;
-      if (!append) renderDrinks(split ? drinks : null);
-      const html = res.dishes.map((d, i) => dishCard(d, i)).join('');
-      if (append) grid.insertAdjacentHTML('beforeend', html);
-      else grid.innerHTML = html || `<div class="empty-state"><strong>${escapeHTML(t('results.emptyTitle'))}</strong>${escapeHTML(t('results.emptyText'))}</div>`;
-      $('#resultCount').textContent = t('results.count', { n: res.total + (split && drinks ? drinks.total : 0) });
-      moreBtn.hidden = state.page >= res.pages;
+      if (grouped) {
+        const res = await api.dishes({ ...filters, limit: 100 });
+        if (id !== requestId) return;
+        const by = new Map(cats.map(c => [c.slug, []]));
+        res.dishes.forEach(d => { if (!by.has(d.category.slug)) by.set(d.category.slug, []); by.get(d.category.slug).push(d); });
+        let i = 0;
+        sections.innerHTML = [...by].filter(([, list]) => list.length).map(([slug, list]) => `
+          <section class="menu-section" aria-labelledby="sec-${escapeHTML(slug)}">
+            <div class="row-head">
+              <h2 id="sec-${escapeHTML(slug)}"><span class="sec-ico" aria-hidden="true">${TAB_ICON[slug] || I.grid}</span>${escapeHTML(catName(slug))}</h2>
+              <span class="line"></span>
+              <button type="button" class="btn-text" data-open="${escapeHTML(slug)}">${escapeHTML(t('home.viewAll'))} (${list.length}) →</button>
+            </div>
+            ${slug === 'drinks' ? `<p class="muted sec-sub">${escapeHTML(t('explore.drinksSub'))}</p>` : ''}
+            <div class="dish-grid cols-3">${list.map(d => dishCard(d, i++)).join('')}</div>
+          </section>`).join('') || empty;
+        $('#resultCount').textContent = t('results.count', { n: res.total });
+      } else {
+        const res = await api.dishes({ ...filters, category: state.category, page: state.page, limit: PAGE_SIZE });
+        if (id !== requestId) return;
+        const html = res.dishes.map((d, k) => dishCard(d, k)).join('');
+        if (append) grid.insertAdjacentHTML('beforeend', html); else grid.innerHTML = html || empty;
+        $('#resultCount').textContent = t('results.count', { n: res.total });
+        moreBtn.hidden = state.page >= res.pages;
+      }
       await loadFavorites();
       syncFavButtons();
     } catch (err) {
       if (id !== requestId) return;
-      grid.innerHTML = `<div class="empty-state"><strong>${escapeHTML(t('results.error'))}</strong>${escapeHTML(err.message)}</div>`;
+      (grouped ? sections : grid).innerHTML = `<div class="empty-state"><strong>${escapeHTML(t('results.error'))}</strong>${escapeHTML(err.message)}</div>`;
       $('#resultCount').textContent = '';
     }
   }
-  function renderDrinks(res) {
-    const box = $('#drinksSection');
-    box.hidden = !res?.dishes.length;
-    if (box.hidden) return;
-    $('#drinksGrid').innerHTML = res.dishes.map((d, i) => dishCard(d, i)).join('');
-    $('#drinksCount').textContent = t('results.count', { n: res.total });
-  }
-  $('#drinksAll').addEventListener('click', () => {
-    state.category = [DRINKS];
-    $$('#categoryChecks input').forEach(i => { i.checked = i.value === DRINKS; });
-    load();
-    window.scrollTo({ top: $('#resultsGrid').getBoundingClientRect().top + scrollY - 140, behavior: 'smooth' });
+  sections.addEventListener('click', e => {
+    const b = e.target.closest('[data-open]'); if (!b) return;
+    setCategory([b.dataset.open]);
+    window.scrollTo({ top: $('#menuTabs').getBoundingClientRect().top + scrollY - 110, behavior: 'smooth' });
   });
   moreBtn.addEventListener('click', () => { state.page += 1; load({ append: true }); });
 

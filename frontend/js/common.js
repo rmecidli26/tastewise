@@ -33,6 +33,8 @@
     cutlery: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M16 3c-2 1.5-3 4-3 7h3v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     bag: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
     cup: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14h28l-3.5 40a4 4 0 0 1-4 3.6H23.5a4 4 0 0 1-4-3.6z"/><path d="M18 26h24M44 22h4a6 6 0 0 1 0 12h-5"/><path d="M26 6c-2 3 2 4 0 7M33 6c-2 3 2 4 0 7"/></svg>',
+    cake: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 54h44M14 54V34h36v20"/><path d="M14 42c4 3 8 3 12 0s8-3 12 0 8 3 12 0"/><path d="M20 34v-8h24v8"/><path d="M32 26v-8M32 12c-2 2-2 4 0 6 2-2 2-4 0-6z"/></svg>',
+    grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>',
     plus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
     pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
     phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
@@ -81,8 +83,8 @@
   }
 
   /* ---------- Dish visuals & cards ---------- */
-  const COLORS = { pizza: ['#a2414f', '#5b1220'], doner: ['#b5695a', '#7b1c2c'], drinks: ['#d98c73', '#8e3b46'] };
-  const ICONS = { pizza: 'pizza', doner: 'wrap', drinks: 'cup' };
+  const COLORS = { pizza: ['#a2414f', '#5b1220'], doner: ['#b5695a', '#7b1c2c'], drinks: ['#d98c73', '#8e3b46'], desserts: ['#c98a5c', '#6e2a35'] };
+  const ICONS = { pizza: 'pizza', doner: 'wrap', drinks: 'cup', desserts: 'cake' };
   function dishPhoto(d, extra = '') {
     const key = COLORS[d.category?.slug] ? d.category.slug : 'pizza';
     const [c1, c2] = COLORS[key];

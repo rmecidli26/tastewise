@@ -78,7 +78,7 @@
       'stars.none': 'Reytinq yoxdur',
 
       'spice.0': 'Acı deyil', 'spice.1': 'Az acı', 'spice.2': 'Orta acı', 'spice.3': 'Acı',
-      'cuisine.italian': 'İtalyan', 'cuisine.turkish': 'Türk', 'cuisine.azerbaijani': 'Azərbaycan', 'cuisine.seafood': 'Dəniz məhsulları',
+      'cuisine.italian': 'İtalyan', 'cuisine.turkish': 'Türk', 'cuisine.azerbaijani': 'Azərbaycan', 'cuisine.international': 'Beynəlxalq', 'cuisine.seafood': 'Dəniz məhsulları',
       'cuisine.grill': 'Qril', 'cuisine.asian': 'Asiya', 'cuisine.european': 'Avropa',
       'diet.vegetarian': 'Vegetarian', 'diet.vegan': 'Vegan', 'diet.gluten-free': 'Qlütensiz', 'diet.dairy-free': 'Süd məhsulsuz',
 
@@ -106,8 +106,8 @@
       /* Explore */
       'explore.title': 'Yeməyinizi tapın',
       'explore.sub': 'Sevdiyiniz inqrediyentləri seçin və büdcənizi təyin edin.',
-      'explore.drinks': 'İçkilər',
-      'explore.drinksSub': 'Milli içkilər — ayran, mineral sular, çay və ev şərbətləri.',
+      'explore.drinksSub': 'Yalnız alkoqolsuz, yerli istehsal içkilər — ayran, mineral sular, çay və ev şərbətləri.',
+      'explore.sections': 'Menyu bölmələri',
       'filters.title': 'Filtrlər',
       'filters.clear': 'Təmizlə',
       'filters.done': 'Hazır',
@@ -638,7 +638,7 @@
       'stars.none': 'No rating',
 
       'spice.0': 'No spice', 'spice.1': 'Mild', 'spice.2': 'Medium', 'spice.3': 'Hot',
-      'cuisine.italian': 'Italian', 'cuisine.turkish': 'Turkish', 'cuisine.azerbaijani': 'Azerbaijani', 'cuisine.seafood': 'Seafood',
+      'cuisine.italian': 'Italian', 'cuisine.turkish': 'Turkish', 'cuisine.azerbaijani': 'Azerbaijani', 'cuisine.international': 'International', 'cuisine.seafood': 'Seafood',
       'cuisine.grill': 'Grill', 'cuisine.asian': 'Asian', 'cuisine.european': 'European',
       'diet.vegetarian': 'Vegetarian', 'diet.vegan': 'Vegan', 'diet.gluten-free': 'Gluten-free', 'diet.dairy-free': 'Dairy-free',
 
@@ -664,8 +664,8 @@
 
       'explore.title': 'Find Your Dish',
       'explore.sub': 'Choose your favorite ingredients and set your budget.',
-      'explore.drinks': 'Drinks',
-      'explore.drinksSub': 'National drinks — ayran, mineral waters, tea and homemade sherbets.',
+      'explore.drinksSub': 'Alcohol-free, locally made drinks only — ayran, mineral waters, tea and homemade sherbets.',
+      'explore.sections': 'Menu sections',
       'filters.title': 'Filters',
       'filters.clear': 'Clear all',
       'filters.done': 'Done',
@@ -1188,7 +1188,7 @@
       'stars.none': 'Нет оценок',
 
       'spice.0': 'Не острое', 'spice.1': 'Слабоострое', 'spice.2': 'Среднеострое', 'spice.3': 'Острое',
-      'cuisine.italian': 'Итальянская', 'cuisine.turkish': 'Турецкая', 'cuisine.azerbaijani': 'Азербайджанская', 'cuisine.seafood': 'Морепродукты',
+      'cuisine.italian': 'Итальянская', 'cuisine.turkish': 'Турецкая', 'cuisine.azerbaijani': 'Азербайджанская', 'cuisine.international': 'Международная', 'cuisine.seafood': 'Морепродукты',
       'cuisine.grill': 'Гриль', 'cuisine.asian': 'Азиатская', 'cuisine.european': 'Европейская',
       'diet.vegetarian': 'Вегетарианское', 'diet.vegan': 'Веганское', 'diet.gluten-free': 'Без глютена', 'diet.dairy-free': 'Без молочных продуктов',
 
@@ -1214,8 +1214,8 @@
 
       'explore.title': 'Найдите своё блюдо',
       'explore.sub': 'Выберите любимые ингредиенты и задайте бюджет.',
-      'explore.drinks': 'Напитки',
-      'explore.drinksSub': 'Национальные напитки — айран, минеральная вода, чай и домашние шербеты.',
+      'explore.drinksSub': 'Только безалкогольные напитки местного производства — айран, минеральная вода, чай и домашние шербеты.',
+      'explore.sections': 'Разделы меню',
       'filters.title': 'Фильтры',
       'filters.clear': 'Сбросить',
       'filters.done': 'Готово',

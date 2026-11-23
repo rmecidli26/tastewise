@@ -1160,13 +1160,28 @@ a.stat:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
 .g-btn:hover { background: var(--blush-2); }
 .field-icon:has(.guests-box) > svg { display: none; }
 
-/* Explore: drinks in their own section */
-.drinks-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px dashed rgba(123, 28, 44, .25); }
-.drinks-section .row-head { margin-bottom: .4rem; }
-.drinks-section h2 { display: flex; align-items: center; gap: .6rem; }
-.drinks-ico { width: 40px; height: 40px; border-radius: 50%; background: var(--blush-2); color: var(--burgundy); display: grid; place-items: center; }
-.drinks-ico svg { width: 24px; height: 24px; }
-.drinks-sub { margin: 0 0 1.2rem; }
+/* Explore: menu tabs and one section per category */
+.menu-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin: 0 0 1.6rem; }
+.menu-tabs button {
+  display: inline-flex; align-items: center; gap: .5rem; padding: .55rem 1.05rem .55rem .8rem; border-radius: 999px;
+  border: 1.5px solid rgba(123, 28, 44, .18); background: var(--white); color: var(--ink); font-weight: 600; font-size: .95rem;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.menu-tabs button svg { width: 22px; height: 22px; color: var(--burgundy); }
+.menu-tabs button:hover { border-color: var(--burgundy); }
+.menu-tabs button[aria-selected="true"] { background: var(--burgundy); border-color: var(--burgundy); color: #fff; box-shadow: 0 10px 22px -14px rgba(91, 18, 32, .9); }
+.menu-tabs button[aria-selected="true"] svg { color: #fff; }
+.menu-sections { display: grid; gap: 2.6rem; }
+.menu-sections[hidden], #resultsGrid[hidden] { display: none; }
+.menu-section .row-head { margin-bottom: 1rem; }
+.menu-section h2 { display: flex; align-items: center; gap: .6rem; font-size: clamp(1.5rem, 2.6vw, 2rem); }
+.sec-ico { width: 42px; height: 42px; border-radius: 50%; background: var(--blush-2); color: var(--burgundy); display: grid; place-items: center; flex: none; }
+.sec-ico svg { width: 25px; height: 25px; }
+.sec-sub { margin: -.4rem 0 1.1rem; }
+@media (max-width: 640px) {
+  .menu-tabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: -1rem; padding: 0 1rem .3rem; scrollbar-width: none; }
+  .menu-tabs button { flex: none; }
+}
 
 /* Order time picker */
 .time-picker { display: grid; gap: .8rem; margin-top: .9rem; padding: .9rem; border-radius: 14px; background: var(--blush); border: 1px solid rgba(123, 28, 44, .12); }

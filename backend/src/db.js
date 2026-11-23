@@ -6,8 +6,21 @@ pg.types.setTypeParser(1700, v => (v === null ? null : Number(v)));
 // Return BIGINT ids / counts as numbers (safe for this app's sizes)
 pg.types.setTypeParser(20, v => (v === null ? null : Number(v)));
 
+// sslmode in the URL (Neon adds ?sslmode=require) makes pg print a SECURITY WARNING on
+// every start. SSL is configured below instead, so the parameter is removed from the URL.
+function cleanUrl(url) {
+  try {
+    const u = new URL(url);
+    if (u.searchParams.has('sslmode')) u.searchParams.delete('sslmode');
+    u.searchParams.delete('channel_binding');
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
 export const pool = new pg.Pool({
-  connectionString: config.databaseUrl,
+  connectionString: cleanUrl(config.databaseUrl),
   max: 10,
   ssl: config.databaseSsl ? { rejectUnauthorized: false } : undefined
 });

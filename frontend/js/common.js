@@ -196,15 +196,39 @@
       input.value = ''; hide();
     };
     const hide = () => { box.hidden = true; active = -1; };
-    const show = async () => {
-      const q = input.value.trim().toLowerCase();
-      if (!q) { hide(); return; }
-      const all = await getIngredients();
-      options = all.filter(i => i.label.toLowerCase().includes(q) && !values.includes(i.label)).slice(0, 8);
-      if (!options.length) { hide(); return; }
-      box.innerHTML = options.map((o, i) => `<button type="button" role="option" data-i="${i}">${escapeHTML(o.label)}</button>`).join('');
-      box.hidden = false; active = -1;
+    const norm = v => v.toLocaleLowerCase(I18N.locale()).normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i').replace(/ə/g, 'e');
+    const mark = (label, q) => {
+      const i = norm(label).indexOf(norm(q));
+      return i < 0 || !q ? escapeHTML(label)
+        : `${escapeHTML(label.slice(0, i))}<mark>${escapeHTML(label.slice(i, i + q.length))}</mark>${escapeHTML(label.slice(i + q.length))}`;
     };
+    /** Empty box → every ingredient (scroll to browse); typing → matches, best first */
+    const show = async () => {
+      const q = input.value.trim();
+      const all = (await getIngredients()).filter(i => !values.includes(i.label));
+      const nq = norm(q);
+      if (!q) options = [...all].sort((a, b) => a.label.localeCompare(b.label, I18N.locale()));
+      else {
+        const starts = [], words = [], inside = [];
+        all.forEach(i => {
+          const l = norm(i.label);
+          if (l.startsWith(nq)) starts.push(i);
+          else if (l.split(/[\s-]+/).some(w => w.startsWith(nq))) words.push(i);
+          else if (l.includes(nq)) inside.push(i);
+        });
+        const byLabel = (a, b) => a.label.localeCompare(b.label, I18N.locale());
+        options = [...starts.sort(byLabel), ...words.sort(byLabel), ...inside.sort(byLabel)];
+      }
+      if (!options.length) {
+        box.innerHTML = q ? `<p class="ing-none">${escapeHTML(t('search.noMatch', { q }))}</p>` : '';
+        box.hidden = !q; active = -1; return;
+      }
+      const head = `<p class="ing-head">${escapeHTML(q ? t('search.matches', { n: options.length }) : t('search.allIngredients', { n: options.length }))}</p>`;
+      box.innerHTML = head + options.map((o, i) => `<button type="button" role="option" data-i="${i}"><span>${mark(o.label, q)}</span><small>${escapeHTML(t('search.inDishes', { n: o.dishCount }))}</small></button>`).join('');
+      box.hidden = false; box.scrollTop = 0; active = -1;
+    };
+    input.addEventListener('focus', show);
+    input.addEventListener('click', () => { if (box.hidden) show(); });
     input.addEventListener('input', () => {
       if (input.value.includes(',')) { input.value.split(',').forEach(add); return; }
       show();
@@ -218,8 +242,10 @@
       else if (e.key === 'Backspace' && !input.value && values.length) { values.pop(); render(); onChange(values); return; }
       else return;
       btns.forEach((b, i) => b.setAttribute('aria-selected', String(i === active)));
+      btns[active]?.scrollIntoView({ block: 'nearest' });
     });
-    box.addEventListener('mousedown', e => { const b = e.target.closest('button'); if (b) { e.preventDefault(); add(options[b.dataset.i].label); } });
+    // Keep focus in the input while using the list (also when dragging its scrollbar)
+    box.addEventListener('mousedown', e => { e.preventDefault(); const b = e.target.closest('button'); if (b) { add(options[b.dataset.i].label); input.focus(); show(); } });
     input.addEventListener('blur', () => setTimeout(() => { if (input.value.trim()) add(input.value); hide(); }, 150));
     root.addEventListener('click', e => { if (e.target === root) input.focus(); });
     render();

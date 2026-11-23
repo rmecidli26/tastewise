@@ -92,7 +92,9 @@ router.get('/categories', asyncHandler(async (req, res) => {
 router.get('/ingredients', asyncHandler(async (req, res) => {
   const { rows } = await query(
     `SELECT i.name, i.name_i18n, i.is_allergen, COUNT(di.dish_id) AS dish_count
-       FROM ingredients i JOIN dish_ingredients di ON di.ingredient_id = i.id
+       FROM ingredients i
+       JOIN dish_ingredients di ON di.ingredient_id = i.id
+       JOIN dishes d ON d.id = di.dish_id AND d.is_available   -- only what is on the menu today
       GROUP BY i.id ORDER BY i.name`
   );
   const ingredients = rows

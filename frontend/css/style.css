@@ -154,7 +154,7 @@ h1 .script, h2 .script { font-size: 1.18em; line-height: .8; padding: 0 .06em; }
 .login-link svg { width: 22px; height: 22px; }
 
 /* ---------- Home hero ---------- */
-.hero { position: relative; overflow: hidden; padding-bottom: 2.5rem; }
+.hero { position: relative; z-index: 3; overflow-x: clip; overflow-y: visible; padding-bottom: 2.5rem; }
 .hero-art {
   position: absolute; top: 0; right: 0; width: 58%; height: calc(100% - 1rem); z-index: 0;
   background: radial-gradient(120% 90% at 90% 10%, #8e2737 0%, var(--burgundy) 45%, var(--wine) 100%);
@@ -184,7 +184,7 @@ h1 .script, h2 .script { font-size: 1.18em; line-height: .8; padding: 0 .06em; }
 .ing-chip button { border: 0; background: none; width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; color: var(--ink); font-size: 1rem; line-height: 1; padding: 0; }
 .ing-chip button:hover { background: var(--rose-deep); }
 .ing-input { flex: 1; min-width: 150px; border: 0; background: transparent; font: inherit; color: var(--ink); padding: .45rem .3rem; outline: none; }
-.ing-suggest { position: absolute; left: 0; top: calc(100% + 12px); z-index: 30; min-width: 260px; max-height: 280px; overflow: auto; background: var(--white); border-radius: var(--radius-sm); box-shadow: var(--shadow); padding: .35rem; border: 1px solid rgba(123, 28, 44, .1); }
+.ing-suggest { position: absolute; left: 0; top: calc(100% + 12px); z-index: 60; width: min(380px, 86vw); max-height: min(360px, 55vh); overscroll-behavior: contain; overflow: auto; background: var(--white); border-radius: var(--radius-sm); box-shadow: var(--shadow); padding: .35rem; border: 1px solid rgba(123, 28, 44, .1); }
 .ing-suggest button { display: block; width: 100%; text-align: left; border: 0; background: none; padding: .55rem .75rem; border-radius: 8px; font-size: .95rem; }
 .ing-suggest button:hover, .ing-suggest button[aria-selected="true"] { background: var(--blush); color: var(--burgundy); }
 .budget { display: flex; align-items: center; gap: .45rem; padding: 0 .4rem 0 .9rem; border-left: 1px solid rgba(123, 28, 44, .15); color: var(--ink); }
@@ -239,7 +239,7 @@ h1 .script, h2 .script { font-size: 1.18em; line-height: .8; padding: 0 .06em; }
 .new-badge { color: var(--burgundy-soft); font-weight: 600; font-size: .85rem; }
 
 /* ---------- Page hero (Explore, Favorites) ---------- */
-.page-hero { position: relative; overflow: hidden; padding: 1.5rem 0 2.5rem; }
+.page-hero { position: relative; z-index: 3; overflow-x: clip; overflow-y: visible; padding: 1.5rem 0 2.5rem; }
 .page-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: .6rem; }
 .page-hero .lead { font-size: 1.15rem; margin-bottom: 1.8rem; }
 .page-hero-art { position: absolute; right: 0; top: -96px; width: min(520px, 42%); height: calc(100% + 96px); z-index: 0; }
@@ -1201,3 +1201,11 @@ a.stat:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
 .time-input svg { position: absolute; left: .85rem; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--burgundy); pointer-events: none; }
 .time-input .input { padding-left: 2.7rem; font-weight: 700; font-size: 1.05rem; }
 .slots-empty { margin: 0; color: #8a5a00; }
+
+/* Ingredient list */
+.ing-suggest mark { background: none; color: var(--burgundy); font-weight: 700; }
+.ing-head { margin: 0; padding: .45rem .75rem .35rem; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); position: sticky; top: -.35rem; background: var(--white); }
+.ing-none { margin: 0; padding: .7rem .8rem; color: var(--muted); font-size: .92rem; }
+.ing-suggest button { display: flex; justify-content: space-between; align-items: baseline; gap: .8rem; }
+.ing-suggest button span::first-letter { text-transform: uppercase; }
+.ing-suggest button small { color: var(--muted); font-size: .78rem; white-space: nowrap; }

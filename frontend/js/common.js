@@ -35,6 +35,11 @@
     cup: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14h28l-3.5 40a4 4 0 0 1-4 3.6H23.5a4 4 0 0 1-4-3.6z"/><path d="M18 26h24M44 22h4a6 6 0 0 1 0 12h-5"/><path d="M26 6c-2 3 2 4 0 7M33 6c-2 3 2 4 0 7"/></svg>',
     cake: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 54h44M14 54V34h36v20"/><path d="M14 42c4 3 8 3 12 0s8-3 12 0 8 3 12 0"/><path d="M20 34v-8h24v8"/><path d="M32 26v-8M32 12c-2 2-2 4 0 6 2-2 2-4 0-6z"/></svg>',
     grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>',
+    salad: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32h48a24 20 0 0 1-48 0z"/><path d="M20 32c-2-6 1-12 7-13 2 5 0 10-3 13M30 32c0-8 5-13 11-12 0 6-3 10-7 12M42 32c2-5 6-7 10-6-1 4-3 5-6 6"/><path d="M24 56h16"/></svg>',
+    soup: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30h48a24 20 0 0 1-48 0z"/><path d="M22 56h20M24 22c-3-4 3-6 0-10M32 22c-3-4 3-6 0-10M40 22c-3-4 3-6 0-10"/></svg>',
+    pide: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 32C16 18 48 18 60 32 48 46 16 46 4 32z"/><path d="M12 32c10-7 30-7 40 0-10 7-30 7-40 0z"/><circle cx="26" cy="31" r="2"/><circle cx="36" cy="33" r="2"/><circle cx="44" cy="31" r="1.6"/></svg>',
+    kebab: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 58L58 6"/><rect x="14" y="34" width="12" height="12" rx="3" transform="rotate(-45 20 40)"/><rect x="26" y="22" width="12" height="12" rx="3" transform="rotate(-45 32 28)"/><rect x="38" y="10" width="12" height="12" rx="3" transform="rotate(-45 44 16)"/></svg>',
+    mains: '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="34" r="18"/><circle cx="32" cy="34" r="11"/><path d="M6 14v14M3 14v6a3 3 0 0 0 6 0v-6M6 28v26M58 14c-3 2-4 6-4 12h4v28"/></svg>',
     plus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
     pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
     phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
@@ -83,8 +88,13 @@
   }
 
   /* ---------- Dish visuals & cards ---------- */
-  const COLORS = { pizza: ['#a2414f', '#5b1220'], doner: ['#b5695a', '#7b1c2c'], drinks: ['#d98c73', '#8e3b46'], desserts: ['#c98a5c', '#6e2a35'] };
-  const ICONS = { pizza: 'pizza', doner: 'wrap', drinks: 'cup', desserts: 'cake' };
+  const COLORS = {
+    pizza: ['#a2414f', '#5b1220'], doner: ['#b5695a', '#7b1c2c'], drinks: ['#d98c73', '#8e3b46'], desserts: ['#c98a5c', '#6e2a35'],
+    salads: ['#8fa86a', '#4f6b3a'], soups: ['#d09a5a', '#8a4b2a'], pide: ['#c98a4a', '#7b3d1c'], kebabs: ['#b4553f', '#5b1a12'], mains: ['#9a5a48', '#4b1c1a'], burgers: ['#d4a04a', '#7a4a1a'], pasta: ['#e0b24f', '#8a5a1e'], snacks: ['#d07a3a', '#7a3416']
+  };
+  const ICONS = { pizza: 'pizza', doner: 'wrap', drinks: 'cup', desserts: 'cake', salads: 'salad', soups: 'soup', pide: 'pide', kebabs: 'kebab', mains: 'mains', burgers: 'mains', pasta: 'pide', snacks: 'kebab' };
+  /** Icon for a menu category (used on tabs, cards and the order page) */
+  const catIcon = slug => I[ICONS[slug]] || I.grid;
   function dishPhoto(d, extra = '') {
     const key = COLORS[d.category?.slug] ? d.category.slug : 'pizza';
     const [c1, c2] = COLORS[key];
@@ -568,7 +578,7 @@
     $, $$, escapeHTML, param, price, priceFrom, stars, ratingNum, cuisineLabel, dietLabel, SPICE, I, t,
     getMe, requireLogin, loginUrl, safeNext,
     toast, dishCard, dishPhoto, ratingHTML, loadingHTML,
-    favorites, loadFavorites, syncFavButtons, cart, cartToast,
+    favorites, loadFavorites, syncFavButtons, cart, cartToast, catIcon,
     ingredientPicker, budgetSelect, fillRestaurant, MAP, mapsUrl,
     showMsg, showFieldErrors, setBusy
   };

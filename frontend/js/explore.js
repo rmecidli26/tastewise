@@ -2,7 +2,7 @@
 (() => {
   const { $, $$, escapeHTML, price, dishCard, loadingHTML, ingredientPicker, budgetSelect, loadFavorites, syncFavButtons, I } = TW;
   const PAGE_SIZE = 12;
-  const PRICE_MAX = 30;
+  const PRICE_MAX = 60;
   const url = new URLSearchParams(location.search);
   const list = k => (url.get(k) || '').split(',').map(s => s.trim()).filter(Boolean);
 
@@ -53,7 +53,7 @@
   syncSlider();
 
   /* ---------- Menu sections: tabs + category filter ---------- */
-  const TAB_ICON = { pizza: I.pizza, doner: I.wrap, desserts: I.cake, drinks: I.cup };
+  const TAB_ICON = new Proxy({}, { get: (_, slug) => TW.catIcon(slug) });
   let cats = [];
   const catsReady = api.categories().then(({ categories }) => {
     cats = categories.filter(c => c.dishCount > 0);
@@ -137,7 +137,7 @@
     const empty = `<div class="empty-state"><strong>${escapeHTML(t('results.emptyTitle'))}</strong>${escapeHTML(t('results.emptyText'))}</div>`;
     try {
       if (grouped) {
-        const res = await api.dishes({ ...filters, limit: 100 });
+        const res = await api.dishes({ ...filters, limit: 300 });
         if (id !== requestId) return;
         const by = new Map(cats.map(c => [c.slug, []]));
         res.dishes.forEach(d => { if (!by.has(d.category.slug)) by.set(d.category.slug, []); by.get(d.category.slug).push(d); });

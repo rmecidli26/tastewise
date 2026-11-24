@@ -54,7 +54,7 @@
     {
       "slug": "pizza",
       "name": "Pizza",
-      "sort_order": 1,
+      "sort_order": 7,
       "i18n": {
         "az": "Pizzalar",
         "ru": "Пицца"
@@ -63,7 +63,7 @@
     {
       "slug": "doner",
       "name": "Döner & Shawarma",
-      "sort_order": 2,
+      "sort_order": 10,
       "i18n": {
         "az": "Dönər və şaurma",
         "ru": "Дёнер и шаурма"
@@ -72,7 +72,7 @@
     {
       "slug": "drinks",
       "name": "Soft drinks",
-      "sort_order": 4,
+      "sort_order": 12,
       "i18n": {
         "az": "Alkoqolsuz içkilər",
         "ru": "Безалкогольные напитки"
@@ -81,10 +81,82 @@
     {
       "slug": "desserts",
       "name": "Desserts",
-      "sort_order": 3,
+      "sort_order": 11,
       "i18n": {
         "az": "Şirniyyatlar",
         "ru": "Десерты"
+      }
+    },
+    {
+      "slug": "salads",
+      "name": "Salads",
+      "sort_order": 1,
+      "i18n": {
+        "az": "Salatlar",
+        "ru": "Салаты"
+      }
+    },
+    {
+      "slug": "soups",
+      "name": "Soups",
+      "sort_order": 2,
+      "i18n": {
+        "az": "Şorbalar",
+        "ru": "Супы"
+      }
+    },
+    {
+      "slug": "pide",
+      "name": "Lahmacun & Pide",
+      "sort_order": 6,
+      "i18n": {
+        "az": "Lahmacun / Pide",
+        "ru": "Лахмаджун / Пиде"
+      }
+    },
+    {
+      "slug": "kebabs",
+      "name": "Kebabs & Grill",
+      "sort_order": 8,
+      "i18n": {
+        "az": "Kabablar",
+        "ru": "Кебабы"
+      }
+    },
+    {
+      "slug": "mains",
+      "name": "Meat & Chicken",
+      "sort_order": 9,
+      "i18n": {
+        "az": "Ət və toyuq yeməkləri",
+        "ru": "Мясо и курица"
+      }
+    },
+    {
+      "slug": "snacks",
+      "name": "Hot Appetizers",
+      "sort_order": 3,
+      "i18n": {
+        "az": "İsti qəlyanaltılar",
+        "ru": "Горячие закуски"
+      }
+    },
+    {
+      "slug": "burgers",
+      "name": "Sandwiches & Burgers",
+      "sort_order": 4,
+      "i18n": {
+        "az": "Sendviç və burgerlər",
+        "ru": "Сэндвичи и бургеры"
+      }
+    },
+    {
+      "slug": "pasta",
+      "name": "Pasta & Noodles",
+      "sort_order": 5,
+      "i18n": {
+        "az": "Pastalar",
+        "ru": "Паста"
       }
     }
   ],
@@ -104,7 +176,21 @@
     "flour",
     "mascarpone",
     "cream cheese",
-    "pistachio"
+    "pistachio",
+    "shrimp",
+    "feta",
+    "parmesan",
+    "dutch cheese",
+    "milk",
+    "cream",
+    "dough",
+    "noodles",
+    "croutons",
+    "waffle",
+    "ice cream",
+    "whipped cream",
+    "chocolate spread",
+    "mayonnaise"
   ],
   "ingredient_names": {
     "arabic sauce": {
@@ -354,6 +440,530 @@
     "vanilla": {
       "az": "vanil",
       "ru": "ваниль"
+    },
+    "fig": {
+      "az": "əncir",
+      "ru": "инжир"
+    },
+    "mixed greens": {
+      "az": "miks göyərti",
+      "ru": "микс зелени"
+    },
+    "beef": {
+      "az": "dana əti",
+      "ru": "говядина"
+    },
+    "cornelian cherry pickle": {
+      "az": "zoğal turşusu",
+      "ru": "кизиловый соус"
+    },
+    "quince sauce": {
+      "az": "heyva rubu",
+      "ru": "айвовый соус"
+    },
+    "cherry tomato": {
+      "az": "çeri pomidor",
+      "ru": "помидоры черри"
+    },
+    "parmesan": {
+      "az": "parmezan pendiri",
+      "ru": "пармезан"
+    },
+    "chips": {
+      "az": "çipsi",
+      "ru": "чипсы"
+    },
+    "iceberg": {
+      "az": "aysberq",
+      "ru": "айсберг"
+    },
+    "croutons": {
+      "az": "suxari",
+      "ru": "сухарики"
+    },
+    "caesar sauce": {
+      "az": "sezar sousu",
+      "ru": "соус цезарь"
+    },
+    "shrimp": {
+      "az": "krevet",
+      "ru": "креветки"
+    },
+    "ginger": {
+      "az": "zəncəfil",
+      "ru": "имбирь"
+    },
+    "prune": {
+      "az": "qara gavalı",
+      "ru": "чернослив"
+    },
+    "special sauce": {
+      "az": "xüsusi sous",
+      "ru": "фирменный соус"
+    },
+    "olive oil": {
+      "az": "zeytun yağı",
+      "ru": "оливковое масло"
+    },
+    "carrot": {
+      "az": "kök",
+      "ru": "морковь"
+    },
+    "mayonnaise": {
+      "az": "mayonez",
+      "ru": "майонез"
+    },
+    "dutch cheese": {
+      "az": "holland pendiri",
+      "ru": "голландский сыр"
+    },
+    "isot pepper": {
+      "az": "isot",
+      "ru": "перец исот"
+    },
+    "bell pepper": {
+      "az": "rəngli bibər",
+      "ru": "болгарский перец"
+    },
+    "parsley": {
+      "az": "cəfəri",
+      "ru": "петрушка"
+    },
+    "greens": {
+      "az": "göyərti",
+      "ru": "зелень"
+    },
+    "red onion": {
+      "az": "qırmızı soğan",
+      "ru": "красный лук"
+    },
+    "feta": {
+      "az": "feta pendiri",
+      "ru": "фета"
+    },
+    "pomegranate sauce": {
+      "az": "narşərab",
+      "ru": "наршараб"
+    },
+    "eggplant": {
+      "az": "badımcan",
+      "ru": "баклажан"
+    },
+    "sumac": {
+      "az": "sumaq",
+      "ru": "сумах"
+    },
+    "lentils": {
+      "az": "mərci",
+      "ru": "чечевица"
+    },
+    "coriander": {
+      "az": "keşniş",
+      "ru": "кинза"
+    },
+    "cream": {
+      "az": "qaymaq",
+      "ru": "сливки"
+    },
+    "milk": {
+      "az": "süd",
+      "ru": "молоко"
+    },
+    "lamb": {
+      "az": "quzu əti",
+      "ru": "баранина"
+    },
+    "dough": {
+      "az": "xəmir",
+      "ru": "тесто"
+    },
+    "broth": {
+      "az": "bulyon",
+      "ru": "бульон"
+    },
+    "noodles": {
+      "az": "əriştə",
+      "ru": "лапша"
+    },
+    "black-eyed peas": {
+      "az": "qara göz lobya",
+      "ru": "вигна"
+    },
+    "chili flakes": {
+      "az": "pul bibər",
+      "ru": "хлопья перца"
+    },
+    "chestnut": {
+      "az": "şabalıd",
+      "ru": "каштан"
+    },
+    "chickpeas": {
+      "az": "noxud",
+      "ru": "нут"
+    },
+    "sour plum": {
+      "az": "qara alça",
+      "ru": "алыча"
+    },
+    "lamb tail fat": {
+      "az": "quyruq",
+      "ru": "курдюк"
+    },
+    "pepper paste": {
+      "az": "bibər salçası",
+      "ru": "перечная паста"
+    },
+    "pide sauce": {
+      "az": "pide sousu",
+      "ru": "соус для пиде"
+    },
+    "sausage": {
+      "az": "kolbasa",
+      "ru": "колбаса"
+    },
+    "french fries": {
+      "az": "kartof fri",
+      "ru": "картофель фри"
+    },
+    "ketchup": {
+      "az": "ketçup",
+      "ru": "кетчуп"
+    },
+    "mexican sauce": {
+      "az": "meksika sousu",
+      "ru": "мексиканский соус"
+    },
+    "demi-glace": {
+      "az": "demiqlas sousu",
+      "ru": "соус демиглас"
+    },
+    "seasonal salad": {
+      "az": "mövsüm salatı",
+      "ru": "сезонный салат"
+    },
+    "kebab salad": {
+      "az": "kabab salatı",
+      "ru": "салат к кебабу"
+    },
+    "green pepper": {
+      "az": "yaşıl bibər",
+      "ru": "зелёный перец"
+    },
+    "cajun sauce": {
+      "az": "kajun sousu",
+      "ru": "соус каджун"
+    },
+    "waffle": {
+      "az": "vafli xəmiri",
+      "ru": "тесто для вафель"
+    },
+    "banana": {
+      "az": "banan",
+      "ru": "банан"
+    },
+    "strawberry": {
+      "az": "çiyələk",
+      "ru": "клубника"
+    },
+    "ice cream": {
+      "az": "dondurma",
+      "ru": "мороженое"
+    },
+    "whipped cream": {
+      "az": "şanti krem",
+      "ru": "взбитые сливки"
+    },
+    "chocolate spread": {
+      "az": "fındıqlı şokolad kremi",
+      "ru": "шоколадно-ореховая паста"
+    },
+    "black pepper": {
+      "az": "qara istiot",
+      "ru": "чёрный перец"
+    },
+    "vinegar": {
+      "az": "sirkə",
+      "ru": "уксус"
+    },
+    "manti dough": {
+      "az": "mantı xəmiri",
+      "ru": "тесто для манты"
+    },
+    "curry sauce": {
+      "az": "köri sousu",
+      "ru": "соус карри"
+    },
+    "tortilla": {
+      "az": "tortilla",
+      "ru": "тортилья"
+    },
+    "sour cream": {
+      "az": "xama",
+      "ru": "сметана"
+    },
+    "salsa": {
+      "az": "salsa",
+      "ru": "сальса"
+    },
+    "penne": {
+      "az": "penne makaron",
+      "ru": "паста пенне"
+    },
+    "tomato sauce": {
+      "az": "pomidor sousu",
+      "ru": "томатный соус"
+    },
+    "breadcrumbs": {
+      "az": "çörək qırıntısı",
+      "ru": "панировка"
+    },
+    "peru sauce": {
+      "az": "peru sousu",
+      "ru": "соус перу"
+    },
+    "arizona sauce": {
+      "az": "arizona sousu",
+      "ru": "соус аризона"
+    },
+    "mixed vegetables": {
+      "az": "tərəvəz qarışığı",
+      "ru": "овощная смесь"
+    },
+    "wild rice": {
+      "az": "yabani düyü",
+      "ru": "дикий рис"
+    },
+    "teriyaki sauce": {
+      "az": "asiya sousu",
+      "ru": "азиатский соус"
+    },
+    "burger bun": {
+      "az": "burger çörəyi",
+      "ru": "булочка"
+    },
+    "crepe": {
+      "az": "krep",
+      "ru": "блин"
+    },
+    "bechamel": {
+      "az": "beşamel sousu",
+      "ru": "соус бешамель"
+    },
+    "eggplant puree": {
+      "az": "badımcan püresi",
+      "ru": "пюре из баклажанов"
+    },
+    "biscuit": {
+      "az": "peçenye",
+      "ru": "печенье"
+    },
+    "caramel": {
+      "az": "karamel",
+      "ru": "карамель"
+    },
+    "carbonated water": {
+      "az": "qazlı su",
+      "ru": "газированная вода"
+    },
+    "tea": {
+      "az": "çay",
+      "ru": "чай"
+    },
+    "peach": {
+      "az": "şaftalı",
+      "ru": "персик"
+    },
+    "orange": {
+      "az": "portağal",
+      "ru": "апельсин"
+    },
+    "mushroom sauce": {
+      "az": "göbələk sousu",
+      "ru": "грибной соус"
+    },
+    "cafe de paris sauce": {
+      "az": "Kafe de Pari sousu",
+      "ru": "соус Кафе де Пари"
+    },
+    "red beans": {
+      "az": "qırmızı lobya",
+      "ru": "красная фасоль"
+    },
+    "tofu": {
+      "az": "tofu",
+      "ru": "тофу"
+    },
+    "toast bread": {
+      "az": "tost çörəyi",
+      "ru": "тостовый хлеб"
+    },
+    "spaghetti": {
+      "az": "spagetti",
+      "ru": "спагетти"
+    },
+    "pesto": {
+      "az": "pesto",
+      "ru": "песто"
+    },
+    "tagliatelle": {
+      "az": "talyatelle",
+      "ru": "тальятелле"
+    },
+    "burrata": {
+      "az": "burrata",
+      "ru": "буррата"
+    },
+    "lasagna sheets": {
+      "az": "lazanya xəmiri",
+      "ru": "листы лазаньи"
+    },
+    "egg noodles": {
+      "az": "noodle",
+      "ru": "лапша"
+    },
+    "zucchini": {
+      "az": "kabaçki",
+      "ru": "кабачок"
+    },
+    "sesame": {
+      "az": "küncüt",
+      "ru": "кунжут"
+    },
+    "soy sauce": {
+      "az": "soya sousu",
+      "ru": "соевый соус"
+    },
+    "fettuccine": {
+      "az": "fettuçini",
+      "ru": "феттучини"
+    },
+    "panko": {
+      "az": "panko",
+      "ru": "панко"
+    },
+    "broccoli": {
+      "az": "brokoli",
+      "ru": "брокколи"
+    },
+    "spinach": {
+      "az": "ispanaq",
+      "ru": "шпинат"
+    },
+    "mashed potato": {
+      "az": "kartof püresi",
+      "ru": "картофельное пюре"
+    },
+    "baby potato": {
+      "az": "xırda kartof",
+      "ru": "молодой картофель"
+    },
+    "sweet chili": {
+      "az": "şirin çili",
+      "ru": "сладкий чили"
+    },
+    "tempura batter": {
+      "az": "tempura",
+      "ru": "темпура"
+    },
+    "trout": {
+      "az": "forel filesi",
+      "ru": "филе форели"
+    },
+    "dip sauce": {
+      "az": "dip sous",
+      "ru": "дип-соус"
+    },
+    "doritos": {
+      "az": "nachos çipsi",
+      "ru": "начос"
+    },
+    "green tea": {
+      "az": "yaşıl çay",
+      "ru": "зелёный чай"
+    },
+    "jasmine": {
+      "az": "yasəmən",
+      "ru": "жасмин"
+    },
+    "blackcurrant": {
+      "az": "qaraqat",
+      "ru": "чёрная смородина"
+    },
+    "lime": {
+      "az": "laym",
+      "ru": "лайм"
+    },
+    "herbal tea": {
+      "az": "bitki çayı",
+      "ru": "травяной чай"
+    },
+    "sea buckthorn": {
+      "az": "çaytikanı",
+      "ru": "облепиха"
+    },
+    "cinnamon": {
+      "az": "darçın",
+      "ru": "корица"
+    },
+    "rosehip": {
+      "az": "itburnu",
+      "ru": "шиповник"
+    },
+    "pancake": {
+      "az": "pankeyk",
+      "ru": "панкейк"
+    },
+    "gluten-free flour": {
+      "az": "glütensiz un",
+      "ru": "безглютеновая мука"
+    },
+    "mango": {
+      "az": "manqo",
+      "ru": "манго"
+    },
+    "apple": {
+      "az": "alma",
+      "ru": "яблоко"
+    },
+    "lychee": {
+      "az": "liçi",
+      "ru": "личи"
+    },
+    "hibiscus": {
+      "az": "hibiskus",
+      "ru": "гибискус"
+    },
+    "pear": {
+      "az": "armud",
+      "ru": "груша"
+    },
+    "passion fruit": {
+      "az": "marakuya",
+      "ru": "маракуйя"
+    },
+    "cranberry": {
+      "az": "mərsin",
+      "ru": "клюква"
+    },
+    "syrup": {
+      "az": "sirop",
+      "ru": "сироп"
+    },
+    "espresso": {
+      "az": "espresso",
+      "ru": "эспрессо"
+    },
+    "condensed milk": {
+      "az": "qatılaşdırılmış süd",
+      "ru": "сгущённое молоко"
+    },
+    "ice": {
+      "az": "buz",
+      "ru": "лёд"
+    },
+    "gum syrup": {
+      "az": "saqqız siropu",
+      "ru": "сироп «жвачка»"
     }
   },
   "dishes": [
@@ -1456,22 +2066,22 @@
       ],
       "variants": [
         {
-          "code": "03",
-          "label": {
-            "az": "0,3 L",
-            "en": "0.3 L",
-            "ru": "0,3 л"
-          },
-          "price": 1.5
-        },
-        {
           "code": "05",
           "label": {
             "az": "0,5 L",
             "en": "0.5 L",
             "ru": "0,5 л"
           },
-          "price": 2.2
+          "price": 3
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 4
         }
       ],
       "i18n": {
@@ -1572,22 +2182,13 @@
       ],
       "variants": [
         {
-          "code": "sparkling",
+          "code": "05",
           "label": {
-            "az": "Qazlı",
-            "en": "Sparkling",
-            "ru": "Газированная"
+            "az": "0,5 L (qazlı/qazsız)",
+            "en": "0.5 L (still/sparkling)",
+            "ru": "0,5 л (с газом/без)"
           },
-          "price": 1.2
-        },
-        {
-          "code": "still",
-          "label": {
-            "az": "Qazsız",
-            "en": "Still",
-            "ru": "Без газа"
-          },
-          "price": 1.2
+          "price": 3
         }
       ],
       "i18n": {
@@ -1741,13 +2342,22 @@
       ],
       "variants": [
         {
-          "code": "03",
+          "code": "025",
           "label": {
-            "az": "0,3 L",
-            "en": "0.3 L",
-            "ru": "0,3 л"
+            "az": "0,25 L",
+            "en": "0.25 L",
+            "ru": "0,25 л"
           },
-          "price": 2.0
+          "price": 2
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 5
         }
       ],
       "i18n": {
@@ -1890,8 +2500,7 @@
         "comfort"
       ],
       "meal": [
-        "dessert",
-        "breakfast"
+        "dessert"
       ],
       "ingredients": [
         "flour",
@@ -1939,93 +2548,87 @@
       "spice": 0,
       "image": "https://images.unsplash.com/photo-1766232333746-b0a2697d6d0d?auto=format&fit=crop&w=800&q=80",
       "best_seller": false,
-      "description": "Savoiardi soaked in coffee, layered with mascarpone cream and dusted with cocoa.",
+      "description": "Mascarpone, savoiardi, egg, sugar",
       "diet": [
         "vegetarian"
       ],
       "mood": [
-        "celebration",
-        "comfort"
+        "sweet"
       ],
       "meal": [
         "dessert"
       ],
       "ingredients": [
-        "savoiardi",
         "mascarpone",
-        "coffee",
+        "savoiardi",
         "egg",
-        "sugar",
-        "cocoa"
+        "sugar"
       ],
       "variants": [
         {
-          "code": "slice",
+          "code": "std",
           "label": {
             "az": "1 porsiya",
             "en": "1 portion",
             "ru": "1 порция"
           },
-          "price": 6.0
+          "price": 14
         }
       ],
       "i18n": {
         "az": {
           "name": "Tiramisu",
-          "description": "Qəhvəyə batırılmış savoyardi, maskarpone kremi və kakao."
+          "description": "Maskarpone, savoyardi peçenyesi, yumurta, şəkər"
         },
         "ru": {
           "name": "Тирамису",
-          "description": "Савоярди, пропитанные кофе, крем из маскарпоне и какао."
+          "description": "Маскарпоне, печенье савоярди, яйца, сахар"
         }
       }
     },
     {
       "slug": "cheesecake",
-      "name": "Blueberry Cheesecake",
+      "name": "Lemon Cheesecake",
       "category": "desserts",
-      "cuisine": "international",
+      "cuisine": "azerbaijani",
       "spice": 0,
       "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
       "best_seller": false,
-      "description": "Creamy baked cheesecake on a buttery biscuit base with blueberry sauce.",
+      "description": "Cream cheese, biscuit, lemon, sugar",
       "diet": [
         "vegetarian"
       ],
       "mood": [
-        "celebration",
-        "comfort"
+        "sweet"
       ],
       "meal": [
         "dessert"
       ],
       "ingredients": [
         "cream cheese",
-        "flour",
-        "butter",
-        "egg",
-        "sugar",
-        "blueberry"
+        "biscuit",
+        "lemon",
+        "sugar"
       ],
       "variants": [
         {
-          "code": "slice",
+          "code": "std",
           "label": {
-            "az": "1 dilim",
-            "en": "1 slice",
-            "ru": "1 кусок"
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
           },
-          "price": 6.5
+          "price": 15
         }
       ],
       "i18n": {
         "az": {
-          "name": "Qaragiləli çizkeyk",
-          "description": "Kərəli peçenye əsasında kremli bişmiş çizkeyk, qaragilə sousu ilə."
+          "name": "Limonlu çizkeyk",
+          "description": "Krem pendir, peçenye, limon, şəkər"
         },
         "ru": {
-          "name": "Чизкейк с черникой",
-          "description": "Нежный запечённый чизкейк на песочной основе с черничным соусом."
+          "name": "Лимонный чизкейк",
+          "description": "Сливочный сыр, печенье, лимон, сахар"
         }
       }
     },
@@ -2059,11 +2662,11 @@
         {
           "code": "1",
           "label": {
-            "az": "1 ədəd",
-            "en": "1 piece",
-            "ru": "1 шт."
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
           },
-          "price": 4.5
+          "price": 18
         }
       ],
       "i18n": {
@@ -2074,6 +2677,6902 @@
         "ru": {
           "name": "Шоколадный брауни",
           "description": "Тёплый брауни из тёмного шоколада — хрустящая корочка, мягкая серединка, с грецким орехом."
+        }
+      }
+    },
+    {
+      "slug": "fig-salad",
+      "name": "Fig Salad",
+      "category": "salads",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Mixed greens, beef, cornelian cherry pickle, quince sauce, cherry tomato, parmesan, chips",
+      "diet": [],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "mixed greens",
+        "beef",
+        "cornelian cherry pickle",
+        "quince sauce",
+        "cherry tomato",
+        "parmesan",
+        "chips"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "250 qr",
+            "en": "250 g",
+            "ru": "250 г"
+          },
+          "price": 9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Əncir salatı",
+          "description": "Miks göyərti, dana əti, zoğal turşusu, heyva rubu, çeri pomidor, parmezan pendiri, çipsi"
+        },
+        "ru": {
+          "name": "Салат с инжиром",
+          "description": "Микс зелени, говядина, кизиловый соус, айвовый соус, помидоры черри, пармезан, чипсы"
+        }
+      }
+    },
+    {
+      "slug": "caesar-chicken",
+      "name": "Caesar Salad with Chicken",
+      "category": "salads",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Iceberg, cherry tomato, croutons, chicken, parmesan, caesar sauce",
+      "diet": [],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "iceberg",
+        "cherry tomato",
+        "croutons",
+        "chicken",
+        "parmesan",
+        "caesar sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "350 qr",
+            "en": "350 g",
+            "ru": "350 г"
+          },
+          "price": 9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Sezar salatı toyuq ilə",
+          "description": "Aysberq, çeri pomidor, suxari, toyuq, parmezan pendiri, sezar sousu"
+        },
+        "ru": {
+          "name": "Цезарь с курицей",
+          "description": "Айсберг, помидоры черри, сухарики, курица, пармезан, соус цезарь"
+        }
+      }
+    },
+    {
+      "slug": "caesar-shrimp",
+      "name": "Caesar Salad with Shrimp",
+      "category": "salads",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Iceberg, cherry tomato, croutons, shrimp, parmesan, caesar sauce",
+      "diet": [],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "iceberg",
+        "cherry tomato",
+        "croutons",
+        "shrimp",
+        "parmesan",
+        "caesar sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "320 qr",
+            "en": "320 g",
+            "ru": "320 г"
+          },
+          "price": 14
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Sezar salatı krevet ilə",
+          "description": "Aysberq, çeri pomidor, suxari, krevet, parmezan pendiri, sezar sousu"
+        },
+        "ru": {
+          "name": "Цезарь с креветками",
+          "description": "Айсберг, помидоры черри, сухарики, креветки, пармезан, соус цезарь"
+        }
+      }
+    },
+    {
+      "slug": "beef-salad",
+      "name": "Beef Salad",
+      "category": "salads",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Mixed greens, beef, cherry tomato, ginger, prune, special sauce",
+      "diet": [],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "mixed greens",
+        "beef",
+        "cherry tomato",
+        "ginger",
+        "prune",
+        "special sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "250 qr",
+            "en": "250 g",
+            "ru": "250 г"
+          },
+          "price": 9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Bif salat",
+          "description": "Miks göyərti, dana əti, çeri pomidor, zəncəfil, qara gavalı, xüsusi sous"
+        },
+        "ru": {
+          "name": "Биф-салат",
+          "description": "Микс зелени, говядина, помидоры черри, имбирь, чернослив, фирменный соус"
+        }
+      }
+    },
+    {
+      "slug": "tuna-salad",
+      "name": "Tuna Salad",
+      "category": "salads",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Tuna, iceberg, corn, cucumber, pickles, tomato, olive oil, salt, egg",
+      "diet": [],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "tuna",
+        "iceberg",
+        "corn",
+        "cucumber",
+        "pickles",
+        "tomato",
+        "olive oil",
+        "salt",
+        "egg"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "300 qr",
+            "en": "300 g",
+            "ru": "300 г"
+          },
+          "price": 7
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Tuna salatı",
+          "description": "Tuna balığı, aysberq, qarğıdalı, xiyar, turşu xiyar, pomidor, zeytun yağı, duz, yumurta"
+        },
+        "ru": {
+          "name": "Салат с тунцом",
+          "description": "Тунец, айсберг, кукуруза, огурцы, маринованные огурцы, помидоры, оливковое масло, соль, яйца"
+        }
+      }
+    },
+    {
+      "slug": "mimosa-salad",
+      "name": "Mimosa Salad",
+      "category": "salads",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Potato, carrot, chicken, egg, dutch cheese, mayonnaise, salt, isot pepper",
+      "diet": [],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "potato",
+        "carrot",
+        "chicken",
+        "egg",
+        "dutch cheese",
+        "mayonnaise",
+        "salt",
+        "isot pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "200 qr",
+            "en": "200 g",
+            "ru": "200 г"
+          },
+          "price": 7
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Mimoza salatı",
+          "description": "Kartof, kök, toyuq, yumurta, holland pendiri, mayonez, duz, isot"
+        },
+        "ru": {
+          "name": "Салат «Мимоза»",
+          "description": "Картофель, морковь, курица, яйца, голландский сыр, майонез, соль, перец исот"
+        }
+      }
+    },
+    {
+      "slug": "chicken-salad",
+      "name": "Chicken Salad",
+      "category": "salads",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, bell pepper, cucumber, corn, parsley, mayonnaise, salt, isot pepper",
+      "diet": [],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "bell pepper",
+        "cucumber",
+        "corn",
+        "parsley",
+        "mayonnaise",
+        "salt",
+        "isot pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "200 qr",
+            "en": "200 g",
+            "ru": "200 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuq salatı",
+          "description": "Toyuq, rəngli bibər, xiyar, qarğıdalı, cəfəri, mayonez, duz, isot"
+        },
+        "ru": {
+          "name": "Куриный салат",
+          "description": "Курица, болгарский перец, огурцы, кукуруза, петрушка, майонез, соль, перец исот"
+        }
+      }
+    },
+    {
+      "slug": "shepherd-salad",
+      "name": "Shepherd Salad",
+      "category": "salads",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Tomato, cucumber, red onion, greens, olive oil, lemon, salt",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "tomato",
+        "cucumber",
+        "red onion",
+        "greens",
+        "olive oil",
+        "lemon",
+        "salt"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "200 qr",
+            "en": "200 g",
+            "ru": "200 г"
+          },
+          "price": 5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Çoban salatı",
+          "description": "Pomidor, xiyar, qırmızı soğan, göyərti, zeytun yağı, limon, duz"
+        },
+        "ru": {
+          "name": "Салат «Чобан»",
+          "description": "Помидоры, огурцы, красный лук, зелень, оливковое масло, лимон, соль"
+        }
+      }
+    },
+    {
+      "slug": "greek-salad",
+      "name": "Greek Salad",
+      "category": "salads",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Tomato, cucumber, lettuce, olives, feta, olive oil, lemon, salt, red onion, corn",
+      "diet": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "tomato",
+        "cucumber",
+        "lettuce",
+        "olives",
+        "feta",
+        "olive oil",
+        "lemon",
+        "salt",
+        "red onion",
+        "corn"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "200 qr",
+            "en": "200 g",
+            "ru": "200 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Yunan salatı",
+          "description": "Pomidor, xiyar, kahı, zeytun, feta pendiri, zeytun yağı, limon, duz, qırmızı soğan, qarğıdalı"
+        },
+        "ru": {
+          "name": "Греческий салат",
+          "description": "Помидоры, огурцы, листья салата, оливки, фета, оливковое масло, лимон, соль, красный лук, кукуруза"
+        }
+      }
+    },
+    {
+      "slug": "fisincan-chicken",
+      "name": "Fisinjan Salad with Chicken",
+      "category": "salads",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Iceberg, chicken, pomegranate, croutons, tomato, cucumber, corn, walnut, vinegar, pomegranate sauce",
+      "diet": [],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "iceberg",
+        "chicken",
+        "pomegranate",
+        "croutons",
+        "tomato",
+        "cucumber",
+        "corn",
+        "walnut",
+        "vinegar",
+        "pomegranate sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "300 qr",
+            "en": "300 g",
+            "ru": "300 г"
+          },
+          "price": 9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Fisincan salatı toyuqla",
+          "description": "Aysberq, toyuq, nar, suxari, pomidor, xiyar, qarğıdalı, qoz, sirkə, narşərab"
+        },
+        "ru": {
+          "name": "Салат «Фисинджан» с курицей",
+          "description": "Айсберг, курица, гранат, сухарики, помидоры, огурцы, кукуруза, грецкий орех, уксус, наршараб"
+        }
+      }
+    },
+    {
+      "slug": "fisincan-beef",
+      "name": "Fisinjan Salad with Beef",
+      "category": "salads",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Iceberg, beef, pomegranate, croutons, tomato, cucumber, corn, walnut, vinegar, pomegranate sauce",
+      "diet": [],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "iceberg",
+        "beef",
+        "pomegranate",
+        "croutons",
+        "tomato",
+        "cucumber",
+        "corn",
+        "walnut",
+        "vinegar",
+        "pomegranate sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "300 qr",
+            "en": "300 g",
+            "ru": "300 г"
+          },
+          "price": 10
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Fisincan salatı ətlə",
+          "description": "Aysberq, dana əti, nar, suxari, pomidor, xiyar, qarğıdalı, qoz, sirkə, narşərab"
+        },
+        "ru": {
+          "name": "Салат «Фисинджан» с говядиной",
+          "description": "Айсберг, говядина, гранат, сухарики, помидоры, огурцы, кукуруза, грецкий орех, уксус, наршараб"
+        }
+      }
+    },
+    {
+      "slug": "tomato-salad",
+      "name": "Tomato Salad",
+      "category": "salads",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Tomato, sour plum, cornelian cherry pickle, red onion, salt, basil",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "tomato",
+        "sour plum",
+        "cornelian cherry pickle",
+        "red onion",
+        "salt",
+        "basil"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "250 qr",
+            "en": "250 g",
+            "ru": "250 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Pomidor salatı",
+          "description": "Pomidor, qara alça, zoğal turşusu, qırmızı soğan, duz, reyhan"
+        },
+        "ru": {
+          "name": "Салат из помидоров",
+          "description": "Помидоры, алыча, кизиловый соус, красный лук, соль, базилик"
+        }
+      }
+    },
+    {
+      "slug": "grill-salad",
+      "name": "Grilled Vegetable Salad",
+      "category": "salads",
+      "cuisine": "azerbaijani",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Tomato, eggplant, bell pepper, red onion, basil, parsley, olive oil, salt, isot pepper, chili flakes",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "tomato",
+        "eggplant",
+        "bell pepper",
+        "red onion",
+        "basil",
+        "parsley",
+        "olive oil",
+        "salt",
+        "isot pepper",
+        "chili flakes"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "250 qr",
+            "en": "250 g",
+            "ru": "250 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Manqal salatı",
+          "description": "Pomidor, badımcan, rəngli bibər, qırmızı soğan, reyhan, cəfəri, zeytun yağı, duz, isot, pul bibər"
+        },
+        "ru": {
+          "name": "Салат «Мангал»",
+          "description": "Помидоры, баклажан, болгарский перец, красный лук, базилик, петрушка, оливковое масло, соль, перец исот, хлопья перца"
+        }
+      }
+    },
+    {
+      "slug": "vegetable-salad",
+      "name": "Vegetable Salad",
+      "category": "salads",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Tomato, cucumber, bell pepper, corn, carrot, olive oil, lemon, salt, isot pepper",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "tomato",
+        "cucumber",
+        "bell pepper",
+        "corn",
+        "carrot",
+        "olive oil",
+        "lemon",
+        "salt",
+        "isot pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "200 qr",
+            "en": "200 g",
+            "ru": "200 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Tərəvəz salatı",
+          "description": "Pomidor, xiyar, rəngli bibər, qarğıdalı, kök, zeytun yağı, limon, duz, isot"
+        },
+        "ru": {
+          "name": "Овощной салат",
+          "description": "Помидоры, огурцы, болгарский перец, кукуруза, морковь, оливковое масло, лимон, соль, перец исот"
+        }
+      }
+    },
+    {
+      "slug": "lentil-soup",
+      "name": "Lentil Soup",
+      "category": "soups",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Onion, carrot, garlic, tomato, butter, mint, lentils",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "onion",
+        "carrot",
+        "garlic",
+        "tomato",
+        "butter",
+        "mint",
+        "lentils"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "300 qr",
+            "en": "300 g",
+            "ru": "300 г"
+          },
+          "price": 5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Mərci şorbası",
+          "description": "Soğan, kök, sarımsaq, pomidor, kərə yağı, nanə, mərci"
+        },
+        "ru": {
+          "name": "Чечевичный суп",
+          "description": "Лук, морковь, чеснок, помидоры, сливочное масло, мята, чечевица"
+        }
+      }
+    },
+    {
+      "slug": "chicken-soup",
+      "name": "Village Chicken Soup",
+      "category": "soups",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, onion, carrot, bell pepper, potato, salt, coriander, rice, butter",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "onion",
+        "carrot",
+        "bell pepper",
+        "potato",
+        "salt",
+        "coriander",
+        "rice",
+        "butter"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "300 qr",
+            "en": "300 g",
+            "ru": "300 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Çolpa şorbası",
+          "description": "Toyuq, soğan, kök, rəngli bibər, kartof, duz, keşniş, düyü, kərə yağı"
+        },
+        "ru": {
+          "name": "Суп из цыплёнка",
+          "description": "Курица, лук, морковь, болгарский перец, картофель, соль, кинза, рис, сливочное масло"
+        }
+      }
+    },
+    {
+      "slug": "mushroom-soup",
+      "name": "Mushroom Soup",
+      "category": "soups",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Mushrooms, carrot, garlic, cream, milk, flour, salt",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "mushrooms",
+        "carrot",
+        "garlic",
+        "cream",
+        "milk",
+        "flour",
+        "salt"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "300 qr",
+            "en": "300 g",
+            "ru": "300 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Göbələk şorbası",
+          "description": "Göbələk, kök, sarımsaq, qaymaq, süd, un, duz"
+        },
+        "ru": {
+          "name": "Грибной суп",
+          "description": "Грибы, морковь, чеснок, сливки, молоко, мука, соль"
+        }
+      }
+    },
+    {
+      "slug": "dushbara",
+      "name": "Dushbara",
+      "category": "soups",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Lamb, beef, dough, butter, salt, broth",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "beef",
+        "dough",
+        "butter",
+        "salt",
+        "broth"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "300 qr",
+            "en": "300 g",
+            "ru": "300 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Düşbərə",
+          "description": "Quzu əti, dana əti, xəmir, kərə yağı, duz, bulyon"
+        },
+        "ru": {
+          "name": "Дюшбара",
+          "description": "Баранина, говядина, тесто, сливочное масло, соль, бульон"
+        }
+      }
+    },
+    {
+      "slug": "arishta",
+      "name": "Arishta Noodle Soup",
+      "category": "soups",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb, beef, noodles, sour plum, black-eyed peas, salt, broth",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "beef",
+        "noodles",
+        "sour plum",
+        "black-eyed peas",
+        "salt",
+        "broth"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "300 qr",
+            "en": "300 g",
+            "ru": "300 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Əriştə şorbası",
+          "description": "Quzu əti, dana əti, əriştə, qara alça, qara göz lobya, duz, bulyon"
+        },
+        "ru": {
+          "name": "Суп с лапшой «Ариште»",
+          "description": "Баранина, говядина, лапша, алыча, вигна, соль, бульон"
+        }
+      }
+    },
+    {
+      "slug": "gurza-soup",
+      "name": "Gurza Soup",
+      "category": "soups",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb, beef, chili flakes, broth, butter, salt, coriander, dough",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "beef",
+        "chili flakes",
+        "broth",
+        "butter",
+        "salt",
+        "coriander",
+        "dough"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "300 qr",
+            "en": "300 g",
+            "ru": "300 г"
+          },
+          "price": 6
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Gürzə şorbası",
+          "description": "Quzu əti, dana əti, pul bibər, bulyon, kərə yağı, duz, keşniş, xəmir"
+        },
+        "ru": {
+          "name": "Суп с гюрзой",
+          "description": "Баранина, говядина, хлопья перца, бульон, сливочное масло, соль, кинза, тесто"
+        }
+      }
+    },
+    {
+      "slug": "sheki-piti",
+      "name": "Sheki Piti",
+      "category": "soups",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Lamb, chestnut, sour plum, chickpeas, onion, salt, saffron, lamb tail fat, mint",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "chestnut",
+        "sour plum",
+        "chickpeas",
+        "onion",
+        "salt",
+        "saffron",
+        "lamb tail fat",
+        "mint"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "350 qr",
+            "en": "350 g",
+            "ru": "350 г"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Şəki pitisi",
+          "description": "Quzu əti, şabalıd, qara alça, noxud, soğan, duz, zəfəran, quyruq, nanə"
+        },
+        "ru": {
+          "name": "Шекинский пити",
+          "description": "Баранина, каштан, алыча, нут, лук, соль, шафран, курдюк, мята"
+        }
+      }
+    },
+    {
+      "slug": "lahmacun",
+      "name": "Lahmacun",
+      "category": "pide",
+      "cuisine": "turkish",
+      "spice": 1,
+      "image": null,
+      "best_seller": true,
+      "description": "Minced beef, tomato, onion, bell pepper, pepper paste, salt, black pepper",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "minced beef",
+        "tomato",
+        "onion",
+        "bell pepper",
+        "pepper paste",
+        "salt",
+        "black pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Lahmacun",
+          "description": "Dana qıyma, pomidor, soğan, rəngli bibər, bibər salçası, duz, qara istiot"
+        },
+        "ru": {
+          "name": "Лахмаджун",
+          "description": "Говяжий фарш, помидоры, лук, болгарский перец, перечная паста, соль, чёрный перец"
+        }
+      }
+    },
+    {
+      "slug": "cheese-lahmacun",
+      "name": "Lahmacun with Cheese",
+      "category": "pide",
+      "cuisine": "turkish",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Minced beef, tomato, onion, bell pepper, pepper paste, salt, black pepper, parsley, lemon, mozzarella",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "minced beef",
+        "tomato",
+        "onion",
+        "bell pepper",
+        "pepper paste",
+        "salt",
+        "black pepper",
+        "parsley",
+        "lemon",
+        "mozzarella"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 4.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Pendirli lahmacun",
+          "description": "Dana qıyma, pomidor, soğan, rəngli bibər, bibər salçası, duz, qara istiot, cəfəri, limon, mozzarella"
+        },
+        "ru": {
+          "name": "Лахмаджун с сыром",
+          "description": "Говяжий фарш, помидоры, лук, болгарский перец, перечная паста, соль, чёрный перец, петрушка, лимон, моцарелла"
+        }
+      }
+    },
+    {
+      "slug": "cheese-pide",
+      "name": "Cheese Pide",
+      "category": "pide",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Dough, pide sauce, mozzarella",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "dough",
+        "pide sauce",
+        "mozzarella"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Pendirli pide",
+          "description": "Xəmir, pide sousu, mozzarella"
+        },
+        "ru": {
+          "name": "Пиде с сыром",
+          "description": "Тесто, соус для пиде, моцарелла"
+        }
+      }
+    },
+    {
+      "slug": "chicken-pide",
+      "name": "Chicken Pide",
+      "category": "pide",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Dough, pide sauce, mozzarella, chicken, bell pepper, tomato",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "dough",
+        "pide sauce",
+        "mozzarella",
+        "chicken",
+        "bell pepper",
+        "tomato"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 10
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuqlu pide",
+          "description": "Xəmir, pide sousu, mozzarella, toyuq, rəngli bibər, pomidor"
+        },
+        "ru": {
+          "name": "Пиде с курицей",
+          "description": "Тесто, соус для пиде, моцарелла, курица, болгарский перец, помидоры"
+        }
+      }
+    },
+    {
+      "slug": "minced-pide",
+      "name": "Minced Meat Pide",
+      "category": "pide",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Dough, pide sauce, minced beef, tomato, bell pepper, mozzarella",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "dough",
+        "pide sauce",
+        "minced beef",
+        "tomato",
+        "bell pepper",
+        "mozzarella"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Qiyməli pide",
+          "description": "Xəmir, pide sousu, dana qıyma, pomidor, rəngli bibər, mozzarella"
+        },
+        "ru": {
+          "name": "Пиде с фаршем",
+          "description": "Тесто, соус для пиде, говяжий фарш, помидоры, болгарский перец, моцарелла"
+        }
+      }
+    },
+    {
+      "slug": "mixed-pide",
+      "name": "Mixed Pide",
+      "category": "pide",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Dough, pide sauce, sausage, chicken, tomato, mushrooms, bell pepper, olives, mozzarella",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "dough",
+        "pide sauce",
+        "sausage",
+        "chicken",
+        "tomato",
+        "mushrooms",
+        "bell pepper",
+        "olives",
+        "mozzarella"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Assorti pide",
+          "description": "Xəmir, pide sousu, kolbasa, toyuq, pomidor, göbələk, rəngli bibər, zeytun, mozzarella"
+        },
+        "ru": {
+          "name": "Пиде ассорти",
+          "description": "Тесто, соус для пиде, колбаса, курица, помидоры, грибы, болгарский перец, оливки, моцарелла"
+        }
+      }
+    },
+    {
+      "slug": "kusbasi-pide",
+      "name": "Kuşbaşı Pide",
+      "category": "pide",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Dough, pide sauce, beef, tomato, bell pepper, mozzarella",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "dough",
+        "pide sauce",
+        "beef",
+        "tomato",
+        "bell pepper",
+        "mozzarella"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 13
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Quşbaşı pide",
+          "description": "Xəmir, pide sousu, dana əti, pomidor, rəngli bibər, mozzarella"
+        },
+        "ru": {
+          "name": "Пиде с мясом кусочками",
+          "description": "Тесто, соус для пиде, говядина, помидоры, болгарский перец, моцарелла"
+        }
+      }
+    },
+    {
+      "slug": "adana-kebab",
+      "name": "Adana Kebab",
+      "category": "kebabs",
+      "cuisine": "turkish",
+      "spice": 2,
+      "image": null,
+      "best_seller": true,
+      "description": "Lamb, lamb tail fat, chili flakes, onion",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "lamb tail fat",
+        "chili flakes",
+        "onion"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Adana kabab",
+          "description": "Quzu əti, quyruq, pul bibər, soğan"
+        },
+        "ru": {
+          "name": "Адана-кебаб",
+          "description": "Баранина, курдюк, хлопья перца, лук"
+        }
+      }
+    },
+    {
+      "slug": "beyti-sarma",
+      "name": "Beyti Sarma",
+      "category": "kebabs",
+      "cuisine": "turkish",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb, parsley, garlic, onion",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "parsley",
+        "garlic",
+        "onion"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Beyti sarma",
+          "description": "Quzu əti, cəfəri, sarımsaq, soğan"
+        },
+        "ru": {
+          "name": "Бейти сарма",
+          "description": "Баранина, петрушка, чеснок, лук"
+        }
+      }
+    },
+    {
+      "slug": "lamb-shish",
+      "name": "Lamb Shish",
+      "category": "kebabs",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Quzu şiş",
+          "description": "Quzu əti"
+        },
+        "ru": {
+          "name": "Шашлык из баранины",
+          "description": "Баранина"
+        }
+      }
+    },
+    {
+      "slug": "chicken-shish",
+      "name": "Chicken Shish",
+      "category": "kebabs",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, thyme, bell pepper, garlic",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "thyme",
+        "bell pepper",
+        "garlic"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 10
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuq şiş",
+          "description": "Toyuq, kəklikotu, rəngli bibər, sarımsaq"
+        },
+        "ru": {
+          "name": "Куриный шашлык",
+          "description": "Курица, чабрец, болгарский перец, чеснок"
+        }
+      }
+    },
+    {
+      "slug": "adana-cheese-oven",
+      "name": "Oven-baked Adana with Cheese",
+      "category": "kebabs",
+      "cuisine": "turkish",
+      "spice": 2,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb, lamb tail fat, chili flakes, dutch cheese",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "lamb tail fat",
+        "chili flakes",
+        "dutch cheese"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 17
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Adana pendirli fırında",
+          "description": "Quzu əti, quyruq, pul bibər, holland pendiri"
+        },
+        "ru": {
+          "name": "Адана с сыром в печи",
+          "description": "Баранина, курдюк, хлопья перца, голландский сыр"
+        }
+      }
+    },
+    {
+      "slug": "bone-chicken-shish",
+      "name": "Bone-in Chicken Shish",
+      "category": "kebabs",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, green pepper, tomato, sumac, onion, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "green pepper",
+        "tomato",
+        "sumac",
+        "onion",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 10.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Sümüklü toyuq şiş",
+          "description": "Toyuq, yaşıl bibər, pomidor, sumaq, soğan, kartof fri"
+        },
+        "ru": {
+          "name": "Шашлык из курицы на кости",
+          "description": "Курица, зелёный перец, помидоры, сумах, лук, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "lamb-cop-shish",
+      "name": "Lamb Çöp Şiş",
+      "category": "kebabs",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb, green pepper, tomato, sumac, onion, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "green pepper",
+        "tomato",
+        "sumac",
+        "onion",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12.4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Quzu çöp şiş",
+          "description": "Quzu əti, yaşıl bibər, pomidor, sumaq, soğan, kartof fri"
+        },
+        "ru": {
+          "name": "Чёп-шиш из баранины",
+          "description": "Баранина, зелёный перец, помидоры, сумах, лук, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "chicken-cop-shish",
+      "name": "Chicken Çöp Şiş",
+      "category": "kebabs",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, green pepper, tomato, sumac, onion, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "green pepper",
+        "tomato",
+        "sumac",
+        "onion",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 10.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuq çöp şiş",
+          "description": "Toyuq, yaşıl bibər, pomidor, sumaq, soğan, kartof fri"
+        },
+        "ru": {
+          "name": "Чёп-шиш из курицы",
+          "description": "Курица, зелёный перец, помидоры, сумах, лук, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "chicken-wings",
+      "name": "Chicken Wings",
+      "category": "kebabs",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, tomato, green pepper, sumac, onion, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "tomato",
+        "green pepper",
+        "sumac",
+        "onion",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 8.3
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuq qanadları",
+          "description": "Toyuq, pomidor, yaşıl bibər, sumaq, soğan, kartof fri"
+        },
+        "ru": {
+          "name": "Куриные крылышки",
+          "description": "Курица, помидоры, зелёный перец, сумах, лук, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "vegetable-lula",
+      "name": "Lula Kebab with Vegetables",
+      "category": "kebabs",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Minced beef, tomato, eggplant, green pepper, kebab salad",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "minced beef",
+        "tomato",
+        "eggplant",
+        "green pepper",
+        "kebab salad"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 11.9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Tərəvəzli lülə kabab",
+          "description": "Dana qıyma, pomidor, badımcan, yaşıl bibər, kabab salatı"
+        },
+        "ru": {
+          "name": "Люля-кебаб с овощами",
+          "description": "Говяжий фарш, помидоры, баклажан, зелёный перец, салат к кебабу"
+        }
+      }
+    },
+    {
+      "slug": "butcher-kofte",
+      "name": "Butcher’s Köfte",
+      "category": "kebabs",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, tomato, green pepper, sumac, onion, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "tomato",
+        "green pepper",
+        "sumac",
+        "onion",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 11.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Qəssab köftə",
+          "description": "Dana əti, pomidor, yaşıl bibər, sumaq, soğan, kartof fri"
+        },
+        "ru": {
+          "name": "Кёфте «Мясник»",
+          "description": "Говядина, помидоры, зелёный перец, сумах, лук, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "cheese-kofte",
+      "name": "Cheese Köfte",
+      "category": "kebabs",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, dutch cheese, tomato, green pepper, sumac, onion, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "dutch cheese",
+        "tomato",
+        "green pepper",
+        "sumac",
+        "onion",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 11.9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Pendirli köftə",
+          "description": "Dana əti, holland pendiri, pomidor, yaşıl bibər, sumaq, soğan, kartof fri"
+        },
+        "ru": {
+          "name": "Кёфте с сыром",
+          "description": "Говядина, голландский сыр, помидоры, зелёный перец, сумах, лук, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "lamb-basdirma",
+      "name": "Lamb Basdirma Kebab",
+      "category": "mains",
+      "cuisine": "azerbaijani",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb, hot pepper, tomato, potato, mushrooms",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "hot pepper",
+        "tomato",
+        "potato",
+        "mushrooms"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 14.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Quzu basdırma kabab",
+          "description": "Quzu əti, acı bibər, pomidor, kartof, göbələk"
+        },
+        "ru": {
+          "name": "Баранина басдырма",
+          "description": "Баранина, острый перец, помидоры, картофель, грибы"
+        }
+      }
+    },
+    {
+      "slug": "bbq-kofte",
+      "name": "Köfte in BBQ Sauce",
+      "category": "mains",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, bell pepper, mushrooms, rice, saffron, seasonal salad",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "bell pepper",
+        "mushrooms",
+        "rice",
+        "saffron",
+        "seasonal salad"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12.9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "BBQ souslu köftə",
+          "description": "Dana əti, rəngli bibər, göbələk, düyü, zəfəran, mövsüm salatı"
+        },
+        "ru": {
+          "name": "Кёфте в соусе барбекю",
+          "description": "Говядина, болгарский перец, грибы, рис, шафран, сезонный салат"
+        }
+      }
+    },
+    {
+      "slug": "lamb-kebab",
+      "name": "Lamb Kebab",
+      "category": "mains",
+      "cuisine": "azerbaijani",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb, hot pepper, tomato, french fries, sumac, onion, ketchup, mexican sauce",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "hot pepper",
+        "tomato",
+        "french fries",
+        "sumac",
+        "onion",
+        "ketchup",
+        "mexican sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 14.9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Quzu kababı",
+          "description": "Quzu əti, acı bibər, pomidor, kartof fri, sumaq, soğan, ketçup, meksika sousu"
+        },
+        "ru": {
+          "name": "Кебаб из баранины",
+          "description": "Баранина, острый перец, помидоры, картофель фри, сумах, лук, кетчуп, мексиканский соус"
+        }
+      }
+    },
+    {
+      "slug": "veal-ribeye",
+      "name": "Veal Entrecôte",
+      "category": "mains",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Beef, potato, mushrooms, cherry tomato, cornelian cherry pickle",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "potato",
+        "mushrooms",
+        "cherry tomato",
+        "cornelian cherry pickle"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 18.9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Dana antrikot",
+          "description": "Dana əti, kartof, göbələk, çeri pomidor, zoğal turşusu"
+        },
+        "ru": {
+          "name": "Антрекот из телятины",
+          "description": "Говядина, картофель, грибы, помидоры черри, кизиловый соус"
+        }
+      }
+    },
+    {
+      "slug": "sirloin-demiglace",
+      "name": "Sirloin with Demi-glace",
+      "category": "mains",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, potato, mushrooms, cherry tomato, demi-glace, seasonal salad",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "potato",
+        "mushrooms",
+        "cherry tomato",
+        "demi-glace",
+        "seasonal salad"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 15.9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Demiqlas souslu bel əti",
+          "description": "Dana əti, kartof, göbələk, çeri pomidor, demiqlas sousu, mövsüm salatı"
+        },
+        "ru": {
+          "name": "Вырезка с соусом демиглас",
+          "description": "Говядина, картофель, грибы, помидоры черри, соус демиглас, сезонный салат"
+        }
+      }
+    },
+    {
+      "slug": "cajun-chicken",
+      "name": "Cajun Chicken",
+      "category": "mains",
+      "cuisine": "international",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, cajun sauce, rice, french fries, tomato, green pepper",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "cajun sauce",
+        "rice",
+        "french fries",
+        "tomato",
+        "green pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 13
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Kajun souslu toyuq",
+          "description": "Toyuq, kajun sousu, düyü, kartof fri, pomidor, yaşıl bibər"
+        },
+        "ru": {
+          "name": "Курица в соусе каджун",
+          "description": "Курица, соус каджун, рис, картофель фри, помидоры, зелёный перец"
+        }
+      }
+    },
+    {
+      "slug": "chicken-kulbasti",
+      "name": "Chicken Külbastı",
+      "category": "mains",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, eggplant, tomato, rice, french fries, green pepper",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "eggplant",
+        "tomato",
+        "rice",
+        "french fries",
+        "green pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuq külbastı",
+          "description": "Toyuq, badımcan, pomidor, düyü, kartof fri, yaşıl bibər"
+        },
+        "ru": {
+          "name": "Куриный кюльбасты",
+          "description": "Курица, баклажан, помидоры, рис, картофель фри, зелёный перец"
+        }
+      }
+    },
+    {
+      "slug": "golden-waffles",
+      "name": "Golden Waffles",
+      "category": "desserts",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Waffle, banana, dark chocolate, strawberry, ice cream",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "celebration",
+        "comfort"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "waffle",
+        "banana",
+        "dark chocolate",
+        "strawberry",
+        "ice cream"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 18
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Golden vafli",
+          "description": "Vafli xəmiri, banan, tünd şokolad, çiyələk, dondurma"
+        },
+        "ru": {
+          "name": "Золотые вафли",
+          "description": "Тесто для вафель, банан, тёмный шоколад, клубника, мороженое"
+        }
+      }
+    },
+    {
+      "slug": "nutella-crepe",
+      "name": "Chocolate Hazelnut Crepe",
+      "category": "desserts",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Whipped cream, banana, strawberry, chocolate spread, flour, egg, milk",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "whipped cream",
+        "banana",
+        "strawberry",
+        "chocolate spread",
+        "flour",
+        "egg",
+        "milk"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 14
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Şokoladlı krep",
+          "description": "Şanti krem, banan, çiyələk, fındıqlı şokolad kremi, un, yumurta, süd"
+        },
+        "ru": {
+          "name": "Крепы с шоколадной пастой",
+          "description": "Взбитые сливки, банан, клубника, шоколадно-ореховая паста, мука, яйца, молоко"
+        }
+      }
+    },
+    {
+      "slug": "hot-chocolate-cookie",
+      "name": "Hot Chocolate Cookie",
+      "category": "desserts",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Flour, butter, dark chocolate, sugar, egg, ice cream",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "flour",
+        "butter",
+        "dark chocolate",
+        "sugar",
+        "egg",
+        "ice cream"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 18
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "İsti şokoladlı kuki",
+          "description": "Un, kərə yağı, tünd şokolad, şəkər, yumurta, dondurma"
+        },
+        "ru": {
+          "name": "Горячее шоколадное печенье",
+          "description": "Мука, сливочное масло, тёмный шоколад, сахар, яйца, мороженое"
+        }
+      }
+    },
+    {
+      "slug": "lemonade",
+      "name": "Lemonade",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Water, sugar, lemon",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "water",
+        "sugar",
+        "lemon"
+      ],
+      "variants": [
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 3
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Limonad",
+          "description": "Su, şəkər, limon"
+        },
+        "ru": {
+          "name": "Лимонад",
+          "description": "Вода, сахар, лимон"
+        }
+      }
+    },
+    {
+      "slug": "begendili-kofte",
+      "name": "Köfte with Eggplant Purée",
+      "category": "mains",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Minced beef, eggplant puree, bechamel, rice, french fries, tomato, green pepper",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "minced beef",
+        "eggplant puree",
+        "bechamel",
+        "rice",
+        "french fries",
+        "tomato",
+        "green pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 14
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Beğendili köftə",
+          "description": "Dana qıyma, badımcan püresi, beşamel sousu, düyü, kartof fri, pomidor, yaşıl bibər"
+        },
+        "ru": {
+          "name": "Кёфте с бегенди",
+          "description": "Говяжий фарш, пюре из баклажанов, соус бешамель, рис, картофель фри, помидоры, зелёный перец"
+        }
+      }
+    },
+    {
+      "slug": "kayseri-manti",
+      "name": "Kayseri Manti",
+      "category": "mains",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Manti dough, minced beef, yoghurt, butter, pepper paste, chili flakes, mint",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "manti dough",
+        "minced beef",
+        "yoghurt",
+        "butter",
+        "pepper paste",
+        "chili flakes",
+        "mint"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Kayseri mantı",
+          "description": "Mantı xəmiri, dana qıyma, qatıq, kərə yağı, bibər salçası, pul bibər, nanə"
+        },
+        "ru": {
+          "name": "Кайсери манты",
+          "description": "Тесто для манты, говяжий фарш, йогурт, сливочное масло, перечная паста, хлопья перца, мята"
+        }
+      }
+    },
+    {
+      "slug": "curry-chicken",
+      "name": "Curry Chicken",
+      "category": "mains",
+      "cuisine": "azerbaijani",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, curry sauce, cream, rice, french fries, green pepper",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "curry sauce",
+        "cream",
+        "rice",
+        "french fries",
+        "green pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 13
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Köri souslu toyuq",
+          "description": "Toyuq, köri sousu, qaymaq, düyü, kartof fri, yaşıl bibər"
+        },
+        "ru": {
+          "name": "Курица в соусе карри",
+          "description": "Курица, соус карри, сливки, рис, картофель фри, зелёный перец"
+        }
+      }
+    },
+    {
+      "slug": "chicken-quesadilla",
+      "name": "Chicken Quesadilla",
+      "category": "mains",
+      "cuisine": "mexican",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Tortilla, chicken, cheese, bell pepper, sour cream, salsa",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "tortilla",
+        "chicken",
+        "cheese",
+        "bell pepper",
+        "sour cream",
+        "salsa"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuqlu kesadilya",
+          "description": "Tortilla, toyuq, pendir, rəngli bibər, xama, salsa"
+        },
+        "ru": {
+          "name": "Кесадилья с курицей",
+          "description": "Тортилья, курица, сыр, болгарский перец, сметана, сальса"
+        }
+      }
+    },
+    {
+      "slug": "penne-arrabbiata",
+      "name": "Penne Arrabbiata",
+      "category": "mains",
+      "cuisine": "italian",
+      "spice": 2,
+      "image": null,
+      "best_seller": false,
+      "description": "Penne, tomato sauce, hot pepper, garlic, olives, parmesan",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "penne",
+        "tomato sauce",
+        "hot pepper",
+        "garlic",
+        "olives",
+        "parmesan"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 11
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Penne arrabbiata",
+          "description": "Penne makaron, pomidor sousu, acı bibər, sarımsaq, zeytun, parmezan pendiri"
+        },
+        "ru": {
+          "name": "Пенне арраббьята",
+          "description": "Паста пенне, томатный соус, острый перец, чеснок, оливки, пармезан"
+        }
+      }
+    },
+    {
+      "slug": "chicken-schnitzel",
+      "name": "Chicken Schnitzel",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, breadcrumbs, egg, french fries, lettuce, corn, lemon",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "breadcrumbs",
+        "egg",
+        "french fries",
+        "lettuce",
+        "corn",
+        "lemon"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 13
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuq şnitsel",
+          "description": "Toyuq, çörək qırıntısı, yumurta, kartof fri, kahı, qarğıdalı, limon"
+        },
+        "ru": {
+          "name": "Куриный шницель",
+          "description": "Курица, панировка, яйца, картофель фри, листья салата, кукуруза, лимон"
+        }
+      }
+    },
+    {
+      "slug": "peru-beef",
+      "name": "Peru Sauce Beef",
+      "category": "mains",
+      "cuisine": "azerbaijani",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, peru sauce, bell pepper, mushrooms, rice, french fries, tomato",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "peru sauce",
+        "bell pepper",
+        "mushrooms",
+        "rice",
+        "french fries",
+        "tomato"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 14
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Peru souslu dana",
+          "description": "Dana əti, peru sousu, rəngli bibər, göbələk, düyü, kartof fri, pomidor"
+        },
+        "ru": {
+          "name": "Говядина в соусе перу",
+          "description": "Говядина, соус перу, болгарский перец, грибы, рис, картофель фри, помидоры"
+        }
+      }
+    },
+    {
+      "slug": "arizona-chicken",
+      "name": "Arizona Chicken",
+      "category": "mains",
+      "cuisine": "azerbaijani",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, arizona sauce, mixed vegetables, french fries, bell pepper",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "arizona sauce",
+        "mixed vegetables",
+        "french fries",
+        "bell pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Arizona toyuq",
+          "description": "Toyuq, arizona sousu, tərəvəz qarışığı, kartof fri, rəngli bibər"
+        },
+        "ru": {
+          "name": "Курица «Аризона»",
+          "description": "Курица, соус аризона, овощная смесь, картофель фри, болгарский перец"
+        }
+      }
+    },
+    {
+      "slug": "creamy-mushroom-chicken",
+      "name": "Creamy Mushroom Chicken",
+      "category": "mains",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, mushrooms, cream, rice, french fries, green pepper",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "mushrooms",
+        "cream",
+        "rice",
+        "french fries",
+        "green pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 13
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Kremalı göbələkli toyuq",
+          "description": "Toyuq, göbələk, qaymaq, düyü, kartof fri, yaşıl bibər"
+        },
+        "ru": {
+          "name": "Курица со сливочно-грибным соусом",
+          "description": "Курица, грибы, сливки, рис, картофель фри, зелёный перец"
+        }
+      }
+    },
+    {
+      "slug": "asian-chicken",
+      "name": "Asian Chicken with Wild Rice",
+      "category": "mains",
+      "cuisine": "asian",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, teriyaki sauce, flour, wild rice, rice, tomato",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "teriyaki sauce",
+        "flour",
+        "wild rice",
+        "rice",
+        "tomato"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Yabani düyülü Asiya toyuğu",
+          "description": "Toyuq, asiya sousu, un, yabani düyü, düyü, pomidor"
+        },
+        "ru": {
+          "name": "Азиатская курица с диким рисом",
+          "description": "Курица, азиатский соус, мука, дикий рис, рис, помидоры"
+        }
+      }
+    },
+    {
+      "slug": "chicken-burger",
+      "name": "Chicken Burger",
+      "category": "mains",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Burger bun, chicken, breadcrumbs, lettuce, tomato, mayonnaise, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "burger bun",
+        "chicken",
+        "breadcrumbs",
+        "lettuce",
+        "tomato",
+        "mayonnaise",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 13
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuq burger",
+          "description": "Burger çörəyi, toyuq, çörək qırıntısı, kahı, pomidor, mayonez, kartof fri"
+        },
+        "ru": {
+          "name": "Куриный бургер",
+          "description": "Булочка, курица, панировка, листья салата, помидоры, майонез, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "chicken-burrito",
+      "name": "Chicken Burrito",
+      "category": "mains",
+      "cuisine": "mexican",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Tortilla, chicken, cheese, bell pepper, sour cream, salsa, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "tortilla",
+        "chicken",
+        "cheese",
+        "bell pepper",
+        "sour cream",
+        "salsa",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuqlu burrito",
+          "description": "Tortilla, toyuq, pendir, rəngli bibər, xama, salsa, kartof fri"
+        },
+        "ru": {
+          "name": "Буррито с курицей",
+          "description": "Тортилья, курица, сыр, болгарский перец, сметана, сальса, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "chicken-mushroom-crepe",
+      "name": "Chicken & Mushroom Crepe",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Crepe, chicken, mushrooms, bechamel, cheese",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "crepe",
+        "chicken",
+        "mushrooms",
+        "bechamel",
+        "cheese"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 13
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuqlu göbələkli krep",
+          "description": "Krep, toyuq, göbələk, beşamel sousu, pendir"
+        },
+        "ru": {
+          "name": "Блин с курицей и грибами",
+          "description": "Блин, курица, грибы, соус бешамель, сыр"
+        }
+      }
+    },
+    {
+      "slug": "chicken-durum",
+      "name": "Chicken Dürüm",
+      "category": "mains",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lavash, chicken, bell pepper, lettuce, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lavash",
+        "chicken",
+        "bell pepper",
+        "lettuce",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuq dürüm",
+          "description": "Lavaş, toyuq, rəngli bibər, kahı, kartof fri"
+        },
+        "ru": {
+          "name": "Куриный дюрюм",
+          "description": "Лаваш, курица, болгарский перец, листья салата, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "creme-brulee",
+      "name": "Crème Brûlée",
+      "category": "desserts",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Cream, egg, sugar, vanilla",
+      "diet": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "mood": [
+        "sweet"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "cream",
+        "egg",
+        "sugar",
+        "vanilla"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 14
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Krem brüle",
+          "description": "Qaymaq, yumurta, şəkər, vanil"
+        },
+        "ru": {
+          "name": "Крем-брюле",
+          "description": "Сливки, яйца, сахар, ваниль"
+        }
+      }
+    },
+    {
+      "slug": "chocolate-volcano",
+      "name": "Chocolate Volcano",
+      "category": "desserts",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Dark chocolate, butter, egg, flour, ice cream, strawberry",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "sweet"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "dark chocolate",
+        "butter",
+        "egg",
+        "flour",
+        "ice cream",
+        "strawberry"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 16
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Şokolad vulkanı",
+          "description": "Tünd şokolad, kərə yağı, yumurta, un, dondurma, çiyələk"
+        },
+        "ru": {
+          "name": "Шоколадный фондан",
+          "description": "Тёмный шоколад, сливочное масло, яйца, мука, мороженое, клубника"
+        }
+      }
+    },
+    {
+      "slug": "coca-cola",
+      "name": "Coca-Cola",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Carbonated water, sugar, caramel",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "carbonated water",
+        "sugar",
+        "caramel"
+      ],
+      "variants": [
+        {
+          "code": "033",
+          "label": {
+            "az": "0,33 L",
+            "en": "0.33 L",
+            "ru": "0,33 л"
+          },
+          "price": 2
+        },
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 2.5
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Coca-Cola",
+          "description": "Qazlı su, şəkər, karamel"
+        },
+        "ru": {
+          "name": "Кока-Кола",
+          "description": "Газированная вода, сахар, карамель"
+        }
+      }
+    },
+    {
+      "slug": "fanta",
+      "name": "Fanta",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Carbonated water, sugar, orange",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "carbonated water",
+        "sugar",
+        "orange"
+      ],
+      "variants": [
+        {
+          "code": "033",
+          "label": {
+            "az": "0,33 L",
+            "en": "0.33 L",
+            "ru": "0,33 л"
+          },
+          "price": 2
+        },
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 2.5
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Fanta",
+          "description": "Qazlı su, şəkər, portağal"
+        },
+        "ru": {
+          "name": "Фанта",
+          "description": "Газированная вода, сахар, апельсин"
+        }
+      }
+    },
+    {
+      "slug": "sprite",
+      "name": "Sprite",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Carbonated water, sugar, lemon",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "carbonated water",
+        "sugar",
+        "lemon"
+      ],
+      "variants": [
+        {
+          "code": "033",
+          "label": {
+            "az": "0,33 L",
+            "en": "0.33 L",
+            "ru": "0,33 л"
+          },
+          "price": 2
+        },
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 2.5
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Sprite",
+          "description": "Qazlı su, şəkər, limon"
+        },
+        "ru": {
+          "name": "Спрайт",
+          "description": "Газированная вода, сахар, лимон"
+        }
+      }
+    },
+    {
+      "slug": "pepsi",
+      "name": "Pepsi",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Carbonated water, sugar, caramel",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "carbonated water",
+        "sugar",
+        "caramel"
+      ],
+      "variants": [
+        {
+          "code": "033",
+          "label": {
+            "az": "0,33 L",
+            "en": "0.33 L",
+            "ru": "0,33 л"
+          },
+          "price": 2
+        },
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 2.5
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Pepsi",
+          "description": "Qazlı su, şəkər, karamel"
+        },
+        "ru": {
+          "name": "Пепси",
+          "description": "Газированная вода, сахар, карамель"
+        }
+      }
+    },
+    {
+      "slug": "7up",
+      "name": "7Up",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Carbonated water, sugar, lemon",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "carbonated water",
+        "sugar",
+        "lemon"
+      ],
+      "variants": [
+        {
+          "code": "033",
+          "label": {
+            "az": "0,33 L",
+            "en": "0.33 L",
+            "ru": "0,33 л"
+          },
+          "price": 2
+        },
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 2.5
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "7Up",
+          "description": "Qazlı su, şəkər, limon"
+        },
+        "ru": {
+          "name": "7Up",
+          "description": "Газированная вода, сахар, лимон"
+        }
+      }
+    },
+    {
+      "slug": "mirinda",
+      "name": "Mirinda",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Carbonated water, sugar, orange",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "carbonated water",
+        "sugar",
+        "orange"
+      ],
+      "variants": [
+        {
+          "code": "033",
+          "label": {
+            "az": "0,33 L",
+            "en": "0.33 L",
+            "ru": "0,33 л"
+          },
+          "price": 2
+        },
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 2.5
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Mirinda",
+          "description": "Qazlı su, şəkər, portağal"
+        },
+        "ru": {
+          "name": "Миринда",
+          "description": "Газированная вода, сахар, апельсин"
+        }
+      }
+    },
+    {
+      "slug": "lipton-ice-tea",
+      "name": "Lipton Ice Tea",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Tea, sugar, peach",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "tea",
+        "sugar",
+        "peach"
+      ],
+      "variants": [
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 2.5
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Lipton Ice Tea",
+          "description": "Çay, şəkər, şaftalı"
+        },
+        "ru": {
+          "name": "Lipton Ice Tea",
+          "description": "Чай, сахар, персик"
+        }
+      }
+    },
+    {
+      "slug": "fuse-tea",
+      "name": "Fuse Tea",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Tea, sugar, lemon",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "tea",
+        "sugar",
+        "lemon"
+      ],
+      "variants": [
+        {
+          "code": "05",
+          "label": {
+            "az": "0,5 L",
+            "en": "0.5 L",
+            "ru": "0,5 л"
+          },
+          "price": 2.5
+        },
+        {
+          "code": "1",
+          "label": {
+            "az": "1 L",
+            "en": "1 L",
+            "ru": "1 л"
+          },
+          "price": 4
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Fuse Tea",
+          "description": "Çay, şəkər, limon"
+        },
+        "ru": {
+          "name": "Fuse Tea",
+          "description": "Чай, сахар, лимон"
+        }
+      }
+    },
+    {
+      "slug": "cheese-burger",
+      "name": "Cheeseburger",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Burger bun, beef, cheddar, lettuce, tomato, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "burger bun",
+        "beef",
+        "cheddar",
+        "lettuce",
+        "tomato",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 22.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Çizburger",
+          "description": "Burger çörəyi, dana əti, çedar pendiri, kahı, pomidor, kartof fri"
+        },
+        "ru": {
+          "name": "Чизбургер",
+          "description": "Булочка, говядина, чеддер, листья салата, помидоры, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "bbq-burger",
+      "name": "BBQ Burger",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Burger bun, beef, bbq sauce, lettuce, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "burger bun",
+        "beef",
+        "bbq sauce",
+        "lettuce",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 22
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "BBQ burger",
+          "description": "Burger çörəyi, dana əti, BBQ sousu, kahı, kartof fri"
+        },
+        "ru": {
+          "name": "BBQ бургер",
+          "description": "Булочка, говядина, соус барбекю, листья салата, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "mushroom-burger",
+      "name": "Mushroom Burger",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Burger bun, beef, mushroom sauce, lettuce, tomato, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "burger bun",
+        "beef",
+        "mushroom sauce",
+        "lettuce",
+        "tomato",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 22
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Göbələkli burger",
+          "description": "Burger çörəyi, dana əti, göbələk sousu, kahı, pomidor, kartof fri"
+        },
+        "ru": {
+          "name": "Бургер с грибами",
+          "description": "Булочка, говядина, грибной соус, листья салата, помидоры, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "mini-burgers",
+      "name": "Mini Burgers",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Burger bun, beef, tomato, lettuce, cheese, dip sauce, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "burger bun",
+        "beef",
+        "tomato",
+        "lettuce",
+        "cheese",
+        "dip sauce",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 22.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Mini burgerlər",
+          "description": "Burger çörəyi, dana əti, pomidor, kahı, pendir, dip sous, kartof fri"
+        },
+        "ru": {
+          "name": "Мини-бургеры",
+          "description": "Булочка, говядина, помидоры, листья салата, сыр, дип-соус, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "cafe-de-paris-burger",
+      "name": "Café de Paris Burger",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Burger bun, beef, tomato, lettuce, cheddar, cafe de paris sauce, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "burger bun",
+        "beef",
+        "tomato",
+        "lettuce",
+        "cheddar",
+        "cafe de paris sauce",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 24
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Kafe de Pari burger",
+          "description": "Burger çörəyi, dana əti, pomidor, kahı, çedar pendiri, Kafe de Pari sousu, kartof fri"
+        },
+        "ru": {
+          "name": "Бургер Кафе де Пари",
+          "description": "Булочка, говядина, помидоры, листья салата, чеддер, соус Кафе де Пари, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "hot-cheese-burger",
+      "name": "Hot Cheese Burger",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Burger bun, beef, cheddar, french fries, lettuce",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "burger bun",
+        "beef",
+        "cheddar",
+        "french fries",
+        "lettuce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 25.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "İsti pendirli burger",
+          "description": "Burger çörəyi, dana əti, çedar pendiri, kartof fri, kahı"
+        },
+        "ru": {
+          "name": "Бургер с горячим сыром",
+          "description": "Булочка, говядина, чеддер, картофель фри, листья салата"
+        }
+      }
+    },
+    {
+      "slug": "veggie-burger",
+      "name": "Vegetarian Burger",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Burger bun, red beans, onion, lettuce, tofu, french fries",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "burger bun",
+        "red beans",
+        "onion",
+        "lettuce",
+        "tofu",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 21
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Vegetarian burger",
+          "description": "Burger çörəyi, qırmızı lobya, soğan, kahı, tofu, kartof fri"
+        },
+        "ru": {
+          "name": "Вегетарианский бургер",
+          "description": "Булочка, красная фасоль, лук, листья салата, тофу, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "crispy-chicken-burger",
+      "name": "Crispy Chicken Burger",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Burger bun, chicken, breadcrumbs, lettuce, mayonnaise, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "burger bun",
+        "chicken",
+        "breadcrumbs",
+        "lettuce",
+        "mayonnaise",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 21
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Xırçıldayan toyuq burger",
+          "description": "Burger çörəyi, toyuq, çörək qırıntısı, kahı, mayonez, kartof fri"
+        },
+        "ru": {
+          "name": "Бургер с хрустящей курицей",
+          "description": "Булочка, курица, панировка, листья салата, майонез, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "chicken-caesar-roll",
+      "name": "Chicken Caesar Roll",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lavash, chicken, caesar sauce, pickles, lettuce, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lavash",
+        "chicken",
+        "caesar sauce",
+        "pickles",
+        "lettuce",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 19
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuqlu Sezar roll",
+          "description": "Lavaş, toyuq, sezar sousu, turşu xiyar, kahı, kartof fri"
+        },
+        "ru": {
+          "name": "Ролл Цезарь с курицей",
+          "description": "Лаваш, курица, соус цезарь, маринованные огурцы, листья салата, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "crispy-chicken-roll",
+      "name": "Crispy Chicken Roll",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lavash, chicken, breadcrumbs, pickles, tomato, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lavash",
+        "chicken",
+        "breadcrumbs",
+        "pickles",
+        "tomato",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 19
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Xırçıldayan toyuq roll",
+          "description": "Lavaş, toyuq, çörək qırıntısı, turşu xiyar, pomidor, kartof fri"
+        },
+        "ru": {
+          "name": "Ролл с хрустящей курицей",
+          "description": "Лаваш, курица, панировка, маринованные огурцы, помидоры, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "club-sandwich",
+      "name": "Club Sandwich",
+      "category": "burgers",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Toast bread, chicken, egg, pickles, tomato, lettuce, french fries",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "toast bread",
+        "chicken",
+        "egg",
+        "pickles",
+        "tomato",
+        "lettuce",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 19
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Klab sendviç",
+          "description": "Tost çörəyi, toyuq, yumurta, turşu xiyar, pomidor, kahı, kartof fri"
+        },
+        "ru": {
+          "name": "Клаб-сэндвич",
+          "description": "Тостовый хлеб, курица, яйца, маринованные огурцы, помидоры, листья салата, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "spaghetti-bolognese",
+      "name": "Spaghetti Bolognese",
+      "category": "pasta",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": null,
+      "best_seller": true,
+      "description": "Spaghetti, minced beef, tomato sauce, parmesan, basil",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "spaghetti",
+        "minced beef",
+        "tomato sauce",
+        "parmesan",
+        "basil"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 22
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Spagetti boloneze",
+          "description": "Spagetti, dana qıyma, pomidor sousu, parmezan pendiri, reyhan"
+        },
+        "ru": {
+          "name": "Спагетти болоньезе",
+          "description": "Спагетти, говяжий фарш, томатный соус, пармезан, базилик"
+        }
+      }
+    },
+    {
+      "slug": "penne-pesto-arrabbiata",
+      "name": "Penne all’Arrabbiata with Pesto",
+      "category": "pasta",
+      "cuisine": "italian",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Penne, cherry tomato, olives, pesto, parmesan, basil, hot pepper",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "penne",
+        "cherry tomato",
+        "olives",
+        "pesto",
+        "parmesan",
+        "basil",
+        "hot pepper"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 23
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Penne arrabbiata (pesto ilə)",
+          "description": "Penne makaron, çeri pomidor, zeytun, pesto, parmezan pendiri, reyhan, acı bibər"
+        },
+        "ru": {
+          "name": "Пенне арраббьята с песто",
+          "description": "Паста пенне, помидоры черри, оливки, песто, пармезан, базилик, острый перец"
+        }
+      }
+    },
+    {
+      "slug": "alfredo-tagliatelle",
+      "name": "Alfredo Tagliatelle",
+      "category": "pasta",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Tagliatelle, chicken, mushrooms, cream, parmesan",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "tagliatelle",
+        "chicken",
+        "mushrooms",
+        "cream",
+        "parmesan"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 24
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Alfredo talyatelle",
+          "description": "Talyatelle, toyuq, göbələk, qaymaq, parmezan pendiri"
+        },
+        "ru": {
+          "name": "Тальятелле Альфредо",
+          "description": "Тальятелле, курица, грибы, сливки, пармезан"
+        }
+      }
+    },
+    {
+      "slug": "spaghetti-burrata",
+      "name": "Spaghetti Burrata",
+      "category": "pasta",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Spaghetti, burrata, cream, pesto, cherry tomato",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "spaghetti",
+        "burrata",
+        "cream",
+        "pesto",
+        "cherry tomato"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 28
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Burratalı spagetti",
+          "description": "Spagetti, burrata, qaymaq, pesto, çeri pomidor"
+        },
+        "ru": {
+          "name": "Спагетти с бурратой",
+          "description": "Спагетти, буррата, сливки, песто, помидоры черри"
+        }
+      }
+    },
+    {
+      "slug": "chicken-cheese-crepe",
+      "name": "Chicken Cheese Crepe",
+      "category": "pasta",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Crepe, chicken, mushrooms, cheese, bechamel",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "crepe",
+        "chicken",
+        "mushrooms",
+        "cheese",
+        "bechamel"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 22
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuqlu pendirli krep",
+          "description": "Krep, toyuq, göbələk, pendir, beşamel sousu"
+        },
+        "ru": {
+          "name": "Блин с курицей и сыром",
+          "description": "Блин, курица, грибы, сыр, соус бешамель"
+        }
+      }
+    },
+    {
+      "slug": "lasagna",
+      "name": "Lasagna",
+      "category": "pasta",
+      "cuisine": "italian",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lasagna sheets, minced beef, tomato sauce, bechamel, mozzarella",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lasagna sheets",
+        "minced beef",
+        "tomato sauce",
+        "bechamel",
+        "mozzarella"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 24
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Lazanya",
+          "description": "Lazanya xəmiri, dana qıyma, pomidor sousu, beşamel sousu, mozzarella"
+        },
+        "ru": {
+          "name": "Лазанья",
+          "description": "Листы лазаньи, говяжий фарш, томатный соус, соус бешамель, моцарелла"
+        }
+      }
+    },
+    {
+      "slug": "chicken-noodles",
+      "name": "Noodles with Chicken",
+      "category": "pasta",
+      "cuisine": "asian",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Egg noodles, chicken, carrot, zucchini, bell pepper, soy sauce, sesame",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "egg noodles",
+        "chicken",
+        "carrot",
+        "zucchini",
+        "bell pepper",
+        "soy sauce",
+        "sesame"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 24
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuqlu noodle",
+          "description": "Noodle, toyuq, kök, kabaçki, rəngli bibər, soya sousu, küncüt"
+        },
+        "ru": {
+          "name": "Лапша с курицей",
+          "description": "Лапша, курица, морковь, кабачок, болгарский перец, соевый соус, кунжут"
+        }
+      }
+    },
+    {
+      "slug": "beef-noodles",
+      "name": "Noodles with Beef",
+      "category": "pasta",
+      "cuisine": "asian",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Egg noodles, beef, bell pepper, zucchini, soy sauce, sesame",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "egg noodles",
+        "beef",
+        "bell pepper",
+        "zucchini",
+        "soy sauce",
+        "sesame"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 26
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Dana ətli noodle",
+          "description": "Noodle, dana əti, rəngli bibər, kabaçki, soya sousu, küncüt"
+        },
+        "ru": {
+          "name": "Лапша с говядиной",
+          "description": "Лапша, говядина, болгарский перец, кабачок, соевый соус, кунжут"
+        }
+      }
+    },
+    {
+      "slug": "beef-fettuccine",
+      "name": "Beef Fettuccine",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, fettuccine, cream, pesto",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "fettuccine",
+        "cream",
+        "pesto"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 29
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Dana ətli fettuçini",
+          "description": "Dana əti, fettuçini, qaymaq, pesto"
+        },
+        "ru": {
+          "name": "Говядина с феттучини",
+          "description": "Говядина, феттучини, сливки, песто"
+        }
+      }
+    },
+    {
+      "slug": "beef-parmesan",
+      "name": "Beef Parmesan",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, panko, parmesan, mozzarella, tomato sauce, spaghetti",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "panko",
+        "parmesan",
+        "mozzarella",
+        "tomato sauce",
+        "spaghetti"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 33
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Dana parmezan",
+          "description": "Dana əti, panko, parmezan pendiri, mozzarella, pomidor sousu, spagetti"
+        },
+        "ru": {
+          "name": "Говядина пармезан",
+          "description": "Говядина, панко, пармезан, моцарелла, томатный соус, спагетти"
+        }
+      }
+    },
+    {
+      "slug": "beef-meatballs",
+      "name": "Beef Meatballs",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Minced beef, mixed greens, mashed potato, tomato",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "minced beef",
+        "mixed greens",
+        "mashed potato",
+        "tomato"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 29
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Dana köftəsi",
+          "description": "Dana qıyma, miks göyərti, kartof püresi, pomidor"
+        },
+        "ru": {
+          "name": "Говяжьи котлеты",
+          "description": "Говяжий фарш, микс зелени, картофельное пюре, помидоры"
+        }
+      }
+    },
+    {
+      "slug": "meatball-crispy-potato",
+      "name": "Meatballs with Crispy Potato",
+      "category": "mains",
+      "cuisine": "turkish",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Minced beef, potato, tomato sauce, green pepper, yoghurt",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "minced beef",
+        "potato",
+        "tomato sauce",
+        "green pepper",
+        "yoghurt"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 32
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Xırçıldayan kartoflu köftə",
+          "description": "Dana qıyma, kartof, pomidor sousu, yaşıl bibər, qatıq"
+        },
+        "ru": {
+          "name": "Кёфте с хрустящим картофелем",
+          "description": "Говяжий фарш, картофель, томатный соус, зелёный перец, йогурт"
+        }
+      }
+    },
+    {
+      "slug": "beef-stroganoff",
+      "name": "Beef Stroganoff",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, demi-glace, onion, mashed potato, parsley",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "demi-glace",
+        "onion",
+        "mashed potato",
+        "parsley"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 29
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Bef stroqanov",
+          "description": "Dana əti, demiqlas sousu, soğan, kartof püresi, cəfəri"
+        },
+        "ru": {
+          "name": "Бефстроганов",
+          "description": "Говядина, соус демиглас, лук, картофельное пюре, петрушка"
+        }
+      }
+    },
+    {
+      "slug": "beef-skewers",
+      "name": "Beef Skewers",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, zucchini, eggplant, broccoli, parmesan",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "zucchini",
+        "eggplant",
+        "broccoli",
+        "parmesan"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 29
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Dana şiş",
+          "description": "Dana əti, kabaçki, badımcan, brokoli, parmezan pendiri"
+        },
+        "ru": {
+          "name": "Шашлычки из говядины",
+          "description": "Говядина, кабачок, баклажан, брокколи, пармезан"
+        }
+      }
+    },
+    {
+      "slug": "beef-fillet",
+      "name": "Beef Fillet",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, baby potato, cream, spinach",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "baby potato",
+        "cream",
+        "spinach"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 35
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Dana file",
+          "description": "Dana əti, xırda kartof, qaymaq, ispanaq"
+        },
+        "ru": {
+          "name": "Говяжье филе",
+          "description": "Говядина, молодой картофель, сливки, шпинат"
+        }
+      }
+    },
+    {
+      "slug": "cafe-de-paris-steak",
+      "name": "Café de Paris Steak",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, cafe de paris sauce, french fries, mixed greens",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "cafe de paris sauce",
+        "french fries",
+        "mixed greens"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 36
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Kafe de Pari steyk",
+          "description": "Dana əti, Kafe de Pari sousu, kartof fri, miks göyərti"
+        },
+        "ru": {
+          "name": "Стейк Кафе де Пари",
+          "description": "Говядина, соус Кафе де Пари, картофель фри, микс зелени"
+        }
+      }
+    },
+    {
+      "slug": "steak-mushroom",
+      "name": "Steak with Mushrooms",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, fettuccine, mushrooms, cream, mixed greens, parmesan",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "fettuccine",
+        "mushrooms",
+        "cream",
+        "mixed greens",
+        "parmesan"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 39
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Göbələkli steyk",
+          "description": "Dana əti, fettuçini, göbələk, qaymaq, miks göyərti, parmezan pendiri"
+        },
+        "ru": {
+          "name": "Стейк с грибами",
+          "description": "Говядина, феттучини, грибы, сливки, микс зелени, пармезан"
+        }
+      }
+    },
+    {
+      "slug": "ribeye-steak-320",
+      "name": "Ribeye Steak 320 g",
+      "category": "mains",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Beef, mushrooms, spinach, cherry tomato, demi-glace",
+      "diet": [],
+      "mood": [
+        "hearty"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "beef",
+        "mushrooms",
+        "spinach",
+        "cherry tomato",
+        "demi-glace"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "320 qr",
+            "en": "320 g",
+            "ru": "320 г"
+          },
+          "price": 56
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Ribay steyk 320 qr",
+          "description": "Dana əti, göbələk, ispanaq, çeri pomidor, demiqlas sousu"
+        },
+        "ru": {
+          "name": "Стейк рибай 320 г",
+          "description": "Говядина, грибы, шпинат, помидоры черри, соус демиглас"
+        }
+      }
+    },
+    {
+      "slug": "popcorn-chicken",
+      "name": "Popcorn Chicken",
+      "category": "snacks",
+      "cuisine": "asian",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, coriander, sweet chili, teriyaki sauce",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "coriander",
+        "sweet chili",
+        "teriyaki sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 16
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Popkorn toyuq",
+          "description": "Toyuq, keşniş, şirin çili, asiya sousu"
+        },
+        "ru": {
+          "name": "Попкорн из курицы",
+          "description": "Курица, кинза, сладкий чили, азиатский соус"
+        }
+      }
+    },
+    {
+      "slug": "popcorn-shrimps",
+      "name": "Popcorn Shrimps",
+      "category": "snacks",
+      "cuisine": "asian",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Shrimp, flour, coriander, sweet chili",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "shrimp",
+        "flour",
+        "coriander",
+        "sweet chili"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 22
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Popkorn krevet",
+          "description": "Krevet, un, keşniş, şirin çili"
+        },
+        "ru": {
+          "name": "Попкорн из креветок",
+          "description": "Креветки, мука, кинза, сладкий чили"
+        }
+      }
+    },
+    {
+      "slug": "tempura-shrimps",
+      "name": "Tempura Shrimps",
+      "category": "snacks",
+      "cuisine": "asian",
+      "spice": 1,
+      "image": null,
+      "best_seller": false,
+      "description": "Shrimp, tempura batter, flour, sweet chili, lemon",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "shrimp",
+        "tempura batter",
+        "flour",
+        "sweet chili",
+        "lemon"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 22
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Tempura krevet",
+          "description": "Krevet, tempura, un, şirin çili, limon"
+        },
+        "ru": {
+          "name": "Креветки темпура",
+          "description": "Креветки, темпура, мука, сладкий чили, лимон"
+        }
+      }
+    },
+    {
+      "slug": "fish-and-chips",
+      "name": "Fish & Chips",
+      "category": "snacks",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Trout, french fries, dip sauce, lemon",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "trout",
+        "french fries",
+        "dip sauce",
+        "lemon"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 24
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Fiş end çips",
+          "description": "Forel filesi, kartof fri, dip sous, limon"
+        },
+        "ru": {
+          "name": "Фиш энд чипс",
+          "description": "Филе форели, картофель фри, дип-соус, лимон"
+        }
+      }
+    },
+    {
+      "slug": "crispy-dushbara",
+      "name": "Crispy Dushbara",
+      "category": "snacks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb, beef, onion, dough, dip sauce",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "beef",
+        "onion",
+        "dough",
+        "dip sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 16
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Qızardılmış düşbərə",
+          "description": "Quzu əti, dana əti, soğan, xəmir, dip sous"
+        },
+        "ru": {
+          "name": "Хрустящая дюшбара",
+          "description": "Баранина, говядина, лук, тесто, дип-соус"
+        }
+      }
+    },
+    {
+      "slug": "crispy-gurza",
+      "name": "Crispy Gurza",
+      "category": "snacks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Lamb, beef, onion, dough, dip sauce",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "lamb",
+        "beef",
+        "onion",
+        "dough",
+        "dip sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 18
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Qızardılmış gürzə",
+          "description": "Quzu əti, dana əti, soğan, xəmir, dip sous"
+        },
+        "ru": {
+          "name": "Хрустящая гюрза",
+          "description": "Баранина, говядина, лук, тесто, дип-соус"
+        }
+      }
+    },
+    {
+      "slug": "crispy-chicken",
+      "name": "Crispy Chicken",
+      "category": "snacks",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, breadcrumbs, dip sauce, french fries",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "breadcrumbs",
+        "dip sauce",
+        "french fries"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 19
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Xırçıldayan toyuq",
+          "description": "Toyuq, çörək qırıntısı, dip sous, kartof fri"
+        },
+        "ru": {
+          "name": "Хрустящая курица",
+          "description": "Курица, панировка, дип-соус, картофель фри"
+        }
+      }
+    },
+    {
+      "slug": "bbq-chicken-strips",
+      "name": "BBQ Chicken Strips",
+      "category": "snacks",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, bbq sauce, french fries, sesame",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "bbq sauce",
+        "french fries",
+        "sesame"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 20
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "BBQ toyuq strips",
+          "description": "Toyuq, BBQ sousu, kartof fri, küncüt"
+        },
+        "ru": {
+          "name": "Куриные стрипсы BBQ",
+          "description": "Курица, соус барбекю, картофель фри, кунжут"
+        }
+      }
+    },
+    {
+      "slug": "chicken-nuggets",
+      "name": "Chicken Nuggets",
+      "category": "snacks",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, breadcrumbs, dip sauce",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "breadcrumbs",
+        "dip sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 14
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuq naggets",
+          "description": "Toyuq, çörək qırıntısı, dip sous"
+        },
+        "ru": {
+          "name": "Куриные наггетсы",
+          "description": "Курица, панировка, дип-соус"
+        }
+      }
+    },
+    {
+      "slug": "chicken-pies",
+      "name": "Chicken Pies",
+      "category": "snacks",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Chicken, mushrooms, mayonnaise, lavash, breadcrumbs",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "chicken",
+        "mushrooms",
+        "mayonnaise",
+        "lavash",
+        "breadcrumbs"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 15
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Toyuqlu piroq",
+          "description": "Toyuq, göbələk, mayonez, lavaş, çörək qırıntısı"
+        },
+        "ru": {
+          "name": "Пирожки с курицей",
+          "description": "Курица, грибы, майонез, лаваш, панировка"
+        }
+      }
+    },
+    {
+      "slug": "jumbo-set",
+      "name": "Jumbo Set",
+      "category": "snacks",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Doritos, chicken, chips, dip sauce, sweet chili, onion",
+      "diet": [],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "doritos",
+        "chicken",
+        "chips",
+        "dip sauce",
+        "sweet chili",
+        "onion"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 39
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Cumbo set",
+          "description": "Nachos çipsi, toyuq, çipsi, dip sous, şirin çili, soğan"
+        },
+        "ru": {
+          "name": "Джамбо сет",
+          "description": "Начос, курица, чипсы, дип-соус, сладкий чили, лук"
+        }
+      }
+    },
+    {
+      "slug": "handmade-chips",
+      "name": "Handmade Chips",
+      "category": "snacks",
+      "cuisine": "american",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Potato, dip sauce",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        "potato",
+        "dip sauce"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 8
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Ev üsulu çips",
+          "description": "Kartof, dip sous"
+        },
+        "ru": {
+          "name": "Домашние чипсы",
+          "description": "Картофель, дип-соус"
+        }
+      }
+    },
+    {
+      "slug": "black-tea-pot",
+      "name": "Black Tea (pot)",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Black tea",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "black tea"
+      ],
+      "variants": [
+        {
+          "code": "pot",
+          "label": {
+            "az": "Dəmlik",
+            "en": "Teapot",
+            "ru": "Чайник"
+          },
+          "price": 14
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Qara çay (dəmlik)",
+          "description": "Qara çay"
+        },
+        "ru": {
+          "name": "Чёрный чай (чайник)",
+          "description": "Чёрный чай"
+        }
+      }
+    },
+    {
+      "slug": "green-tea-pot",
+      "name": "Green Tea (pot)",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Green tea",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "green tea"
+      ],
+      "variants": [
+        {
+          "code": "pot",
+          "label": {
+            "az": "Dəmlik",
+            "en": "Teapot",
+            "ru": "Чайник"
+          },
+          "price": 15
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Yaşıl çay (dəmlik)",
+          "description": "Yaşıl çay"
+        },
+        "ru": {
+          "name": "Зелёный чай (чайник)",
+          "description": "Зелёный чай"
+        }
+      }
+    },
+    {
+      "slug": "jasmine-tea",
+      "name": "Jasmine Tea",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Green tea, jasmine",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "green tea",
+        "jasmine"
+      ],
+      "variants": [
+        {
+          "code": "pot",
+          "label": {
+            "az": "Dəmlik",
+            "en": "Teapot",
+            "ru": "Чайник"
+          },
+          "price": 15
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Yasəmən çayı",
+          "description": "Yaşıl çay, yasəmən"
+        },
+        "ru": {
+          "name": "Жасминовый чай",
+          "description": "Зелёный чай, жасмин"
+        }
+      }
+    },
+    {
+      "slug": "kir-royal-tea",
+      "name": "Kir Royal Tea",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Herbal tea, dried fruit, rosehip",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "herbal tea",
+        "dried fruit",
+        "rosehip"
+      ],
+      "variants": [
+        {
+          "code": "pot",
+          "label": {
+            "az": "Dəmlik",
+            "en": "Teapot",
+            "ru": "Чайник"
+          },
+          "price": 15
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Kir Royal çayı",
+          "description": "Bitki çayı, quru meyvə, itburnu"
+        },
+        "ru": {
+          "name": "Чай «Кир Рояль»",
+          "description": "Травяной чай, сухофрукты, шиповник"
+        }
+      }
+    },
+    {
+      "slug": "currant-basil-tea",
+      "name": "Blackcurrant & Basil Tea",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Blackcurrant, basil, lime",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "blackcurrant",
+        "basil",
+        "lime"
+      ],
+      "variants": [
+        {
+          "code": "pot",
+          "label": {
+            "az": "Dəmlik",
+            "en": "Teapot",
+            "ru": "Чайник"
+          },
+          "price": 16
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Reyhanlı qaraqat çayı",
+          "description": "Qaraqat, reyhan, laym"
+        },
+        "ru": {
+          "name": "Чай со смородиной и базиликом",
+          "description": "Чёрная смородина, базилик, лайм"
+        }
+      }
+    },
+    {
+      "slug": "beauty-tea",
+      "name": "Beauty Tea",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Herbal tea, dried fruit",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "herbal tea",
+        "dried fruit"
+      ],
+      "variants": [
+        {
+          "code": "pot",
+          "label": {
+            "az": "Dəmlik",
+            "en": "Teapot",
+            "ru": "Чайник"
+          },
+          "price": 16
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Beauty çayı",
+          "description": "Bitki çayı, quru meyvə"
+        },
+        "ru": {
+          "name": "Чай «Бьюти»",
+          "description": "Травяной чай, сухофрукты"
+        }
+      }
+    },
+    {
+      "slug": "moroccan-tea",
+      "name": "Moroccan Tea",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Green tea, mint, orange, cinnamon",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "green tea",
+        "mint",
+        "orange",
+        "cinnamon"
+      ],
+      "variants": [
+        {
+          "code": "pot",
+          "label": {
+            "az": "Dəmlik",
+            "en": "Teapot",
+            "ru": "Чайник"
+          },
+          "price": 16
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Mərakeş çayı",
+          "description": "Yaşıl çay, nanə, portağal, darçın"
+        },
+        "ru": {
+          "name": "Марокканский чай",
+          "description": "Зелёный чай, мята, апельсин, корица"
+        }
+      }
+    },
+    {
+      "slug": "sea-buckthorn-tea",
+      "name": "Sea Buckthorn Tea",
+      "category": "drinks",
+      "cuisine": "azerbaijani",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Sea buckthorn, sugar, lemon",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light",
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "sea buckthorn",
+        "sugar",
+        "lemon"
+      ],
+      "variants": [
+        {
+          "code": "pot",
+          "label": {
+            "az": "Dəmlik",
+            "en": "Teapot",
+            "ru": "Чайник"
+          },
+          "price": 16
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Çaytikanı çayı",
+          "description": "Çaytikanı, şəkər, limon"
+        },
+        "ru": {
+          "name": "Облепиховый чай",
+          "description": "Облепиха, сахар, лимон"
+        }
+      }
+    },
+    {
+      "slug": "mini-pancakes",
+      "name": "Hot Chocolate Mini Pancakes",
+      "category": "desserts",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Pancake, dark chocolate, strawberry, banana",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "sweet"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "pancake",
+        "dark chocolate",
+        "strawberry",
+        "banana"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 18
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "İsti şokoladlı mini pankeyk",
+          "description": "Pankeyk, tünd şokolad, çiyələk, banan"
+        },
+        "ru": {
+          "name": "Мини-панкейки с горячим шоколадом",
+          "description": "Панкейк, тёмный шоколад, клубника, банан"
+        }
+      }
+    },
+    {
+      "slug": "vanilla-pancakes",
+      "name": "Vanilla Pancakes",
+      "category": "desserts",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Pancake, banana, caramel, ice cream, walnut, vanilla",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "sweet"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "pancake",
+        "banana",
+        "caramel",
+        "ice cream",
+        "walnut",
+        "vanilla"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 18
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Vanilli pankeyk",
+          "description": "Pankeyk, banan, karamel, dondurma, qoz, vanil"
+        },
+        "ru": {
+          "name": "Ванильные панкейки",
+          "description": "Панкейк, банан, карамель, мороженое, грецкий орех, ваниль"
+        }
+      }
+    },
+    {
+      "slug": "chocolate-crepe-plain",
+      "name": "Chocolate Crepe",
+      "category": "desserts",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Crepe, dark chocolate, whipped cream",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "sweet"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "crepe",
+        "dark chocolate",
+        "whipped cream"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 15
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Şokoladlı krep (klassik)",
+          "description": "Krep, tünd şokolad, şanti krem"
+        },
+        "ru": {
+          "name": "Шоколадный блин",
+          "description": "Блин, тёмный шоколад, взбитые сливки"
+        }
+      }
+    },
+    {
+      "slug": "gluten-free-crepe",
+      "name": "Crepe (Gluten-Free)",
+      "category": "desserts",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Gluten-free flour, egg, milk, dark chocolate",
+      "diet": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "mood": [
+        "sweet"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "gluten-free flour",
+        "egg",
+        "milk",
+        "dark chocolate"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 15
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Glütensiz krep",
+          "description": "Glütensiz un, yumurta, süd, tünd şokolad"
+        },
+        "ru": {
+          "name": "Безглютеновый блин",
+          "description": "Безглютеновая мука, яйца, молоко, тёмный шоколад"
+        }
+      }
+    },
+    {
+      "slug": "carrot-cake",
+      "name": "Carrot Cake",
+      "category": "desserts",
+      "cuisine": "european",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Carrot, walnut, cream cheese, flour, cinnamon",
+      "diet": [
+        "vegetarian"
+      ],
+      "mood": [
+        "sweet"
+      ],
+      "meal": [
+        "dessert"
+      ],
+      "ingredients": [
+        "carrot",
+        "walnut",
+        "cream cheese",
+        "flour",
+        "cinnamon"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 porsiya",
+            "en": "1 portion",
+            "ru": "1 порция"
+          },
+          "price": 15
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Yerkökü tortu",
+          "description": "Kök, qoz, krem pendir, un, darçın"
+        },
+        "ru": {
+          "name": "Морковный торт",
+          "description": "Морковь, грецкий орех, сливочный сыр, мука, корица"
+        }
+      }
+    },
+    {
+      "slug": "mango-pie-lemonade",
+      "name": "Mango Pie Lemonade",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Mango, apple, cinnamon, lime, carbonated water",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "mango",
+        "apple",
+        "cinnamon",
+        "lime",
+        "carbonated water"
+      ],
+      "variants": [
+        {
+          "code": "jug",
+          "label": {
+            "az": "Qrafin",
+            "en": "Jug",
+            "ru": "Графин"
+          },
+          "price": 21
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Manqo piroqu limonadı",
+          "description": "Manqo, alma, darçın, laym, qazlı su"
+        },
+        "ru": {
+          "name": "Лимонад «Манговый пирог»",
+          "description": "Манго, яблоко, корица, лайм, газированная вода"
+        }
+      }
+    },
+    {
+      "slug": "strawberry-exotic-lemonade",
+      "name": "Strawberry Exotic Lemonade",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Strawberry, lime, lychee, carbonated water",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "strawberry",
+        "lime",
+        "lychee",
+        "carbonated water"
+      ],
+      "variants": [
+        {
+          "code": "jug",
+          "label": {
+            "az": "Qrafin",
+            "en": "Jug",
+            "ru": "Графин"
+          },
+          "price": 21
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Çiyələkli ekzotik limonad",
+          "description": "Çiyələk, laym, liçi, qazlı su"
+        },
+        "ru": {
+          "name": "Клубнично-экзотический лимонад",
+          "description": "Клубника, лайм, личи, газированная вода"
+        }
+      }
+    },
+    {
+      "slug": "peach-hibiscus-lemonade",
+      "name": "Peach Hibiscus Lemonade",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Peach, hibiscus, lemon, carbonated water",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "peach",
+        "hibiscus",
+        "lemon",
+        "carbonated water"
+      ],
+      "variants": [
+        {
+          "code": "jug",
+          "label": {
+            "az": "Qrafin",
+            "en": "Jug",
+            "ru": "Графин"
+          },
+          "price": 21
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Şaftalı-hibiskus limonadı",
+          "description": "Şaftalı, hibiskus, limon, qazlı su"
+        },
+        "ru": {
+          "name": "Лимонад персик-гибискус",
+          "description": "Персик, гибискус, лимон, газированная вода"
+        }
+      }
+    },
+    {
+      "slug": "apple-basil-lemonade",
+      "name": "Apple & Basil Lemonade",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Apple, basil, syrup, lemon, carbonated water",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "apple",
+        "basil",
+        "syrup",
+        "lemon",
+        "carbonated water"
+      ],
+      "variants": [
+        {
+          "code": "glass",
+          "label": {
+            "az": "1 stəkan",
+            "en": "1 glass",
+            "ru": "1 стакан"
+          },
+          "price": 9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Alma-reyhan limonadı",
+          "description": "Alma, reyhan, sirop, limon, qazlı su"
+        },
+        "ru": {
+          "name": "Лимонад яблоко-базилик",
+          "description": "Яблоко, базилик, сироп, лимон, газированная вода"
+        }
+      }
+    },
+    {
+      "slug": "tutti-frutti-lemonade",
+      "name": "Tutti-Frutti Lemonade",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Strawberry, passion fruit, syrup, carbonated water",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "strawberry",
+        "passion fruit",
+        "syrup",
+        "carbonated water"
+      ],
+      "variants": [
+        {
+          "code": "glass",
+          "label": {
+            "az": "1 stəkan",
+            "en": "1 glass",
+            "ru": "1 стакан"
+          },
+          "price": 9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Tutti-frutti limonadı",
+          "description": "Çiyələk, marakuya, sirop, qazlı su"
+        },
+        "ru": {
+          "name": "Лимонад тутти-фрутти",
+          "description": "Клубника, маракуйя, сироп, газированная вода"
+        }
+      }
+    },
+    {
+      "slug": "pear-cinnamon-lemonade",
+      "name": "Pear & Cinnamon Lemonade",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Pear, cinnamon, syrup, lemon, carbonated water",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "pear",
+        "cinnamon",
+        "syrup",
+        "lemon",
+        "carbonated water"
+      ],
+      "variants": [
+        {
+          "code": "glass",
+          "label": {
+            "az": "1 stəkan",
+            "en": "1 glass",
+            "ru": "1 стакан"
+          },
+          "price": 9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Armud-darçın limonadı",
+          "description": "Armud, darçın, sirop, limon, qazlı su"
+        },
+        "ru": {
+          "name": "Лимонад груша-корица",
+          "description": "Груша, корица, сироп, лимон, газированная вода"
+        }
+      }
+    },
+    {
+      "slug": "gum-lemonade",
+      "name": "Bubble Gum Lemonade",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Gum syrup, cranberry, lemon, carbonated water",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "gum syrup",
+        "cranberry",
+        "lemon",
+        "carbonated water"
+      ],
+      "variants": [
+        {
+          "code": "glass",
+          "label": {
+            "az": "1 stəkan",
+            "en": "1 glass",
+            "ru": "1 стакан"
+          },
+          "price": 9
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Saqqızlı limonad",
+          "description": "Saqqız siropu, mərsin, limon, qazlı su"
+        },
+        "ru": {
+          "name": "Лимонад «Жвачка»",
+          "description": "Сироп «жвачка», клюква, лимон, газированная вода"
+        }
+      }
+    },
+    {
+      "slug": "passion-fruit-lemonade",
+      "name": "Passion Fruit Lemonade",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Passion fruit, mango, lime, carbonated water",
+      "diet": [
+        "vegetarian",
+        "vegan",
+        "gluten-free"
+      ],
+      "mood": [
+        "light"
+      ],
+      "meal": [
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "passion fruit",
+        "mango",
+        "lime",
+        "carbonated water"
+      ],
+      "variants": [
+        {
+          "code": "glass",
+          "label": {
+            "az": "1 stəkan",
+            "en": "1 glass",
+            "ru": "1 стакан"
+          },
+          "price": 12
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Marakuyalı limonad",
+          "description": "Marakuya, manqo, laym, qazlı su"
+        },
+        "ru": {
+          "name": "Лимонад с маракуйей",
+          "description": "Маракуйя, манго, лайм, газированная вода"
+        }
+      }
+    },
+    {
+      "slug": "cappuccino",
+      "name": "Cappuccino",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Espresso, milk",
+      "diet": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "espresso",
+        "milk"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "Adi süd",
+            "en": "Regular milk",
+            "ru": "Обычное молоко"
+          },
+          "price": 8.5
+        },
+        {
+          "code": "alt",
+          "label": {
+            "az": "Badam/kokos südü",
+            "en": "Almond/coconut milk",
+            "ru": "Миндальное/кокосовое молоко"
+          },
+          "price": 10.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Kapuçino",
+          "description": "Espresso, süd"
+        },
+        "ru": {
+          "name": "Капучино",
+          "description": "Эспрессо, молоко"
+        }
+      }
+    },
+    {
+      "slug": "flat-white",
+      "name": "Flat White",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Espresso, milk",
+      "diet": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "espresso",
+        "milk"
+      ],
+      "variants": [
+        {
+          "code": "std",
+          "label": {
+            "az": "1 fincan",
+            "en": "1 cup",
+            "ru": "1 чашка"
+          },
+          "price": 9.5
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Flet uayt",
+          "description": "Espresso, süd"
+        },
+        "ru": {
+          "name": "Флэт уайт",
+          "description": "Эспрессо, молоко"
+        }
+      }
+    },
+    {
+      "slug": "latte",
+      "name": "Latte / Spanish Latte",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Espresso, milk, condensed milk",
+      "diet": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "espresso",
+        "milk",
+        "condensed milk"
+      ],
+      "variants": [
+        {
+          "code": "latte",
+          "label": {
+            "az": "Latte",
+            "en": "Latte",
+            "ru": "Латте"
+          },
+          "price": 8.5
+        },
+        {
+          "code": "spanish",
+          "label": {
+            "az": "İspan latte",
+            "en": "Spanish latte",
+            "ru": "Испанский латте"
+          },
+          "price": 10
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Latte / İspan latte",
+          "description": "Espresso, süd, qatılaşdırılmış süd"
+        },
+        "ru": {
+          "name": "Латте / Испанский латте",
+          "description": "Эспрессо, молоко, сгущённое молоко"
+        }
+      }
+    },
+    {
+      "slug": "iced-latte",
+      "name": "Iced Latte / Spanish Latte",
+      "category": "drinks",
+      "cuisine": "international",
+      "spice": 0,
+      "image": null,
+      "best_seller": false,
+      "description": "Espresso, milk, condensed milk, ice",
+      "diet": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "mood": [
+        "comfort"
+      ],
+      "meal": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "drink"
+      ],
+      "ingredients": [
+        "espresso",
+        "milk",
+        "condensed milk",
+        "ice"
+      ],
+      "variants": [
+        {
+          "code": "latte",
+          "label": {
+            "az": "Soyuq latte",
+            "en": "Iced latte",
+            "ru": "Айс латте"
+          },
+          "price": 11
+        },
+        {
+          "code": "spanish",
+          "label": {
+            "az": "Soyuq İspan latte",
+            "en": "Iced Spanish latte",
+            "ru": "Айс испанский латте"
+          },
+          "price": 13
+        }
+      ],
+      "i18n": {
+        "az": {
+          "name": "Soyuq latte / İspan latte",
+          "description": "Espresso, süd, qatılaşdırılmış süd, buz"
+        },
+        "ru": {
+          "name": "Айс латте / Испанский латте",
+          "description": "Эспрессо, молоко, сгущённое молоко, лёд"
         }
       }
     }

@@ -7,7 +7,7 @@
   let savedCards = [];
   let cardForm = null;
   const money = n => Math.round(n * 100) / 100;
-  const ICON = { pizza: I.pizza, doner: I.wrap, drinks: I.cup, desserts: I.cake };
+  const ICON = new Proxy({}, { get: (_, slug) => TW.catIcon(slug) });
 
   /* ---------- Cart list ---------- */
   function render() {

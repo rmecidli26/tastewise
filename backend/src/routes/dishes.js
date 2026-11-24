@@ -39,7 +39,7 @@ const searchSchema = z.object({
     z.array(z.number().int().positive()).max(30).optional()
   ),
   sort: z.enum(['match', 'menu', 'popular', 'price_asc', 'price_desc', 'name']).optional(),
-  limit: optionalNumber(z.number().int().min(1).max(100)),
+  limit: optionalNumber(z.number().int().min(1).max(300)),
   page: optionalNumber(z.number().int().min(1).max(1000))
 });
 
